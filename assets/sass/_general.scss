@@ -1,0 +1,65 @@
+
+// COMPONENTS
+
+@use "./components/index" as *;
+
+// COMPONENTS
+
+.body {
+    @extend %flex-center;
+    height: 100vh;
+    font-family: 'Hind Madurai', sans-serif;
+
+    background-color: $color-background;
+}
+
+h1 {
+    @extend %title-h1;
+}
+
+h2, h3 {
+    @extend %title-h2;
+}
+
+a{
+    text-decoration: none;
+    transition: 0.3s;
+    
+    :hover{
+        text-decoration: underline;
+        color: $color-link;
+
+        transform: scale(1.01);
+
+        transition: 0.3s;
+    }
+}
+
+
+.wrapper{
+    @extend %grid-default;
+    min-height: 95vh; max-height: 95% ;
+    max-width: 95%;
+    margin: auto;
+}
+
+.container_header_footer {
+    @include grid-position(1 /span 2, 1 /span 12);
+    @extend %grid-default;
+}
+
+.header {
+    @include grid-position(1 /span 12, 1 /span 11);
+}
+
+.footer {
+    @include grid-position(1 /span 12, 11 /span 2 );
+}
+
+.container_nav_secondary{
+    @include grid-position(3 /span 10, 1 /span 2);
+}
+
+section {
+    @include grid-position(3 /span 10, 3 /span 10);
+}

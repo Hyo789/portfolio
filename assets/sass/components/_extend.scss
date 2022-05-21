@@ -1,0 +1,44 @@
+
+// COMPONENTS
+
+@use "./variables" as *;
+
+@use "./colors" as *;
+
+@use "./mixin" as *;
+
+// COMPONENTS
+
+// flex
+
+%flex{
+    display: flex;
+}
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// GRID
+
+%grid{
+    display: grid;
+}
+
+%grid-default{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+// FONTS
+
+%title-h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+%title-h2{
+    font-family: 'Open Sans', sans-serif;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "La version finale de mon portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass assets/sass/style.scss assets/css/style.css -w --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyo789/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "hyo@sayajin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hyo789/portfolio/issues"
+  },
+  "homepage": "https://github.com/Hyo789/portfolio#readme",
+  "dependencies": {
+    "sass": "^1.52.1"
+  }
+}

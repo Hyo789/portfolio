@@ -1,0 +1,15 @@
+
+// COMPONENTS
+
+@use "../../components/index" as *;
+
+// COMPONENTS
+
+.container_logo {
+    @extend %flex-center;
+    gap: 0.5rem;
+}
+
+.logo {
+
+}
