@@ -9,7 +9,9 @@
     @extend %flex-center;
     height: 100vh;
     font-family: 'Hind Madurai', sans-serif;
+    letter-spacing: 1px;
 
+    color: $color-text;
     background-color: $color-background;
 }
 
@@ -22,44 +24,64 @@ h2, h3 {
 }
 
 a{
-    text-decoration: none;
-    transition: 0.3s;
+    @extend %d-inline-block;
+    text-decoration: underline;
+    color: $color-text;
+
+    transition: 0.4s;
     
-    :hover{
-        text-decoration: underline;
+    &:hover{
         color: $color-link;
 
-        transform: scale(1.01);
+        transform: scale(1.02);
 
-        transition: 0.3s;
+        transition: 0.4s;
     }
 }
 
 
 .wrapper{
     @extend %grid-default;
-    min-height: 95vh; max-height: 95% ;
-    max-width: 95%;
-    margin: auto;
+    min-height: 95vh; max-height: 98% ;
+    width: 98%;
+    
+    border-radius: 1rem;
+    box-shadow: 4px 4px 4px silver, -4px -4px 4px silver ;
+    padding: 0.5rem;
+
+    background-color: $color-background;
 }
 
 .container_header_footer {
-    @include grid-position(1 /span 2, 1 /span 12);
     @extend %grid-default;
+    @include grid-position(1 /span 2, 1 /span 12);
+    border-radius: 0.5rem 0 0 0.5rem;
+    // border-right: solid 1px;
+    box-shadow: 2px 0 4px silver;
 }
 
 .header {
     @include grid-position(1 /span 12, 1 /span 11);
+    padding: 0.5rem;
 }
 
 .footer {
+    @extend %flex-center;
     @include grid-position(1 /span 12, 11 /span 2 );
+    flex-flow: column wrap;
+    gap: 0.5rem;
 }
 
 .container_nav_secondary{
-    @include grid-position(3 /span 10, 1 /span 2);
+    @extend %flex-center;
+    @include grid-position(3 /span 10, 1 /span 1);
+
+    box-shadow: 2px 2px 4px silver;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
-section {
-    @include grid-position(3 /span 10, 3 /span 10);
+.sections {
+    @extend %grid-default;
+    @include grid-position(3 /span 10, 2 /span 11);
+    padding: 0.5rem;
 }

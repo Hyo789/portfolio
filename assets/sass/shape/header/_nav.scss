@@ -7,14 +7,25 @@
 
 .nav_principal {
     @extend %flex-center;
+    padding: 2rem 0.5rem
 }
 
 .list {
     @extend %flex;
     @include flex (space-evenly, center);
     flex-flow: column wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 
     padding: 1rem 0.5rem;
+
+    li {
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: capitalize;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
 }

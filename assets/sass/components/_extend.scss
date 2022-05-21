@@ -9,6 +9,12 @@
 
 // COMPONENTS
 
+// DISPLAY
+
+%d-inline-block {
+    display: inline-block;
+}
+
 // flex
 
 %flex{
@@ -37,8 +43,12 @@
 
 %title-h1{
     font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 %title-h2{
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
 }

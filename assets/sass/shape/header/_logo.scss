@@ -8,8 +8,12 @@
 .container_logo {
     @extend %flex-center;
     gap: 0.5rem;
+
+    h1 {
+        @extend %title-h1;
+    }
 }
 
 .logo {
-
+    @include body(3rem, 3rem);
 }

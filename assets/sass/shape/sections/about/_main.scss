@@ -1,0 +1,11 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.container_section {
+    @extend %flex-center;
+    @include grid-position (2 / span 10, 2 / span 10);
+}

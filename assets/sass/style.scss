@@ -1,3 +1,4 @@
+
 // RESET
 
 @use "./tools/reset";
@@ -9,3 +10,11 @@
 // HEADER
 
 @use "./shape/header/header-stack";
+
+// FOOTER
+
+@use "./shape/footer/footer-stack";
+
+// SECTIONS
+
+@use "./shape/sections/sections-stack";
