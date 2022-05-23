@@ -8,4 +8,6 @@
 .container_section {
     @extend %flex-center;
     @include grid-position (2 / span 10, 2 / span 10);
+    gap: 2rem; flex-wrap: wrap;
+    padding: 0.5rem;
 }

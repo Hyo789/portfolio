@@ -15,5 +15,6 @@
 }
 
 .logo {
-    @include body(3rem, 3rem);
+    @include body(5rem, 5rem);
+    // transform: scale(1.8);
 }
