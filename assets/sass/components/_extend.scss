@@ -11,6 +11,10 @@
 
 // DISPLAY
 
+%display-none {
+    display: none;
+}
+
 %d-inline-block {
     display: inline-block;
 }
@@ -39,6 +43,16 @@
     grid-template-rows: repeat(12, 1fr);
 }
 
+// POSITION 
+
+%position-relative {
+    position:relative;
+}
+
+%position-absolute {
+    position:absolute;
+}
+
 // FONTS
 
 %title-h1{
@@ -51,4 +65,49 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
+}
+
+// MARGIN 
+
+%margin-auto {
+    margin: auto;
+}
+
+%margin-1rem {
+    margin: 1rem;
+}
+
+%margin-0_5rem {
+    margin: .5rem;
+}
+
+// PADDING 
+
+%padding-1rem {
+    padding: 1rem;
+}
+
+%padding-0_5rem {
+    padding: .5rem;
+}
+
+// HOVER
+
+%hover-cursor {
+    & {
+        transition: 0.3s;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+
+        transition: 0.3s;
+    }
+}
+
+// BORDER
+
+%border {
+    @include border ();
 }

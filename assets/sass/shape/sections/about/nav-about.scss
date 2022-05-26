@@ -1,0 +1,25 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.nav_title.v2 {
+    // @extend %margin-auto;
+    margin-right: auto;
+    padding: 0 1rem 0 3rem;
+}
+
+.nav_secondary.about {
+    @extend %flex;
+    align-items: center;
+    width: 90%;
+    
+    .secondary_ul {
+        @extend %flex;
+        @include flex (space-evenly, center);
+        width: 50%;
+    }
+
+}

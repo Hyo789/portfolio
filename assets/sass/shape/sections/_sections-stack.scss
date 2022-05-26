@@ -1,7 +1,14 @@
 
 
-@use "./nav-secondary";
 
-// ABOUT 
+// ACCUEIL
 
-@use "./about/main";
+@use "./accueil/nav-secondary";
+
+@use "./accueil/main";
+
+// ABOUT
+
+@use "./about/nav-about";
+
+@use "./about/main-about";

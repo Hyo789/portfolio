@@ -47,7 +47,7 @@ a{
     
     border-radius: 1rem;
     box-shadow: 4px 4px 4px silver, -4px -4px 4px silver ;
-    padding: 0.5rem;
+    @extend %padding-0_5rem;
 
     background-color: $color-background;
 }
@@ -62,7 +62,7 @@ a{
 
 .header {
     @include grid-position(1 /span 12, 1 /span 11);
-    padding: 0.5rem;
+    @extend %padding-0_5rem;
 }
 
 .footer {
@@ -83,5 +83,15 @@ a{
 .sections {
     @extend %grid-default;
     @include grid-position(3 /span 10, 2 /span 11);
-    padding: 0.5rem;
+    @extend %padding-0_5rem;
+    
 }
+
+.container_section {
+    // @extend %flex-center;
+    // gap: 2rem; flex-wrap: wrap;
+    @include grid-position (2 / span 10, 2 / span 10);
+    @extend %padding-0_5rem;
+    
+}
+

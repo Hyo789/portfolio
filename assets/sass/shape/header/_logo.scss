@@ -8,6 +8,7 @@
 .container_logo {
     @extend %flex-center;
     gap: 0.5rem;
+    margin-right: auto;
 
     h1 {
         @extend %title-h1;
@@ -15,6 +16,5 @@
 }
 
 .logo {
-    @include body(5rem, 5rem);
-    // transform: scale(1.8);
+    @include body(3.5rem, 3.5rem);
 }

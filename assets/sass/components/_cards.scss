@@ -12,17 +12,10 @@
 // COMPONENTS
 .cards {
     @extend %flex-center;
-    @include body (calc(100% / 3.5), calc(100% / 3.5));
-    @include border ($radius:1rem);
+    // @include body (calc(100% / 3.5), calc(100% / 3.5));
+    @include border (unset ,1rem);
 
     box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;
 
     transition: 0.3s;
-
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-
-        transition: 0.3s;
-    }
 }

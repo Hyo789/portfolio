@@ -1,0 +1,59 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+
+// PAGES D'ACCUEIL
+
+.container_section.accueil {
+    @extend %grid-default;
+    align-items: stretch;
+}
+
+// SHAPE
+
+.cards.accueil {
+    @include body (auto, auto);
+}
+
+.cards.a1.accueil {
+    @include grid-position (1 / span 12, 1 / span 6);
+    @extend %position-relative;
+    
+    &::after{
+        content: "";
+        @extend %position-absolute; top: $ref; left: $ref;
+        @include border ($radius:50%);
+        @include body (50px, 50px);
+    }
+}
+
+.cards.a2.accueil {
+    @extend %margin-1rem;
+    @extend %hover-cursor;
+    @include grid-position (1 / span 4, 8 / span 4 );
+}
+
+.cards.a3.accueil {
+    @extend %margin-1rem;
+    @extend %hover-cursor;
+    @include grid-position (5 / span 4, 8 / span 4 );
+}
+
+.cards.a4.accueil {
+    @extend %margin-1rem;
+    @extend %hover-cursor;
+    @include grid-position (9 / span 4, 8 / span 4 );
+}
+
+.cards.a5.accueil {
+    @extend %display-none;
+
+}
+
+.cards.a6.accueil {
+    @extend %display-none;
+}
