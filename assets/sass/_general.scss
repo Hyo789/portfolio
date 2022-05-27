@@ -82,16 +82,16 @@ a{
 
 .sections {
     @extend %grid-default;
-    @include grid-position(3 /span 10, 2 /span 11);
     @extend %padding-0_5rem;
+    @include grid-position(3 /span 10, 2 /span 11);
     
 }
 
 .container_section {
     // @extend %flex-center;
     // gap: 2rem; flex-wrap: wrap;
-    @include grid-position (2 / span 10, 2 / span 10);
+    @extend %grid-default;
     @extend %padding-0_5rem;
-    
+    @include grid-position (2 / span 10, 2 / span 10);
 }
 

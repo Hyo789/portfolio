@@ -12,7 +12,6 @@
 // COMPONENTS
 .cards {
     @extend %flex-center;
-    // @include body (calc(100% / 3.5), calc(100% / 3.5));
     @include border (unset ,1rem);
 
     box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;

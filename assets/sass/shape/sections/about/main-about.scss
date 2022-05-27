@@ -4,3 +4,70 @@
 @use "../../../components/index" as *;
 
 // COMPONENTS
+
+// SHAPE
+
+// PROFIL
+
+.cards.about {
+    // @include body (auto, auto);
+}
+
+.cards.a1.about {
+    @include grid-position (1 / span 12, 1 / span 12);
+    @extend %margin-0_5rem;
+}
+
+.cards.a2.about {
+    @extend %display-none;
+}
+
+.cards.a3.about {
+    @extend %display-none;
+}
+
+.cards.a4.about {
+    @extend %display-none;
+}
+
+.cards.a5.about {
+    @extend %display-none;
+
+}
+
+.cards.a6.about {
+    @extend %display-none;
+}
+
+// COMPETENCES FORMATIONS INTERET 
+
+.cards.competences {
+    // @include body (auto, auto);
+}
+
+.cards.a1.competences {
+    @include grid-position (1 / span 12, 1 / span 12);
+    @extend %margin-0_5rem;
+}
+
+.cards.a2.competences {
+    @include grid-position (7 / span 6, 1 / span 12);
+    @extend %margin-0_5rem;
+}
+
+.cards.a3.competences {
+    @extend %display-none;
+}
+
+.cards.a4.competences {
+    @extend %display-none;
+}
+
+.cards.a5.competences {
+    @extend %display-none;
+
+}
+
+.cards.a6.competences {
+    @extend %display-none;
+}

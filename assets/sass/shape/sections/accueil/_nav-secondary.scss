@@ -8,3 +8,10 @@
 .nav_title {
     text-decoration: underline;
 }
+
+.nav_secondary {
+
+    .secondary_ul {
+        @extend %display-none;
+    }
+}
