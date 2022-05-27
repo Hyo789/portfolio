@@ -9,33 +9,33 @@
 
 // PROFIL
 
-.cards.about {
+.cards.profil {
     // @include body (auto, auto);
 }
 
-.cards.a1.about {
+.cards.a1.profil {
     @include grid-position (1 / span 12, 1 / span 12);
     @extend %margin-0_5rem;
 }
 
-.cards.a2.about {
+.cards.a2.profil {
     @extend %display-none;
 }
 
-.cards.a3.about {
+.cards.a3.profil {
     @extend %display-none;
 }
 
-.cards.a4.about {
+.cards.a4.profil {
     @extend %display-none;
 }
 
-.cards.a5.about {
+.cards.a5.profil {
     @extend %display-none;
 
 }
 
-.cards.a6.about {
+.cards.a6.profil {
     @extend %display-none;
 }
 

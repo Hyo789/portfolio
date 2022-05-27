@@ -11,7 +11,7 @@
     padding: 0 1rem 0 3rem;
 }
 
-.nav_secondary.about {
+.nav_secondary.profil {
     @extend %flex;
     align-items: center;
     width: 90%;
@@ -20,5 +20,9 @@
         @extend %flex;
         @include flex (space-evenly, center);
         width: 50%;
+        
+        li {
+            @extend %hover-cursor;
+        }
     }
 }
