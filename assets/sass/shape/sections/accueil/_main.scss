@@ -14,14 +14,6 @@
 
 .cards.a1.accueil {
     @include grid-position (1 / span 12, 1 / span 6);
-    @extend %position-relative;
-    
-    &::after{
-        content: "";
-        @extend %position-absolute; top: $ref; left: $ref;
-        @include border ($radius:50%);
-        @include body (50px, 50px);
-    }
 }
 
 .cards.a2.accueil {

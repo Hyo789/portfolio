@@ -7,11 +7,15 @@
 
 @use "./accueil/main";
 
+@use "./accueil/accueil-article";
+
 // ABOUT
 
 @use "./about/nav-about";
 
 @use "./about/main-about";
+
+@use "./about/profil-about";
 
 // CREATIONS TRAVAUX RESSOURCES
 

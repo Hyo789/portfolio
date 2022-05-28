@@ -23,6 +23,12 @@
         
         li {
             @extend %hover-cursor;
+            text-transform: capitalize;
         }
     }
+}
+
+.secondary_ul li.active {
+    font-weight: 600;
+    text-decoration: underline;
 }
