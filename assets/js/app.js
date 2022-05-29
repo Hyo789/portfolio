@@ -17,6 +17,19 @@ const about_competences = document.querySelector("#competences");
 const about_formations = document.querySelector("#formations");
 const about_interet = document.querySelector("#interet");
 
+
+let eraser = function () {
+    
+    for(let i = 0; i < cards.length; i++) {
+        let el = cards[i].firstElementChild;
+        if(el != null || undefined) {
+            el.remove()
+        }else {
+            continue
+        }
+    }
+}
+
 let switchSection = function (section) {
     for (let c = 0; c < cards.length; c++) {
 
@@ -82,9 +95,25 @@ let switchSection = function (section) {
 
 (function () {
 
+    let cards_a1 = document.querySelector(".cards.a1");
+
+    let competences = [
+        {   texte :"javascript",
+            Image:"./assets/img/Fichier 1.svg"
+    },
+        {   texte :"bootstrap",
+            Image:"./assets/img/Fichier 1.svg"
+    },
+        {   texte :"SASS",
+            Image:"./assets/img/Fichier 1.svg"
+    }, 
+        {   texte :"html/css",
+            Image:"./assets/img/Fichier 1.svg"
+    }
+    ];
+
     let contentAbout_profil = function () {
 
-        let cards_a1 = document.querySelector(".cards.a1");
         cards_a1.innerHTML= '<div class="container"></div>';
 
         const container = cards_a1.querySelector(".container");
@@ -96,69 +125,112 @@ let switchSection = function (section) {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam"
     }
 
-    let contentAbout_competences = function () {
-        
-    }
+    let contentAbout_list = function (params1) {
+        // console.log(params1);
+        const article = cards_a1.querySelector(".container article");
+        let paraph = article.querySelector("p");
+
+        if(paraph != null || undefined) {
+            paraph.remove();
+        };
+        article.innerHTML = '<ul></ul>';
+        const list = article.querySelector("ul");
+
+        for(let i = 0; i < params1.length; i++) {
+            let competence = params1[i].texte;
+            let el = document.createElement("li");
+            el.innerHTML = '<span>' + competence + '</span>';
+            list.appendChild(el);
+
+            let img = document.createElement("img");
+            img.src = params1[i].Image;
+            el.prepend(img);
+        }
+
+    };
 
     nav_About.addEventListener("click", () => {
         let sectionClass = nav_About.getAttribute("id");
-        switchSection(sectionClass)
-        let child = cards[0].firstElementChild;
-    
-        for(let i = 0; i < cards.length; i++) {
-            let el = cards[i].firstElementChild;
-            if(el != null || undefined) {
-                el.remove()
-            }else {
-                continue
-            }
-        }
+        eraser();
+        switchSection(sectionClass);
         contentAbout_profil();
         about_profil.classList.add("active");
-    })
+    });
 
     about_profil.addEventListener("click", () => {
         contentAbout_profil();
+
+        if(about_profil.classList.contains("active")) {
+            return false
+        } else {
+            about_profil.parentNode.querySelector(".active").classList.remove("active");
+            about_profil.classList.add("active");
+        };
     });
 
     about_competences.addEventListener("click", () => {
-
+        contentAbout_list(competences);
+        
+        if(about_competences.classList.contains("active")) {
+            return false
+        } else {
+            about_competences.parentNode.querySelector(".active").classList.remove("active");
+            about_competences.classList.add("active");
+        };
     });
-    // about_formations.addEventListener();
-    // about_interet.addEventListener();
+
+    about_formations.addEventListener("click", () => {
+        contentAbout_list(competences);
+
+        if(about_formations.classList.contains("active")) {
+            return false
+        } else {
+            about_formations.parentNode.querySelector(".active").classList.remove("active");
+            about_formations.classList.add("active");
+        };
+    });
+
+    about_interet.addEventListener("click", () => {
+        contentAbout_list(competences)
+
+        if(about_interet.classList.contains("active")) {
+            return false
+        } else {
+            about_interet.parentNode.querySelector(".active").classList.remove("active");
+            about_interet.classList.add("active");
+        };
+    });
 
 }) ();
 
-nav_Creations.addEventListener("click", () => {
-    let sectionClass = nav_Creations.getAttribute("id");
-    switchSection(sectionClass)
+(function () {
+
+    nav_Creations.addEventListener("click", () => {
+        let sectionClass = nav_Creations.getAttribute("id");
+        eraser();
+        switchSection(sectionClass);
+    });
     
-    for(let i = 0; i < cards.length; i++) {
-        let el = cards[i].firstElementChild;
-        if(el != null || undefined) {
-            el.remove()
-        }else {
-            continue
-        }
-        console.log(el);
-    }
-});
+    nav_Travaux.addEventListener("click", () => {
+        let sectionClass = nav_Travaux.getAttribute("id");
+        eraser();
+        switchSection(sectionClass);
+    });
+    
+    nav_ressources.addEventListener("click", () => {
+        let sectionClass = nav_ressources.getAttribute("id");
+        eraser();
+        switchSection(sectionClass);
+    });
+    
+    nav_bonus.addEventListener("click", () => {
+        let sectionClass = nav_bonus.getAttribute("id");
+        eraser();
+        switchSection(sectionClass);
+    });
+    
 
-nav_Travaux.addEventListener("click", () => {
-    let sectionClass = nav_Travaux.getAttribute("id");
-    switchSection(sectionClass)
-});
-
-nav_ressources.addEventListener("click", () => {
-    let sectionClass = nav_ressources.getAttribute("id");
-    switchSection(sectionClass)
-});
-
-nav_bonus.addEventListener("click", () => {
-    let sectionClass = nav_bonus.getAttribute("id");
-    switchSection(sectionClass)
-});
-
+}) ();
 
 
 

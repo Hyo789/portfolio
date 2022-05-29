@@ -6,8 +6,8 @@
 // COMPONENTS
 
 .cards.a1.profil .container {
-    @extend %flex-center;
-    height: 100%;
+    @extend %flex;
+    width: 100%; height: 100%;
     justify-content: space-around;
     
     .profil_illustration{
