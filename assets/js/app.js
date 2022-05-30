@@ -2,6 +2,12 @@
 // SHAPE ACCUEIL
 
 const cards = document.querySelectorAll(".cards");
+const card_a1 = document.querySelector(".cards.a1");
+const card_a2 = document.querySelector(".cards.a2");
+const card_a3 = document.querySelector(".cards.a3");
+const card_a4 = document.querySelector(".cards.a4");
+const card_a5 = document.querySelector(".cards.a5");
+const card_a6 = document.querySelector(".cards.a6");
 const nav_list = document.querySelectorAll("#nav-principal .list li");
 
 const container_section = document.querySelector("#container-section");
@@ -28,7 +34,12 @@ let eraser = function () {
             continue
         }
     }
-}
+
+    if (card_a1.classList.contains("bloom" || "fade")) {
+        card_a1.classList.remove(card_a1.classList.item(3));
+        card_a2.classList.remove(card_a2.classList.item(3));
+    }
+};
 
 let switchSection = function (section) {
     for (let c = 0; c < cards.length; c++) {
@@ -50,6 +61,11 @@ let switchSection = function (section) {
         navSecondary.classList.replace(navSecondaryClass, section);
     }
 
+};
+
+let bloom = function (card_1, card_2) {
+    card_1.classList.add("fade");
+    card_2.classList.add("bloom");
 };
 
 // ACCUEIL
@@ -203,6 +219,8 @@ let switchSection = function (section) {
 
 }) ();
 
+// NAV PRICIPAL
+
 (function () {
 
     nav_Creations.addEventListener("click", () => {
@@ -229,7 +247,45 @@ let switchSection = function (section) {
         switchSection(sectionClass);
     });
     
+}) ();
 
+// DESIGNE DEV
+
+(function () {
+    
+    card_a1.addEventListener("click", () => {
+
+        let clause = card_a1.classList.item(2);
+        // console.log(clause1, clause2);
+        switch (clause) {
+            case "creations":
+                card_a1.innerHTML= "CREATIONS"
+                
+                break;
+            case "travaux":
+                card_a1.innerHTML= "TRAVAUX"
+                
+                break;
+            case "ressources":
+                card_a1.innerHTML= "RESSOURCES"
+                
+                break;
+        
+            default:
+                break;
+        };
+        bloom(card_a2,card_a1);
+
+        for(let i = 2; i < cards.length; i++) {
+            cards[i].classList.add("place");
+        }
+    });
+
+    /*
+    card_a2.addEventListener("click", () => {
+        bloom(card_a2,card_a1);
+    });
+    */
 }) ();
 
 
