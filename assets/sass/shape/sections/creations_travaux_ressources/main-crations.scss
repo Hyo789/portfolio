@@ -9,10 +9,6 @@
 
 // CREATIONS TRAVAUX RESSOURCES
 
-.cards.creations {
-    // @include body (auto, auto);
-    @extend %hover-cursor;
-}
 
 .cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources {
     @extend %position-relative;
@@ -29,6 +25,9 @@
             background-color: $color-green;
             @include grid-position (1 / span 12, 1 / span 12);
 
+            &:hover {
+                transform: scale(1);
+            }
         }
 }
 
@@ -46,6 +45,10 @@
         &.bloom {
             background-color: $color-green;
             @include grid-position (1 / span 12, 1 / span 12);
+
+            &:hover {
+                transform: scale(1);
+            }
         }
 }
 
@@ -55,6 +58,7 @@
     &.place {
         z-index: 5;
         @extend %display-block;
+        @extend %hover-cursor;
         @include grid-position (2 / span 4, 2 / span 4);
     }
 }
@@ -66,6 +70,7 @@
     &.place {
         z-index: 5;
         @extend %display-block;
+        @extend %hover-cursor;
         @include grid-position (8 / span 4, 2 / span 4);
     }
 }
@@ -77,6 +82,7 @@
     &.place {
         z-index: 5;
         @extend %display-block;
+        @extend %hover-cursor;
         @include grid-position (2 / span 4, 8 / span 4);
     }
 
@@ -89,6 +95,7 @@
     &.place {
         z-index: 5;
         @extend %display-block;
+        @extend %hover-cursor;
         @include grid-position (8 / span 4, 8 / span 4);
     }
 

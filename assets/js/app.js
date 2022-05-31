@@ -38,6 +38,10 @@ let eraser = function () {
     if (card_a1.classList.contains("bloom" || "fade")) {
         card_a1.classList.remove(card_a1.classList.item(3));
         card_a2.classList.remove(card_a2.classList.item(3));
+        card_a3.classList.remove("place");
+        card_a4.classList.remove("place");
+        card_a5.classList.remove("place");
+        card_a6.classList.remove("place");
     }
 };
 
