@@ -10,7 +10,9 @@ const card_a5 = document.querySelector(".cards.a5");
 const card_a6 = document.querySelector(".cards.a6");
 const nav_list = document.querySelectorAll("#nav-principal .list li");
 
+const container_logo = document.querySelector("#container-logo");
 const container_section = document.querySelector("#container-section");
+const nav_principal = document.querySelector("#nav-principal");
 const nav_About = document.querySelector("#profil");
 const nav_Creations = document.querySelector("#creations");
 const nav_Travaux = document.querySelector("#travaux");
@@ -33,7 +35,7 @@ let eraser = function () {
         }else {
             continue
         }
-    }
+    };
 
     if (card_a1.classList.contains("bloom" || "fade")) {
         card_a1.classList.remove(card_a1.classList.item(3));
@@ -57,15 +59,28 @@ let switchSection = function (section) {
     if(navSecondaryClass === null || undefined) {
         navSecondary.classList.add(section);
     } 
-    // else if (navSecondaryClass === "creations" || "ressources" || "travaux") {
-        // navSecondary.classList.remove(navSecondaryClass);
-    // }
     
     else {
         navSecondary.classList.replace(navSecondaryClass, section);
-    }
+    };
+
+    
+    
+    if (section === "profil") {
+        let section = "about";
+        navSecondary.parentNode.querySelector("h2").textContent = section + "   |";
+    } else {
+        navSecondary.parentNode.querySelector("h2").textContent = section;
+    };
 
 };
+
+let selection = function (element) {
+    
+    let li_active = nav_principal.querySelector("li.active");
+
+    li_active === null || undefined ? element.classList.add("active") : li_active.classList.remove("active"),element.classList.add("active");
+}
 
 let bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
@@ -76,6 +91,8 @@ let bloom = function (card_1, card_2) {
 
 (function () {
 
+    let defaultPage = function () {
+        
     const cards_a1 = document.querySelector(".cards.a1");
     cards_a1.innerHTML = '<div class="container"></div>';
 
@@ -109,6 +126,17 @@ let bloom = function (card_1, card_2) {
     const cards_a4 = document.querySelector(".cards.a4");
     cards_a4.innerHTML = '<img src="" alt="Illustration de la card">'
     cards_a4.querySelector('img').src = './assets/img/Fichier 1.svg';
+    };
+
+    defaultPage();
+
+    container_logo.addEventListener("click", () => {
+        let sectionClass = "accueil";
+        eraser();
+        switchSection(sectionClass);
+        defaultPage();
+    });
+
 }) ();
 
 // ABOUT ME
@@ -143,7 +171,7 @@ let bloom = function (card_1, card_2) {
         container.querySelector("h3").innerHTML = "Présentation"
         container.querySelector("p").textContent = 
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam"
-    }
+    };
 
     let contentAbout_list = function (params1) {
         // console.log(params1);
@@ -169,56 +197,47 @@ let bloom = function (card_1, card_2) {
 
     };
 
+    let active = function (element) {
+        
+        if(element.classList.contains("active")) {
+            return false
+        } else {
+            element.parentNode.querySelector(".active").classList.remove("active");
+            element.classList.add("active");
+        };
+    };
+
     nav_About.addEventListener("click", () => {
         let sectionClass = nav_About.getAttribute("id");
         eraser();
         switchSection(sectionClass);
+        selection(nav_About);
         contentAbout_profil();
-        about_profil.classList.add("active");
+
+        let li_active = navSecondary.querySelector("li.active");
+
+        li_active === null || undefined ? about_profil.classList.add("active") : 
+        li_active.classList.remove("active"), about_profil.classList.add("active");
     });
 
     about_profil.addEventListener("click", () => {
         contentAbout_profil();
-
-        if(about_profil.classList.contains("active")) {
-            return false
-        } else {
-            about_profil.parentNode.querySelector(".active").classList.remove("active");
-            about_profil.classList.add("active");
-        };
+        active(about_profil);
     });
 
     about_competences.addEventListener("click", () => {
         contentAbout_list(competences);
-        
-        if(about_competences.classList.contains("active")) {
-            return false
-        } else {
-            about_competences.parentNode.querySelector(".active").classList.remove("active");
-            about_competences.classList.add("active");
-        };
+        active(about_competences);
     });
 
     about_formations.addEventListener("click", () => {
         contentAbout_list(competences);
-
-        if(about_formations.classList.contains("active")) {
-            return false
-        } else {
-            about_formations.parentNode.querySelector(".active").classList.remove("active");
-            about_formations.classList.add("active");
-        };
+        active(about_formations);
     });
 
     about_interet.addEventListener("click", () => {
         contentAbout_list(competences)
-
-        if(about_interet.classList.contains("active")) {
-            return false
-        } else {
-            about_interet.parentNode.querySelector(".active").classList.remove("active");
-            about_interet.classList.add("active");
-        };
+        active(about_interet);
     });
 
 }) ();
@@ -231,24 +250,28 @@ let bloom = function (card_1, card_2) {
         let sectionClass = nav_Creations.getAttribute("id");
         eraser();
         switchSection(sectionClass);
+        selection(nav_Creations);
     });
     
     nav_Travaux.addEventListener("click", () => {
         let sectionClass = nav_Travaux.getAttribute("id");
         eraser();
         switchSection(sectionClass);
+        selection(nav_Travaux);
     });
     
     nav_ressources.addEventListener("click", () => {
         let sectionClass = nav_ressources.getAttribute("id");
         eraser();
         switchSection(sectionClass);
+        selection(nav_ressources);
     });
     
     nav_bonus.addEventListener("click", () => {
         let sectionClass = nav_bonus.getAttribute("id");
         eraser();
         switchSection(sectionClass);
+        selection(nav_bonus);
     });
     
 }) ();
@@ -291,29 +314,4 @@ let bloom = function (card_1, card_2) {
     });
     */
 }) ();
-
-
-
-/*
-for(i = 0; i < nav_list.length; i++) {
-
-    let li = nav_list[i];
-    let sectionClass = li.getAttribute("id");
-    
-    li.addEventListener("click", () => {
-        switchSection(sectionClass);
-    })
-}
-
-// ABOUT NAV
-
-about_profil.addEventListener("click", () => {
-    let element = document.querySelector(".cards.a1");
-    element.innerHTML= 
-    '<div><img src="" alt=""> </div> <div> <h3></h3> <p></p> </div>';
-
-    element.querySelector("h3").innerHTML = "C'est ok pour le titre"
-    element.querySelector("p").innerHTML = "C'est ok pour faire le boulot"
-})
-*/
 

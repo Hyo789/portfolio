@@ -19,16 +19,27 @@
     .secondary_ul {
         @extend %flex;
         @include flex (space-evenly, center);
-        width: 50%;
+        width: 60%;
         
         li {
             @extend %hover-cursor;
             text-transform: capitalize;
+
+            &:hover {
+                padding: 0 1rem;
+                background-color: $color-green;
+                border-radius: 0.5rem;
+            }
         }
     }
 }
 
 .secondary_ul li.active {
+    // @extend %padding-0_5rem;
+    padding: 0 1rem;
     font-weight: 600;
-    text-decoration: underline;
+    // text-decoration: underline;
+
+    background-color: $color-green;
+    border-radius: 0.5rem;
 }

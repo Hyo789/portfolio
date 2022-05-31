@@ -46,7 +46,7 @@ a{
     width: 95%;
     
     border-radius: 1rem;
-    box-shadow: 4px 4px 4px silver, -4px -4px 4px silver ;
+    box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;
     @extend %padding-0_5rem;
 
     background-color: $color-background;
@@ -56,7 +56,7 @@ a{
     @extend %grid-default;
     @include grid-position(1 /span 2, 1 /span 12);
     border-radius: 0.5rem 0 0 0.5rem;
-    box-shadow: 2px 0 4px silver;
+    box-shadow: -2px -2px 4px silver;
 }
 
 .header {
@@ -75,8 +75,10 @@ a{
     @extend %flex-center;
     @include grid-position(3 /span 10, 1 /span 1);
 
-    box-shadow: 2px 2px 4px silver;
+    box-shadow: 2px -2px 4px silver;
     border-radius: 0 0.5rem 0.5rem 0;
+
+    text-transform: capitalize;
 }
 
 .sections {
