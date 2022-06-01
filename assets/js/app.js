@@ -112,7 +112,7 @@ let bloom = function (card_1, card_2) {
 
     const illustration = container.querySelector(".accueil_article_illustration");
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
-    illustration.querySelector('img').src = './assets/img/Fichier 1.svg';
+    illustration.querySelector('img').src = './assets/img/svg/accueil.svg';
     
     
     const cards_a2 = document.querySelector(".cards.a2");

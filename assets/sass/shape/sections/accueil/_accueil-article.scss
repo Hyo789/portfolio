@@ -47,7 +47,9 @@
     @extend %padding-0_5rem;
     width: 45%;
 
+    
     img {
-        @include body(60%, auto)
+        @include body(60%, auto);
+        transform: scale(1.3);
     }
 }
