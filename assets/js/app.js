@@ -1,6 +1,8 @@
 
 // SHAPE ACCUEIL
 
+// CARDS
+
 const cards = document.querySelectorAll(".cards");
 const card_a1 = document.querySelector(".cards.a1");
 const card_a2 = document.querySelector(".cards.a2");
@@ -8,9 +10,15 @@ const card_a3 = document.querySelector(".cards.a3");
 const card_a4 = document.querySelector(".cards.a4");
 const card_a5 = document.querySelector(".cards.a5");
 const card_a6 = document.querySelector(".cards.a6");
-const nav_list = document.querySelectorAll("#nav-principal .list li");
+
+// HEADER
 
 const container_logo = document.querySelector("#container-logo");
+
+// NAV PRINCIPAL
+
+const nav_list = document.querySelectorAll("#nav-principal .list li");
+
 const container_section = document.querySelector("#container-section");
 const nav_principal = document.querySelector("#nav-principal");
 const nav_About = document.querySelector("#profil");
@@ -18,13 +26,123 @@ const nav_Creations = document.querySelector("#creations");
 const nav_Travaux = document.querySelector("#travaux");
 const nav_ressources = document.querySelector("#ressources");
 const nav_bonus = document.querySelector("#bonus");
+
+// NAV SECONDARY
+
 const navSecondary = document.querySelector("#nav-secondary");
+
+// ABOUT NAV
 
 const about_profil = document.querySelector("#profil-2");
 const about_competences = document.querySelector("#competences");
 const about_formations = document.querySelector("#formations");
 const about_interet = document.querySelector("#interet");
 
+// ARRAY
+
+// ABOUT ME
+
+let tab_competences = [
+    
+    {   texte :"HTML",
+        Image:"./assets/img/svg/about/icons8-html-5-96.svg"
+},
+
+    {   texte :"CSS",
+        Image:"./assets/img/svg/about/icons8-css3-96.svg"
+},
+
+    {   texte :"jascript",
+        Image:"./assets/img/svg/about/icons8-javascript-96.svg"
+},
+
+    {   texte :"SASS",
+        Image:"./assets/img/svg/about/icons8-sass-96.svg"
+},
+
+    {   texte :"bootstrap",
+        Image:"./assets/img/svg/about/icons8-bootstrap-96.svg"
+},
+
+    {   texte :"Wordpress",
+        Image:"./assets/img/svg/about/icons8-wordpress-96.svg"
+},
+
+    {   texte :"a.Illustrator",
+        Image:"./assets/img/svg/about/icons8-adobe-illustrator-96.svg"
+},
+
+    {   texte :"a.phtoshop",
+        Image:"./assets/img/svg/about/icons8-adobe-photoshop-96.svg"
+},
+
+    {   texte :"a.afther effect",
+        Image:"./assets/img/svg/about/icons8-adobe-after-effects-96.svg"
+},
+
+    {   texte :"a.premier pro",
+        Image:"./assets/img/svg/about/icons8-adobe-premiere-pro-96.svg"
+},
+
+    {   texte :"a.indesign",
+        Image:"./assets/img/svg/about/icons8-adobe-indesign-96.svg"
+},
+
+    {   texte :"a.XD",
+        Image:"./assets/img/svg/about/icons8-adobe-xd-96.svg"
+},
+
+    {   texte :"figma",
+        Image:"./assets/img/svg/about/icons8-figma-96.svg"
+},
+
+    "assets/img/svg/about/competences.svg"
+
+];
+
+let tab_formations = [
+    {   texte :"Openclassroom",
+        Image:"#"
+},
+    {   texte :"Concepteur designer UI",
+        Image:"#"
+},
+    {   texte :"BTS (Management des Unitées commercial)",
+        Image:"#"
+},
+
+    "./assets/img/svg/about/formations.svg"
+
+]
+
+let tab_interet = [
+    {   texte :"gGastronomie",
+        Image:"#"
+},
+    {   texte :"Manga (BD Japonais)",
+        Image:"#"
+},
+    {   texte :"Running",
+        Image:"#"
+},
+    {   texte :"Musculation",
+        Image:"#"
+},
+
+    "assets/img/svg/about/interets.svg"
+
+]
+
+// OBJETS
+
+// DESIGNE DEV
+
+let tabDesigne_dev = {
+    designe : "./assets/img/svg/divers/designe.svg",
+    dev : "./assets/img/svg/divers/dev.svg"
+};
+
+// FUNCTIONS
 
 let eraser = function () {
     
@@ -71,6 +189,18 @@ let switchSection = function (section) {
         navSecondary.parentNode.querySelector("h2").textContent = section + "   |";
     } else {
         navSecondary.parentNode.querySelector("h2").textContent = section;
+
+        function switchDesigneDev(elememt,array) {
+            let designe = document.createElement("div");
+            designe.className = "designe_dev";
+            elememt.appendChild(designe);
+            let designe_image = document.createElement("img");
+            designe.appendChild(designe_image);
+            designe_image.src = array;
+        };
+
+        switchDesigneDev(card_a1,tabDesigne_dev.designe);
+        switchDesigneDev(card_a2,tabDesigne_dev.dev);
     };
 
 };
@@ -79,7 +209,16 @@ let selection = function (element) {
     
     let li_active = nav_principal.querySelector("li.active");
 
-    li_active === null || undefined ? element.classList.add("active") : li_active.classList.remove("active"),element.classList.add("active");
+    if (li_active === null || undefined) {
+        element.classList.add("active");
+        
+    } else if ((li_active != null || undefined) && element === container_logo) {
+        li_active.classList.remove("active");
+    } 
+    else {
+        li_active.classList.remove("active");
+        element.classList.add("active");
+    }
 }
 
 let bloom = function (card_1, card_2) {
@@ -112,7 +251,7 @@ let bloom = function (card_1, card_2) {
 
     const illustration = container.querySelector(".accueil_article_illustration");
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
-    illustration.querySelector('img').src = './assets/img/svg/accueil.svg';
+    illustration.querySelector('img').src = './assets/img/svg/accueil/accueil.svg';
     
     
     const cards_a2 = document.querySelector(".cards.a2");
@@ -135,6 +274,7 @@ let bloom = function (card_1, card_2) {
         eraser();
         switchSection(sectionClass);
         defaultPage();
+        selection(container_logo);
     });
 
 }) ();
@@ -145,21 +285,6 @@ let bloom = function (card_1, card_2) {
 
     let cards_a1 = document.querySelector(".cards.a1");
 
-    let competences = [
-        {   texte :"javascript",
-            Image:"./assets/img/Fichier 1.svg"
-    },
-        {   texte :"bootstrap",
-            Image:"./assets/img/Fichier 1.svg"
-    },
-        {   texte :"SASS",
-            Image:"./assets/img/Fichier 1.svg"
-    }, 
-        {   texte :"html/css",
-            Image:"./assets/img/Fichier 1.svg"
-    }
-    ];
-
     let contentAbout_profil = function () {
 
         cards_a1.innerHTML= '<div class="container"></div>';
@@ -167,14 +292,15 @@ let bloom = function (card_1, card_2) {
         const container = cards_a1.querySelector(".container");
         container.innerHTML='<div class="profil_illustration"><img src="" alt="Illustration"> </div> <article> <h3></h3> <p></p> </article>';
     
-        container.querySelector("img").src = './assets/img/Fichier 1.svg';
+        container.querySelector("img").src = './assets/img/svg/about/presentation.svg';
         container.querySelector("h3").innerHTML = "Présentation"
         container.querySelector("p").textContent = 
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam"
     };
 
-    let contentAbout_list = function (params1) {
+    let contentAbout_list = function (array) {
         // console.log(params1);
+        let container = cards_a1.querySelector(".container");
         const article = cards_a1.querySelector(".container article");
         let paraph = article.querySelector("p");
 
@@ -183,18 +309,19 @@ let bloom = function (card_1, card_2) {
         };
         article.innerHTML = '<ul></ul>';
         const list = article.querySelector("ul");
-
-        for(let i = 0; i < params1.length; i++) {
-            let competence = params1[i].texte;
+        
+        for(let i = 0; i < array.length - 1; i++) {
+            let competence = array[i].texte;
             let el = document.createElement("li");
             el.innerHTML = '<span>' + competence + '</span>';
             list.appendChild(el);
-
+            
             let img = document.createElement("img");
-            img.src = params1[i].Image;
+            img.src = array[i].Image;
             el.prepend(img);
-        }
-
+        };
+        
+        container.querySelector("img").src = array[array.length - 1];
     };
 
     let active = function (element) {
@@ -226,17 +353,17 @@ let bloom = function (card_1, card_2) {
     });
 
     about_competences.addEventListener("click", () => {
-        contentAbout_list(competences);
+        contentAbout_list(tab_competences);
         active(about_competences);
     });
 
     about_formations.addEventListener("click", () => {
-        contentAbout_list(competences);
+        contentAbout_list(tab_formations);
         active(about_formations);
     });
 
     about_interet.addEventListener("click", () => {
-        contentAbout_list(competences)
+        contentAbout_list(tab_interet)
         active(about_interet);
     });
 

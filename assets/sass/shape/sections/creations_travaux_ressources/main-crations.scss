@@ -15,20 +15,6 @@
     @extend %margin-1rem;
     @extend %hover-cursor;
     @include grid-position (1 / span 6, 1 / span 12);
-
-    
-        &.fade {
-            @extend %display-none;
-        }
-
-
-        &.bloom {
-            @include grid-position (1 / span 12, 1 / span 12);
-
-            &:hover {
-                transform: scale(1);
-            }
-        }
 }
 
 .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources {
@@ -36,20 +22,6 @@
     @extend %margin-1rem;
     @extend %hover-cursor;
     @include grid-position (7 / span 6, 1 / span 12);
-
-    
-        &.fade {
-            @extend %display-none;
-        }
-
-        
-        &.bloom {
-            @include grid-position (1 / span 12, 1 / span 12);
-
-            &:hover {
-                transform: scale(1);
-            }
-        }
 }
 
 .cards.a3.creations, .cards.a3.travaux, .cards.a3.ressources {
@@ -101,6 +73,28 @@
 
 }
 
+.cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources, .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources {
+
+    .designe_dev {
+        width: 85%;
+    }
+
+    
+    &.fade {
+        @extend %display-none;
+    }
+
+    
+    &.bloom {
+        @include grid-position (1 / span 12, 1 / span 12);
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+
+}
+
 // CREATIONS TRAVAUX RESSOURCES
 
 .container_section.creations-active {
@@ -108,7 +102,7 @@
     gap: 2rem; flex-wrap: wrap;
 }
 
-.cards.creations-active {
-    @include body (calc(100% / 3.5), calc(100% / 3.5));
-    @extend %hover-cards;
-}
+// .cards.creations-active {
+//     @include body (calc(100% / 3.5), calc(100% / 3.5));
+//     @extend %hover-cards;
+// }
