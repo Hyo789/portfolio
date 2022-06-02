@@ -38,19 +38,46 @@
             cursor: pointer;
 
             transition: 0.3s;
+
+            
+        &::before {
+            content: url(../img/icon/gigot.svg);
+            @extend %position-absolute;
+            right: $ref;
+            width: 10%;
+
+            opacity: 0;
+            transform: rotate(-300deg) scale(0.1);
+
+            transition: 0.5s;
+        }
         }
     }
 
     li.active {
-        background-color: $color-green;
         border-radius: 1rem;
+
+        font-weight: 700;
+        // text-decoration: underline;
+        background-color: $color-green;
 
         
         &::before {
-            content: "@";
+            content: url(../img/icon/gigot.svg);
             @extend %position-absolute;
             right: $ref;
+            width: 10%;
+
+            opacity: 1;
+            transform: rotate(25deg) scale(1);
+
+            transition: 0.3s;
         }
+
+        
+    // &:hover::before {
+    //     transform: rotate(-25deg);
+    // }
     }
 
 }

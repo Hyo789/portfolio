@@ -102,13 +102,13 @@ let tab_competences = [
 
 let tab_formations = [
     {   texte :"Openclassroom",
-        Image:"#"
+        Image:"./assets/img/svg/about/openclassroom.svg"
 },
     {   texte :"Concepteur designer UI",
-        Image:"#"
+        Image:"./assets/img/svg/about/designer.svg"
 },
     {   texte :"BTS (Management des Unitées commercial)",
-        Image:"#"
+        Image:"assets/img/svg/about/management.svg"
 },
 
     "./assets/img/svg/about/formations.svg"
@@ -116,17 +116,17 @@ let tab_formations = [
 ]
 
 let tab_interet = [
-    {   texte :"gGastronomie",
-        Image:"#"
+    {   texte :"Gastronomie",
+        Image:"./assets/img/svg/about/gastronomie.svg"
 },
     {   texte :"Manga (BD Japonais)",
-        Image:"#"
+        Image:"./assets/img/svg/about/manga.svg"
 },
     {   texte :"Running",
-        Image:"#"
+        Image:"./assets/img/svg/about/wooman_run.svg"
 },
     {   texte :"Musculation",
-        Image:"#"
+        Image:"./assets/img/svg/about/musculation.svg"
 },
 
     "assets/img/svg/about/interets.svg"
