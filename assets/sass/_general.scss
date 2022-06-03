@@ -26,16 +26,16 @@ h2, h3 {
 a{
     @extend %d-inline-block;
     text-decoration: underline;
-    color: $color-text;
+    color: rgba($color-link,0.8);
 
-    transition: 0.4s;
+    transition: 0.3s;
     
     &:hover{
         color: $color-link;
 
-        transform: scale(1.02);
+        transform: scale(1.01);
 
-        transition: 0.4s;
+        transition: 0.3s;
     }
 }
 

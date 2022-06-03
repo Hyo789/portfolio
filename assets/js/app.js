@@ -37,6 +37,23 @@ const about_profil = document.querySelector("#profil-2");
 const about_competences = document.querySelector("#competences");
 const about_formations = document.querySelector("#formations");
 const about_interet = document.querySelector("#interet");
+const about_exp_pro = document.querySelector("#exp-pro");
+const about_contact = document.querySelector("#contact");
+const about_social = document.querySelector("#resaux");
+
+// ANIMATIONS
+
+let fondu = function (element) {
+    
+        element.animate([
+            {opacity:'0'},
+            {opacity:'1'},
+        ], 
+        {
+            duration:600
+        });
+
+};
 
 // ARRAY
 
@@ -96,6 +113,10 @@ let tab_competences = [
         Image:"./assets/img/svg/about/icons8-figma-96.svg"
 },
 
+    {   texte :"git / github",
+        Image:"./assets/img/svg/about/icons8-git-96.svg"
+},
+
     "assets/img/svg/about/competences.svg"
 
 ];
@@ -116,12 +137,18 @@ let tab_formations = [
 ]
 
 let tab_interet = [
+
     {   texte :"Gastronomie",
         Image:"./assets/img/svg/about/gastronomie.svg"
 },
     {   texte :"Manga (BD Japonais)",
         Image:"./assets/img/svg/about/manga.svg"
 },
+
+    {   texte :"Jeux vidéos",
+        Image:"./assets/img/svg/about/icons8-steam-96.svg"
+},
+
     {   texte :"Running",
         Image:"./assets/img/svg/about/wooman_run.svg"
 },
@@ -131,7 +158,35 @@ let tab_interet = [
 
     "assets/img/svg/about/interets.svg"
 
-]
+];
+
+let tab_exp_pro = [
+    
+    {   texte :"Gastronomie",
+        Image:"./assets/img/svg/about/gastronomie.svg"
+},
+
+        "assets/img/svg/about/exp_pro.svg"
+
+];
+
+let tab_social = [
+    
+    {   texte :"linkedin",
+        Image:"./assets/img/svg/about/icons8-linkedin-96.svg"
+},
+    
+    {   texte :"instagram",
+        Image:"./assets/img/svg/about/icons8-instagram-96.svg"
+},
+    
+    {   texte :"twitter",
+        Image:"./assets/img/svg/about/icons8-twitter-96.svg"
+},
+
+        "assets/img/svg/about/social.svg"
+
+];
 
 // OBJETS
 
@@ -155,14 +210,20 @@ let eraser = function () {
         }
     };
 
-    if (card_a1.classList.contains("bloom" || "fade")) {
+    if (card_a1.classList.contains("bloom") || card_a1.classList.contains("fade")) {
         card_a1.classList.remove(card_a1.classList.item(3));
         card_a2.classList.remove(card_a2.classList.item(3));
         card_a3.classList.remove("place");
         card_a4.classList.remove("place");
         card_a5.classList.remove("place");
         card_a6.classList.remove("place");
-    }
+    };
+
+    let verif = navSecondary.parentNode.querySelector(".nav_title.v2");
+    if (verif != null || undefined) {
+        verif.classList.remove("v2");
+    };
+
 };
 
 let switchSection = function (section) {
@@ -219,11 +280,20 @@ let selection = function (element) {
         li_active.classList.remove("active");
         element.classList.add("active");
     }
-}
+};
 
 let bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
     card_2.classList.add("bloom");
+
+    for(let i = 2; i < cards.length; i++) {
+        cards[i].classList.add("place");
+    };
+
+};
+
+let nav_title_v2 = function () {
+    navSecondary.parentNode.querySelector(".nav_title").classList.add("v2");
 };
 
 // ACCUEIL
@@ -275,6 +345,9 @@ let bloom = function (card_1, card_2) {
         switchSection(sectionClass);
         defaultPage();
         selection(container_logo);
+
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
     });
 
 }) ();
@@ -293,9 +366,22 @@ let bloom = function (card_1, card_2) {
         container.innerHTML='<div class="profil_illustration"><img src="" alt="Illustration"> </div> <article> <h3></h3> <p></p> </article>';
     
         container.querySelector("img").src = './assets/img/svg/about/presentation.svg';
-        container.querySelector("h3").innerHTML = "Présentation"
-        container.querySelector("p").textContent = 
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam"
+        container.querySelector("h3").innerHTML = "Présentation";
+        let paragraph = container.querySelector("p");
+        paragraph.innerHTML = 
+        'Esprit d’équipe, Sociable et Dynamique.\
+        Intégrer une entreprise telle que la vôtre serais pour moi une chance de bien débuter dans le métier et d\'améliorer mes compétences.\
+        Actuellement en formation Concepteur designer UI, je me permets de de vous soumettre ma candidature de stage.\
+        </br>';
+        
+        let cv = document.createElement("span");
+        paragraph.parentNode.appendChild(cv);
+        let cv_lien = document.createElement("a");
+        cv.appendChild(cv_lien);
+        cv_lien.innerText = "Télécharger mon CV";
+        cv_lien.className = "btn";
+        cv_lien.href = "./assets/docs/CV_Faizdine_TOUMBOU.pdf";
+
     };
 
     let contentAbout_list = function (array) {
@@ -340,6 +426,8 @@ let bloom = function (card_1, card_2) {
         switchSection(sectionClass);
         selection(nav_About);
         contentAbout_profil();
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
 
         let li_active = navSecondary.querySelector("li.active");
 
@@ -367,6 +455,23 @@ let bloom = function (card_1, card_2) {
         active(about_interet);
     });
 
+    about_exp_pro.addEventListener("click", () => {
+        contentAbout_list(tab_exp_pro)
+        active(about_exp_pro);
+    });
+
+    /*
+    about_contact.addEventListener("click", () => {
+        contentAbout_list(tab_interet)
+        active(about_contact);
+    });
+    */
+
+    about_social.addEventListener("click", () => {
+        contentAbout_list(tab_social)
+        active(about_social);
+    });
+
 }) ();
 
 // NAV PRICIPAL
@@ -378,6 +483,8 @@ let bloom = function (card_1, card_2) {
         eraser();
         switchSection(sectionClass);
         selection(nav_Creations);
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
     });
     
     nav_Travaux.addEventListener("click", () => {
@@ -385,6 +492,8 @@ let bloom = function (card_1, card_2) {
         eraser();
         switchSection(sectionClass);
         selection(nav_Travaux);
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
     });
     
     nav_ressources.addEventListener("click", () => {
@@ -392,6 +501,8 @@ let bloom = function (card_1, card_2) {
         eraser();
         switchSection(sectionClass);
         selection(nav_ressources);
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
     });
     
     nav_bonus.addEventListener("click", () => {
@@ -399,6 +510,8 @@ let bloom = function (card_1, card_2) {
         eraser();
         switchSection(sectionClass);
         selection(nav_bonus);
+        // ANIMATIOS
+        fondu(document.querySelector(".nav_title"));
     });
     
 }) ();
@@ -410,35 +523,86 @@ let bloom = function (card_1, card_2) {
     card_a1.addEventListener("click", () => {
 
         let clause = card_a1.classList.item(2);
-        // console.log(clause1, clause2);
+
         switch (clause) {
+
             case "creations":
-                card_a1.innerHTML= "CREATIONS"
-                
+                eraser();
+                nav_title_v2();
+                bloom(card_a2,card_a1);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+
                 break;
             case "travaux":
-                card_a1.innerHTML= "TRAVAUX"
+
+                eraser();
+                nav_title_v2();
+                bloom(card_a2,card_a1);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
                 
                 break;
             case "ressources":
-                card_a1.innerHTML= "RESSOURCES"
+
+                eraser();
+                nav_title_v2();
+                bloom(card_a2,card_a1);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
                 
                 break;
         
             default:
                 break;
         };
-        bloom(card_a2,card_a1);
 
-        for(let i = 2; i < cards.length; i++) {
-            cards[i].classList.add("place");
-        }
     });
 
-    /*
+    
     card_a2.addEventListener("click", () => {
-        bloom(card_a2,card_a1);
+
+        eraser();
+        
+        let clause = card_a2.classList.item(2);
+
+        switch (clause) {
+
+            case "creations":
+
+                eraser();
+                nav_title_v2();
+                bloom(card_a1,card_a2);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+
+                break;
+            case "travaux":
+
+                eraser();
+                nav_title_v2();
+                bloom(card_a1,card_a2);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+                
+                break;
+            case "ressources":
+
+                eraser();
+                nav_title_v2();
+                bloom(card_a1,card_a2);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+                
+                break;
+        
+            default:
+                break;
+        };
+
     });
-    */
+    
 }) ();
+
+
 
