@@ -13,6 +13,8 @@
 
     color: $color-text;
     background-color: $color-background;
+
+    overflow: hidden;
 }
 
 h1 {
@@ -50,6 +52,8 @@ a{
     @extend %padding-0_5rem;
 
     background-color: $color-background;
+
+    overflow: hidden;
 }
 
 .container_header_footer {

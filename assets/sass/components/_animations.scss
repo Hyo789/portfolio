@@ -17,17 +17,13 @@
     }
 }
 
-@keyframes fondu2 {
+@keyframes slideOUT {
     
     0%{
-        opacity: 0;
+        transform: translate(-105%);
     }
-
-    50%{
-        opacity: 0;
-    }
-
+    
     100%{
-        opacity: 1;
+        transform: translate(0%);
     }
 }

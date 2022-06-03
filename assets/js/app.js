@@ -3,7 +3,6 @@
 
 // CARDS
 
-const cards = document.querySelectorAll(".cards");
 const card_a1 = document.querySelector(".cards.a1");
 const card_a2 = document.querySelector(".cards.a2");
 const card_a3 = document.querySelector(".cards.a3");
@@ -16,8 +15,6 @@ const card_a6 = document.querySelector(".cards.a6");
 const container_logo = document.querySelector("#container-logo");
 
 // NAV PRINCIPAL
-
-const nav_list = document.querySelectorAll("#nav-principal .list li");
 
 const container_section = document.querySelector("#container-section");
 const nav_principal = document.querySelector("#nav-principal");
@@ -41,25 +38,15 @@ const about_exp_pro = document.querySelector("#exp-pro");
 const about_contact = document.querySelector("#contact");
 const about_social = document.querySelector("#resaux");
 
-// ANIMATIONS
-
-let fondu = function (element) {
-    
-        element.animate([
-            {opacity:'0'},
-            {opacity:'1'},
-        ], 
-        {
-            duration:600
-        });
-
-};
-
 // ARRAY
+
+const nav_list = document.querySelectorAll("#nav-principal .list li");
+const cards = document.querySelectorAll(".cards");
+const tab_about = document.querySelectorAll(".secondary_ul li");
 
 // ABOUT ME
 
-let tab_competences = [
+const tab_competences = [
     
     {   texte :"HTML",
         Image:"./assets/img/svg/about/icons8-html-5-96.svg"
@@ -121,7 +108,7 @@ let tab_competences = [
 
 ];
 
-let tab_formations = [
+const tab_formations = [
     {   texte :"Openclassroom",
         Image:"./assets/img/svg/about/openclassroom.svg"
 },
@@ -136,7 +123,7 @@ let tab_formations = [
 
 ]
 
-let tab_interet = [
+const tab_interet = [
 
     {   texte :"Gastronomie",
         Image:"./assets/img/svg/about/gastronomie.svg"
@@ -160,7 +147,7 @@ let tab_interet = [
 
 ];
 
-let tab_exp_pro = [
+const tab_exp_pro = [
     
     {   texte :"Gastronomie",
         Image:"./assets/img/svg/about/gastronomie.svg"
@@ -170,7 +157,7 @@ let tab_exp_pro = [
 
 ];
 
-let tab_social = [
+const tab_social = [
     
     {   texte :"linkedin",
         Image:"./assets/img/svg/about/icons8-linkedin-96.svg"
@@ -192,14 +179,109 @@ let tab_social = [
 
 // DESIGNE DEV
 
-let tabDesigne_dev = {
+const tabDesigne_dev = {
     designe : "./assets/img/svg/divers/designe.svg",
     dev : "./assets/img/svg/divers/dev.svg"
 };
 
+// ANIMATIONS
+
+const fondu = function (element, duration = 400 , delay = 0) {
+    
+    element.animate([
+        {opacity:'0'},
+        {opacity:'1'},
+    ], 
+    {
+        duration: duration,
+        delay:delay
+    });
+
+};
+
+const depli = function (elememt, duration = 800 , delay = 0) {
+
+    elememt.animate([
+        {opacity: "0"},
+        {opacity:"0", transform: "scaley(0)"},
+        {opacity:"1",transform: "scaley(1)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-out"
+        
+    });
+
+};
+
+const slideIN = function (elememt, duration = 500 , delay = 0) {
+
+    elememt.animate([
+        {opacity: "0"},
+        {opacity:"0", transform: "translatex(100%)"},
+        {opacity:"1",transform: "translatex(0%)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-out"
+        
+    });
+
+};
+
+const slideOUT = function (elememt, duration = 500 , delay = 0) {
+
+    elememt.animate([
+        {opacity: "0"},
+        {opacity:"0", transform: "translatex(-100%)"},
+        {opacity:"1",transform: "translatex(0%)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-out"
+        
+    });
+
+};
+
+const slideDown = function (elememt, duration = 500 , delay = 0) {
+
+    elememt.animate([
+        {opacity: "0"},
+        {opacity:"0", transform: "translatey(-100%)"},
+        {opacity:"1",transform: "translatey(0%)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-out"
+        
+    });
+
+};
+
+const slideUp = function (elememt, duration = 500 , delay = 0) {
+
+    elememt.animate([
+        {opacity: "0"},
+        {opacity:"0", transform: "translatey(100%)"},
+        {opacity:"1",transform: "translatey(0%)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-out"
+        
+    });
+
+};
+
 // FUNCTIONS
 
-let eraser = function () {
+const eraser = function () {
     
     for(let i = 0; i < cards.length; i++) {
         let el = cards[i].firstElementChild;
@@ -226,7 +308,7 @@ let eraser = function () {
 
 };
 
-let switchSection = function (section) {
+const switchSection = function (section) {
     for (let c = 0; c < cards.length; c++) {
 
         let  cardsClass = cards[c].classList.item(2);
@@ -266,7 +348,7 @@ let switchSection = function (section) {
 
 };
 
-let selection = function (element) {
+const selection = function (element) {
     
     let li_active = nav_principal.querySelector("li.active");
 
@@ -282,7 +364,7 @@ let selection = function (element) {
     }
 };
 
-let bloom = function (card_1, card_2) {
+const bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
     card_2.classList.add("bloom");
 
@@ -292,20 +374,28 @@ let bloom = function (card_1, card_2) {
 
 };
 
-let nav_title_v2 = function () {
+const nav_title_v2 = function () {
     navSecondary.parentNode.querySelector(".nav_title").classList.add("v2");
+};
+
+const useAnimation = function (array,anim) {
+
+    (function () {
+        array.forEach(element => {
+            anim(element);
+        });
+    }) ();
 };
 
 // ACCUEIL
 
 (function () {
 
-    let defaultPage = function () {
-        
-    const cards_a1 = document.querySelector(".cards.a1");
-    cards_a1.innerHTML = '<div class="container"></div>';
+    const defaultPage = function () {
+    
+    card_a1.innerHTML = '<div class="container"></div>';
 
-    const container = cards_a1.querySelector(".container");
+    const container = card_a1.querySelector(".container");
     container.innerHTML = '<article class="accueil_article"></article> <div class="accueil_article_illustration"></div>';
 
     const article = container.querySelector(".accueil_article");
@@ -323,31 +413,40 @@ let nav_title_v2 = function () {
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
     illustration.querySelector('img').src = './assets/img/svg/accueil/accueil.svg';
     
+
+    card_a2.innerHTML = '<img src="" alt="Illustration de la card">'
+    card_a2.querySelector('img').src = './assets/img/Fichier 1.svg';
     
-    const cards_a2 = document.querySelector(".cards.a2");
-    cards_a2.innerHTML = '<img src="" alt="Illustration de la card">'
-    cards_a2.querySelector('img').src = './assets/img/Fichier 1.svg';
+    const card_a3 = document.querySelector(".cards.a3");
+    card_a3.innerHTML = '<img src="" alt="Illustration de la card">'
+    card_a3.querySelector('img').src = './assets/img/Fichier 1.svg';
     
-    const cards_a3 = document.querySelector(".cards.a3");
-    cards_a3.innerHTML = '<img src="" alt="Illustration de la card">'
-    cards_a3.querySelector('img').src = './assets/img/Fichier 1.svg';
-    
-    const cards_a4 = document.querySelector(".cards.a4");
-    cards_a4.innerHTML = '<img src="" alt="Illustration de la card">'
-    cards_a4.querySelector('img').src = './assets/img/Fichier 1.svg';
+    const card_a4 = document.querySelector(".cards.a4");
+    card_a4.innerHTML = '<img src="" alt="Illustration de la card">'
+    card_a4.querySelector('img').src = './assets/img/Fichier 1.svg';
     };
 
     defaultPage();
 
     container_logo.addEventListener("click", () => {
         let sectionClass = "accueil";
-        eraser();
-        switchSection(sectionClass);
-        defaultPage();
-        selection(container_logo);
 
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
+        
+        (  () => {
+            if (card_a1.classList.contains(sectionClass)) {
+            return false
+        }
+            else {
+                eraser();
+                switchSection(sectionClass);
+                defaultPage();
+                selection(container_logo);
+        
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+            }
+    }   ) ();
+    
     });
 
 }) ();
@@ -356,13 +455,11 @@ let nav_title_v2 = function () {
 
 (function () {
 
-    let cards_a1 = document.querySelector(".cards.a1");
+    const contentAbout_profil = function () {
 
-    let contentAbout_profil = function () {
+        card_a1.innerHTML= '<div class="container"></div>';
 
-        cards_a1.innerHTML= '<div class="container"></div>';
-
-        const container = cards_a1.querySelector(".container");
+        const container = card_a1.querySelector(".container");
         container.innerHTML='<div class="profil_illustration"><img src="" alt="Illustration"> </div> <article> <h3></h3> <p></p> </article>';
     
         container.querySelector("img").src = './assets/img/svg/about/presentation.svg';
@@ -384,10 +481,10 @@ let nav_title_v2 = function () {
 
     };
 
-    let contentAbout_list = function (array) {
+    const contentAbout_list = function (array) {
         // console.log(params1);
-        let container = cards_a1.querySelector(".container");
-        const article = cards_a1.querySelector(".container article");
+        let container = card_a1.querySelector(".container");
+        const article = card_a1.querySelector(".container article");
         let paraph = article.querySelector("p");
 
         if(paraph != null || undefined) {
@@ -410,7 +507,7 @@ let nav_title_v2 = function () {
         container.querySelector("img").src = array[array.length - 1];
     };
 
-    let active = function (element) {
+    const active = function (element) {
         
         if(element.classList.contains("active")) {
             return false
@@ -420,57 +517,57 @@ let nav_title_v2 = function () {
         };
     };
 
-    nav_About.addEventListener("click", () => {
-        let sectionClass = nav_About.getAttribute("id");
-        eraser();
-        switchSection(sectionClass);
-        selection(nav_About);
-        contentAbout_profil();
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
+    nav_About.addEventListener("click", function () {
 
-        let li_active = navSecondary.querySelector("li.active");
+        let sectionClass = this.getAttribute("id");
 
-        li_active === null || undefined ? about_profil.classList.add("active") : 
-        li_active.classList.remove("active"), about_profil.classList.add("active");
+        ( () => {
+            
+        if (card_a1.classList.contains(sectionClass)) {
+            return false
+        }
+        else {
+            eraser();
+            switchSection(sectionClass);
+            selection(this);
+            contentAbout_profil();
+            // ANIMATIOS
+            fondu(navSecondary.parentNode.querySelector(".nav_title"));
+            fondu(navSecondary.querySelector("ul"));
+            // useAnimation(tab_about,fondu,);
+            depli(card_a1, 500, 0);
+    
+            let li_active = navSecondary.querySelector("li.active");
+    
+            li_active === null || undefined ? about_profil.classList.add("active") : 
+            li_active.classList.remove("active"), about_profil.classList.add("active");
+        }
+
+        }) ();
+
     });
 
-    about_profil.addEventListener("click", () => {
-        contentAbout_profil();
-        active(about_profil);
-    });
+    const about_nav = function (element,array) {
+    
+        element.addEventListener("click", function () {
+            if (element === about_profil) {
+                contentAbout_profil();
+                active(this);
+            } else {
+                contentAbout_list(array);
+                active(this);
+            }
+        });
+    
+    };
 
-    about_competences.addEventListener("click", () => {
-        contentAbout_list(tab_competences);
-        active(about_competences);
-    });
-
-    about_formations.addEventListener("click", () => {
-        contentAbout_list(tab_formations);
-        active(about_formations);
-    });
-
-    about_interet.addEventListener("click", () => {
-        contentAbout_list(tab_interet)
-        active(about_interet);
-    });
-
-    about_exp_pro.addEventListener("click", () => {
-        contentAbout_list(tab_exp_pro)
-        active(about_exp_pro);
-    });
-
-    /*
-    about_contact.addEventListener("click", () => {
-        contentAbout_list(tab_interet)
-        active(about_contact);
-    });
-    */
-
-    about_social.addEventListener("click", () => {
-        contentAbout_list(tab_social)
-        active(about_social);
-    });
+    about_nav(about_profil);
+    about_nav(about_competences, tab_competences);
+    about_nav(about_formations, tab_formations);
+    about_nav(about_interet, tab_interet);
+    about_nav(about_exp_pro, tab_exp_pro);
+    // about_nav(about_contact);
+    about_nav(about_social, tab_social);
 
 }) ();
 
@@ -478,41 +575,34 @@ let nav_title_v2 = function () {
 
 (function () {
 
-    nav_Creations.addEventListener("click", () => {
-        let sectionClass = nav_Creations.getAttribute("id");
-        eraser();
-        switchSection(sectionClass);
-        selection(nav_Creations);
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
+    const nav = function (element) {
+        
+        element.addEventListener("click", function ()  {
+
+            let sectionClass = this.getAttribute("id");
+
+            if ((card_a1.classList.contains("bloom") || card_a1.classList.contains("fade")) || card_a1.classList.contains(sectionClass) != true) {
+                
+                eraser();
+                switchSection(sectionClass);
+                selection(this);
+                // ANIMATIOS
+                fondu(document.querySelector(".nav_title"));
+                slideDown(card_a1);
+                slideUp(card_a2);
+
+            } else {
+                return false
+            }
+
     });
-    
-    nav_Travaux.addEventListener("click", () => {
-        let sectionClass = nav_Travaux.getAttribute("id");
-        eraser();
-        switchSection(sectionClass);
-        selection(nav_Travaux);
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
-    });
-    
-    nav_ressources.addEventListener("click", () => {
-        let sectionClass = nav_ressources.getAttribute("id");
-        eraser();
-        switchSection(sectionClass);
-        selection(nav_ressources);
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
-    });
-    
-    nav_bonus.addEventListener("click", () => {
-        let sectionClass = nav_bonus.getAttribute("id");
-        eraser();
-        switchSection(sectionClass);
-        selection(nav_bonus);
-        // ANIMATIOS
-        fondu(document.querySelector(".nav_title"));
-    });
+
+    };
+
+    nav(nav_Creations);
+    nav(nav_Travaux);
+    nav(nav_ressources);
+    // nav(nav_bonus);
     
 }) ();
 
@@ -520,16 +610,16 @@ let nav_title_v2 = function () {
 
 (function () {
     
-    card_a1.addEventListener("click", () => {
+    card_a1.addEventListener("click", function () {
 
-        let clause = card_a1.classList.item(2);
+        let clause = this.classList.item(2);
 
         switch (clause) {
 
             case "creations":
                 eraser();
                 nav_title_v2();
-                bloom(card_a2,card_a1);
+                bloom(card_a2,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
 
@@ -538,7 +628,7 @@ let nav_title_v2 = function () {
 
                 eraser();
                 nav_title_v2();
-                bloom(card_a2,card_a1);
+                bloom(card_a2,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 
@@ -547,7 +637,7 @@ let nav_title_v2 = function () {
 
                 eraser();
                 nav_title_v2();
-                bloom(card_a2,card_a1);
+                bloom(card_a2,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 
@@ -560,11 +650,9 @@ let nav_title_v2 = function () {
     });
 
     
-    card_a2.addEventListener("click", () => {
-
-        eraser();
+    card_a2.addEventListener("click", function () {
         
-        let clause = card_a2.classList.item(2);
+        let clause = this.classList.item(2);
 
         switch (clause) {
 
@@ -572,7 +660,7 @@ let nav_title_v2 = function () {
 
                 eraser();
                 nav_title_v2();
-                bloom(card_a1,card_a2);
+                bloom(card_a1,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
 
@@ -581,7 +669,7 @@ let nav_title_v2 = function () {
 
                 eraser();
                 nav_title_v2();
-                bloom(card_a1,card_a2);
+                bloom(card_a1,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 
@@ -590,7 +678,7 @@ let nav_title_v2 = function () {
 
                 eraser();
                 nav_title_v2();
-                bloom(card_a1,card_a2);
+                bloom(card_a1,this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 
