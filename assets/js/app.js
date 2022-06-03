@@ -1,4 +1,19 @@
 
+window.addEventListener("load", function (event) {
+
+    this.setTimeout(function () {
+        const loader = document.querySelector("#container_loader");
+        loader.classList.add("disactive");
+        
+        this.setTimeout(function () {
+            loader.style.display ="none";
+        },2000)
+
+    },500);
+
+
+(function () {
+
 // SHAPE ACCUEIL
 
 // CARDS
@@ -215,7 +230,7 @@ const depli = function (elememt, duration = 800 , delay = 0) {
 
 };
 
-const slideIN = function (elememt, duration = 500 , delay = 0) {
+const slideIN_right = function (elememt, duration = 500 , delay = 0) {
 
     elememt.animate([
         {opacity: "0"},
@@ -231,7 +246,7 @@ const slideIN = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-const slideOUT = function (elememt, duration = 500 , delay = 0) {
+const slideIN_left = function (elememt, duration = 500 , delay = 0) {
 
     elememt.animate([
         {opacity: "0"},
@@ -247,7 +262,7 @@ const slideOUT = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-const slideDown = function (elememt, duration = 500 , delay = 0) {
+const slideIN_top = function (elememt, duration = 500 , delay = 0) {
 
     elememt.animate([
         {opacity: "0"},
@@ -263,7 +278,7 @@ const slideDown = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-const slideUp = function (elememt, duration = 500 , delay = 0) {
+const slideIN_bottom = function (elememt, duration = 500 , delay = 0) {
 
     elememt.animate([
         {opacity: "0"},
@@ -278,6 +293,27 @@ const slideUp = function (elememt, duration = 500 , delay = 0) {
     });
 
 };
+
+
+const replace = function (elememt, duration = 500 , delay = 0) {
+
+    elememt.animate([
+        // {opacity: "0"},
+        {opacity:"1", transform: "translatey(0%)"},
+        {opacity:"0",transform: "translatey(-130%)"},
+        // {opacity: "0"},
+        {opacity:"0", transform: "translatey(130%)"},
+        {opacity:"1",transform: "translatey(0%)"},
+    ],
+    {
+        duration: duration,
+        delay:delay,
+        easing:"ease-in-out"
+        
+    });
+
+};
+
 
 // FUNCTIONS
 
@@ -535,7 +571,7 @@ const useAnimation = function (array,anim) {
             fondu(navSecondary.parentNode.querySelector(".nav_title"));
             fondu(navSecondary.querySelector("ul"));
             // useAnimation(tab_about,fondu,);
-            depli(card_a1, 500, 0);
+            depli(card_a1, 300, 0);
     
             let li_active = navSecondary.querySelector("li.active");
     
@@ -550,13 +586,23 @@ const useAnimation = function (array,anim) {
     const about_nav = function (element,array) {
     
         element.addEventListener("click", function () {
-            if (element === about_profil) {
-                contentAbout_profil();
-                active(this);
-            } else {
-                contentAbout_list(array);
-                active(this);
-            }
+
+            setTimeout(() => {
+                if (element === about_profil) {
+                    contentAbout_profil();
+                    active(this);
+                } else {
+                    
+                        contentAbout_list(array);
+                        active(this);
+                    
+                }
+
+            },250)
+
+            // ANIMATIONS
+
+            this.classList.contains("active") ? false : replace(card_a1);
         });
     
     };
@@ -588,8 +634,8 @@ const useAnimation = function (array,anim) {
                 selection(this);
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
-                slideDown(card_a1);
-                slideUp(card_a2);
+                slideIN_top(card_a1);
+                slideIN_bottom(card_a2);
 
             } else {
                 return false
@@ -693,4 +739,7 @@ const useAnimation = function (array,anim) {
 }) ();
 
 
+})();
 
+
+});
