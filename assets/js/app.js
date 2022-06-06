@@ -7,7 +7,7 @@ window.addEventListener("load", function (event) {
         
         this.setTimeout(function () {
             loader.style.display ="none";
-        },2000)
+        },1000)
 
     },500);
 
@@ -189,6 +189,36 @@ const tab_social = [
         "assets/img/svg/about/social.svg"
 
 ];
+
+const tab_cards = [
+    card_a3,
+    card_a4,
+    card_a5,
+    card_a6
+] 
+
+const cards_data = [
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
+] 
 
 // OBJETS
 
@@ -553,14 +583,14 @@ const useAnimation = function (array,anim) {
         };
     };
 
-    nav_About.addEventListener("click", function () {
+    nav_About.addEventListener("click", function (event) {
 
         let sectionClass = this.getAttribute("id");
 
         ( () => {
             
         if (card_a1.classList.contains(sectionClass)) {
-            return false
+            event.preventDefault
         }
         else {
             eraser();
@@ -585,7 +615,7 @@ const useAnimation = function (array,anim) {
 
     const about_nav = function (element,array) {
     
-        element.addEventListener("click", function () {
+        element.addEventListener("click", function (event) {
 
             setTimeout(() => {
                 if (element === about_profil) {
@@ -623,7 +653,7 @@ const useAnimation = function (array,anim) {
 
     const nav = function (element) {
         
-        element.addEventListener("click", function ()  {
+        element.addEventListener("click", function (event)  {
 
             let sectionClass = this.getAttribute("id");
 
@@ -638,7 +668,7 @@ const useAnimation = function (array,anim) {
                 slideIN_bottom(card_a2);
 
             } else {
-                return false
+                event.preventDefault();
             }
 
     });
@@ -655,15 +685,71 @@ const useAnimation = function (array,anim) {
 // DESIGNE DEV
 
 (function () {
-    
-    card_a1.addEventListener("click", function () {
 
+    let counter = 0;
+    
+    const cards_generator = function (array,data) {
+
+        let parent = document.createElement("div");
+        parent.className = "designe_dev";
+        card_a1.appendChild(parent);
+
+        console.log(parent);
+        
+        let next = document.createElement("span"); 
+        next.textContent = "Suivant";
+        next.id = "suivant";
+        let previous = document.createElement("span"); 
+        previous.textContent = "Precedant";
+        parent.prepend(previous);
+        parent.appendChild(next);
+    
+        array.forEach(element => {
+
+            let container = document.createElement("div");
+            element.prepend(container);
+    
+            let titre = document.createElement("h3");
+            container.appendChild(titre);
+            titre.textContent = data[counter].titre;
+            let link = document.createElement("a");
+            container.appendChild(link);
+            link.href = "#";
+            let backgroound = document.createElement("img");
+            link.appendChild(backgroound);
+            backgroound.src = "#";
+            let buided = document.createElement("span");
+            container.appendChild(buided);
+            buided.textContent = "date";
+
+            counter++;
+            
+        });
+
+        
+        next.addEventListener("click", function (event) {
+            this.style.color = "red";
+            event.stopPropagation();
+        });
+    };
+    
+    card_a1.addEventListener("click", function box (event) {
+        counter = 0;
+
+        
+        if (card_a3.classList.contains("place")) {
+            event.preventDefault;
+            console.log("card A1");
+            return false
+        };
+
+        eraser();
         let clause = this.classList.item(2);
+        cards_generator(tab_cards, cards_data);
 
         switch (clause) {
 
             case "creations":
-                eraser();
                 nav_title_v2();
                 bloom(card_a2,this);
                 // ANIMATIOS
@@ -672,7 +758,7 @@ const useAnimation = function (array,anim) {
                 break;
             case "travaux":
 
-                eraser();
+                // eraser();
                 nav_title_v2();
                 bloom(card_a2,this);
                 // ANIMATIOS
@@ -681,7 +767,7 @@ const useAnimation = function (array,anim) {
                 break;
             case "ressources":
 
-                eraser();
+                // eraser();
                 nav_title_v2();
                 bloom(card_a2,this);
                 // ANIMATIOS
@@ -697,14 +783,22 @@ const useAnimation = function (array,anim) {
 
     
     card_a2.addEventListener("click", function () {
+
+        counter = 0;
         
+        if (card_a3.classList.contains("place")) {
+            console.log("ok");
+            return false
+        };
+        
+        eraser();
         let clause = this.classList.item(2);
+        cards_generator(tab_cards);
 
         switch (clause) {
 
             case "creations":
 
-                eraser();
                 nav_title_v2();
                 bloom(card_a1,this);
                 // ANIMATIOS
@@ -713,7 +807,7 @@ const useAnimation = function (array,anim) {
                 break;
             case "travaux":
 
-                eraser();
+                // eraser();
                 nav_title_v2();
                 bloom(card_a1,this);
                 // ANIMATIOS
@@ -722,7 +816,7 @@ const useAnimation = function (array,anim) {
                 break;
             case "ressources":
 
-                eraser();
+                // eraser();
                 nav_title_v2();
                 bloom(card_a1,this);
                 // ANIMATIOS
@@ -735,6 +829,7 @@ const useAnimation = function (array,anim) {
         };
 
     });
+
     
 }) ();
 
