@@ -1,0 +1,50 @@
+
+// COMPONENTS
+
+@use "./variables" as *;
+
+@use "./colors" as *;
+
+@use "./extend" as *;
+
+@use "./mixin" as *;
+
+// COMPONENTS
+
+
+.container_loader {
+    @extend %flex-center;
+    position: absolute; inset: 0; z-index: 2000;
+    
+    background: rgb(215, 215, 244);
+    
+    .loader {
+        @extend %flex;
+        @include flex ($justify:flex-start);
+        position: relative;
+
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        &::before {
+            content: "";
+            position: absolute; left: -40%;
+            @include body (5rem, 5rem);
+
+            border-radius: 50%;
+            border-top:solid 10px $color-green;
+            border-left:solid 10px transparent;
+            border-right:solid 10px transparent;
+
+            animation: spin 1.5s linear infinite;
+        }
+    }
+}
+
+.disactive {
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 1s;
+}
