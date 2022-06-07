@@ -218,6 +218,67 @@ const cards_data = [
         image:"#",
         date:"00/00/2022"
     },
+    // ........................................
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
 ] 
 
 // OBJETS
@@ -325,7 +386,7 @@ const slideIN_bottom = function (elememt, duration = 500 , delay = 0) {
 };
 
 
-const replace = function (elememt, duration = 500 , delay = 0) {
+const replace = function (elememt, duration = 800 , delay = 0) {
 
     elememt.animate([
         // {opacity: "0"},
@@ -361,10 +422,10 @@ const eraser = function () {
     if (card_a1.classList.contains("bloom") || card_a1.classList.contains("fade")) {
         card_a1.classList.remove(card_a1.classList.item(3));
         card_a2.classList.remove(card_a2.classList.item(3));
-        card_a3.classList.remove("place");
-        card_a4.classList.remove("place");
-        card_a5.classList.remove("place");
-        card_a6.classList.remove("place");
+        // card_a3.classList.remove("place");
+        // card_a4.classList.remove("place");
+        // card_a5.classList.remove("place");
+        // card_a6.classList.remove("place");
     };
 
     let verif = navSecondary.parentNode.querySelector(".nav_title.v2");
@@ -434,9 +495,9 @@ const bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
     card_2.classList.add("bloom");
 
-    for(let i = 2; i < cards.length; i++) {
-        cards[i].classList.add("place");
-    };
+    // for(let i = 2; i < cards.length; i++) {
+    //     cards[i].classList.add("place");
+    // };
 
 };
 
@@ -510,6 +571,10 @@ const useAnimation = function (array,anim) {
         
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
+                slideIN_left(card_a1);
+                slideIN_right(card_a2);
+                slideIN_right(card_a3);
+                slideIN_right(card_a4);
             }
     }   ) ();
     
@@ -616,6 +681,10 @@ const useAnimation = function (array,anim) {
     const about_nav = function (element,array) {
     
         element.addEventListener("click", function (event) {
+            
+            // ANIMATIONS
+
+            this.classList.contains("active") ? false : replace(card_a1);
 
             setTimeout(() => {
                 if (element === about_profil) {
@@ -628,11 +697,8 @@ const useAnimation = function (array,anim) {
                     
                 }
 
-            },250)
+            },300)
 
-            // ANIMATIONS
-
-            this.classList.contains("active") ? false : replace(card_a1);
         });
     
     };
@@ -676,7 +742,7 @@ const useAnimation = function (array,anim) {
     };
 
     nav(nav_Creations);
-    nav(nav_Travaux);
+    // nav(nav_Travaux);
     nav(nav_ressources);
     // nav(nav_bonus);
     
@@ -688,14 +754,13 @@ const useAnimation = function (array,anim) {
 
     let counter = 0;
     
-    const cards_generator = function (array,data) {
+    const cards_generator = function (array) {
 
         let parent = document.createElement("div");
         parent.className = "designe_dev";
         card_a1.appendChild(parent);
-
-        console.log(parent);
         
+        /*
         let next = document.createElement("span"); 
         next.textContent = "Suivant";
         next.id = "suivant";
@@ -703,15 +768,19 @@ const useAnimation = function (array,anim) {
         previous.textContent = "Precedant";
         parent.prepend(previous);
         parent.appendChild(next);
-    
-        array.forEach(element => {
+        */
 
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+
+            
             let container = document.createElement("div");
-            element.prepend(container);
+            parent.appendChild(container);
+            // element.prepend(container);
     
             let titre = document.createElement("h3");
             container.appendChild(titre);
-            titre.textContent = data[counter].titre;
+            titre.textContent = array[counter].titre;
             let link = document.createElement("a");
             container.appendChild(link);
             link.href = "#";
@@ -724,28 +793,28 @@ const useAnimation = function (array,anim) {
 
             counter++;
             
-        });
+        };
 
         
+        /*
         next.addEventListener("click", function (event) {
             this.style.color = "red";
             event.stopPropagation();
         });
+        */
     };
     
     card_a1.addEventListener("click", function box (event) {
-        counter = 0;
-
         
-        if (card_a3.classList.contains("place")) {
-            event.preventDefault;
-            console.log("card A1");
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil")) {
             return false
         };
 
+        counter = 0;
+
         eraser();
         let clause = this.classList.item(2);
-        cards_generator(tab_cards, cards_data);
+        cards_generator(cards_data);
 
         switch (clause) {
 
@@ -783,17 +852,15 @@ const useAnimation = function (array,anim) {
 
     
     card_a2.addEventListener("click", function () {
-
-        counter = 0;
         
-        if (card_a3.classList.contains("place")) {
-            console.log("ok");
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil")) {
             return false
         };
-        
+
+        counter = 0;
         eraser();
         let clause = this.classList.item(2);
-        cards_generator(tab_cards);
+        // cards_generator(tab_cards);
 
         switch (clause) {
 
