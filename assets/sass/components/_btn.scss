@@ -14,6 +14,6 @@
 .btn {
     @extend %padding-0_5rem;
     border-radius: 1rem;
-    background-color: rgba($color-yellow,0.5);
-    color: #000;
+    background-color: rgba($color-green,1);
+    color: $color-text;
 }

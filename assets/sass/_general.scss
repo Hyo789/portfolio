@@ -27,8 +27,8 @@ h2, h3 {
 
 a{
     @extend %d-inline-block;
-    text-decoration: underline;
-    color: rgba($color-link,0.8);
+    text-decoration: none;
+    // color: rgba($color-yellow,1);
 
     transition: 0.3s;
     
@@ -85,6 +85,14 @@ a{
     border-radius: 0 0.5rem 0.5rem 0;
 
     text-transform: capitalize;
+
+}
+
+.nav_title {
+    min-width: 10%;
+    max-width: 20%;
+
+    margin: auto;
 }
 
 .sections {

@@ -40,3 +40,45 @@
     background-color: $color-green;
     border-radius: 0.5rem;
 }
+
+
+#contact {
+    // @extend %hover-cursor;
+    // margin-left:2rem;
+    @extend %position-relative;
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+        
+        transition: 0.3s;
+
+    }
+
+    
+    &::before {
+        content: "";
+        @extend %position-absolute; top: 0; left: 0;
+        width: 0; height: 0;
+        background-color: $color-yellow;
+
+        animation: travel 1.5s ease-out 2s;
+        animation-iteration-count: 3;
+    }
+    
+    
+    &::after {
+        content: "";
+        @extend %position-absolute; bottom: 0; right: 0;
+        width: 0; height: 0;
+        background-color: $color-yellow;
+        
+        animation: travel 1.5s ease-out 2s;
+        animation-iteration-count: 3;
+    }
+}

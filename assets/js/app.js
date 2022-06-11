@@ -11,7 +11,6 @@ window.addEventListener("load", function (event) {
 
     },500);
 
-
 (function () {
 
 // SHAPE ACCUEIL
@@ -286,7 +285,7 @@ const cards_data = [
 // DESIGNE DEV
 
 const tabDesigne_dev = {
-    designe : "./assets/img/svg/divers/designe.svg",
+    designe : "./assets/img/svg/divers/fichier 6.svg",
     dev : "./assets/img/svg/divers/dev.svg"
 };
 
@@ -385,7 +384,6 @@ const slideIN_bottom = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-
 const replace = function (elememt, duration = 800 , delay = 0) {
 
     elememt.animate([
@@ -404,7 +402,6 @@ const replace = function (elememt, duration = 800 , delay = 0) {
     });
 
 };
-
 
 // FUNCTIONS
 
@@ -436,6 +433,7 @@ const eraser = function () {
 };
 
 const switchSection = function (section) {
+
     for (let c = 0; c < cards.length; c++) {
 
         let  cardsClass = cards[c].classList.item(2);
@@ -452,25 +450,11 @@ const switchSection = function (section) {
         navSecondary.classList.replace(navSecondaryClass, section);
     };
 
-    
-    
     if (section === "profil") {
         let section = "about";
         navSecondary.parentNode.querySelector("h2").textContent = section + "   |";
     } else {
         navSecondary.parentNode.querySelector("h2").textContent = section;
-
-        function switchDesigneDev(elememt,array) {
-            let designe = document.createElement("div");
-            designe.className = "designe_dev";
-            elememt.appendChild(designe);
-            let designe_image = document.createElement("img");
-            designe.appendChild(designe_image);
-            designe_image.src = array;
-        };
-
-        switchDesigneDev(card_a1,tabDesigne_dev.designe);
-        switchDesigneDev(card_a2,tabDesigne_dev.dev);
     };
 
 };
@@ -519,22 +503,43 @@ const useAnimation = function (array,anim) {
 (function () {
 
     const defaultPage = function () {
+
+    const container = document.createElement("div");
+    card_a1.appendChild(container);
+    container.className = "container";
+
+    const article = document.createElement("article");
+    article.className = "accueil_article";
+    container.appendChild(article);
+
     
-    card_a1.innerHTML = '<div class="container"></div>';
+    const cta = document.createElement("div");
+    container.appendChild(cta)
+    cta.classList= "accueil_cta";
+    const cta_commencer = document.createElement("a");
+    cta.appendChild(cta_commencer);
+    cta_commencer.className = "btn";
+    cta_commencer.href = "#";
+    cta_commencer.textContent = "Commencer";
+    // cta.innerHTML= '<a class = "btn"> commencer</a>';
 
-    const container = card_a1.querySelector(".container");
-    container.innerHTML = '<article class="accueil_article"></article> <div class="accueil_article_illustration"></div>';
+    const accueil_illus = document.createElement("div");
+    accueil_illus.className = "accueil_article_illustration";
+    container.appendChild(accueil_illus);
 
-    const article = container.querySelector(".accueil_article");
-    article.innerHTML = '<div class="accueil_article_profil"></div> <p></p>';
-
-    const profil = article.querySelector(".accueil_article_profil");
+    const profil = document.createElement("div");
+    profil.className = "accueil_article_profil";
+    article.appendChild(profil);
     profil.innerHTML = '<img src="" alt="Image de profil"> <h2></h2>';
     profil.querySelector("img").src = './assets/img/logo/logo.svg';
     profil.querySelector("h2").innerHTML = "faizdine";
+    
+    const paraph = document.createElement("p");
+    article.appendChild(paraph);
 
-    article.querySelector("p").textContent = 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam";
+    paraph.textContent = 
+    "Bonjour, et bienvenu sur mon portfolio.\ \
+    En tant que concepteur designer UI je suis toujours en quête de nouveaux projets ou poser mes idées de créations. ";
 
     const illustration = container.querySelector(".accueil_article_illustration");
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
@@ -565,9 +570,9 @@ const useAnimation = function (array,anim) {
         }
             else {
                 eraser();
-                switchSection(sectionClass);
                 defaultPage();
-                selection(container_logo);
+                switchSection(sectionClass);
+                // selection(container_logo);
         
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
@@ -717,6 +722,17 @@ const useAnimation = function (array,anim) {
 
 (function () {
 
+    
+        
+    const switchDesigneDev = function (objet,array) {
+        let designe = document.createElement("div");
+        designe.className = "designe_dev";
+        objet.appendChild(designe);
+        let designe_image = document.createElement("img");
+        designe.appendChild(designe_image);
+        designe_image.src = array;
+    };
+
     const nav = function (element) {
         
         element.addEventListener("click", function (event)  {
@@ -727,7 +743,10 @@ const useAnimation = function (array,anim) {
                 
                 eraser();
                 switchSection(sectionClass);
+                switchDesigneDev(card_a1,tabDesigne_dev.designe);
+                switchDesigneDev(card_a2,tabDesigne_dev.dev);
                 selection(this);
+                
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 slideIN_top(card_a1);
@@ -759,6 +778,7 @@ const useAnimation = function (array,anim) {
         let parent = document.createElement("div");
         parent.className = "designe_dev";
         card_a1.appendChild(parent);
+        parent.classList.add("active")
         
         /*
         let next = document.createElement("span"); 

@@ -31,7 +31,6 @@
     }
 }
 
-
 .accueil_article p {
     @extend %flex-center;
     @extend %margin-auto;
@@ -52,4 +51,10 @@
         @include body(60%, auto);
         transform: scale(1.3);
     }
+}
+
+.accueil_cta {
+    align-self: flex-end;
+    padding-bottom: 1rem;
+    transform: translate(80%);
 }
