@@ -75,7 +75,7 @@
             &:hover {
                 border-radius: 1rem;
                 background-color: $color-green;
-                border-bottom: solid 1px;
+                // border-bottom: solid 1px;
                 box-shadow: silver 0 2px 4px, silver -2px 0 4px ;
 
                 transform: scale(1.05);
@@ -85,7 +85,7 @@
         }
 
         img {
-            width: 60px;
+            @include body (40px, 40px);
         }
     }
 }

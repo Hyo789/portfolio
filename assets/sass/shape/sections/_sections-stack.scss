@@ -9,6 +9,14 @@
 
 @use "./accueil/accueil-article";
 
+// CONTACT
+
+@use "./contact/main-contact";
+
+@use "./contact/cards-contact";
+
+@use "./contact/container-contact";
+
 // ABOUT
 
 @use "./about/nav-about";
@@ -22,3 +30,5 @@
 @use "./creations_travaux_ressources/nav-creations.scss";
 
 @use "./creations_travaux_ressources/main-crations.scss";
+
+@use "./creations_travaux_ressources/design-dev";

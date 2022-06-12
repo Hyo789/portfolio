@@ -9,6 +9,11 @@
 
 // CREATIONS TRAVAUX RESSOURCES
 
+.cards.creations, .cards.travaux, .cards.ressources {
+    // @extend %margin-1rem;
+    margin: 1.5rem
+}
+
 
 .cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources {
     @extend %position-relative;
@@ -31,31 +36,29 @@
         z-index: 5;
         @extend %display-block;
         @extend %hover-cursor;
-        @include grid-position (2 / span 4, 2 / span 4);
+        @include grid-position (1 / span 3, 2 / span 4);
     }
 }
 
 .cards.a4.creations, .cards.a4.travaux, .cards.a4.ressources {
     @extend %display-none;
-
     
     &.place {
         z-index: 5;
         @extend %display-block;
         @extend %hover-cursor;
-        @include grid-position (8 / span 4, 2 / span 4);
+        @include grid-position (4 / span 3, 2 / span 4);
     }
 }
 
 .cards.a5.creations, .cards.a5.travaux, .cards.a5.ressources {
     @extend %display-none;
-
     
     &.place {
         z-index: 5;
         @extend %display-block;
         @extend %hover-cursor;
-        @include grid-position (2 / span 4, 8 / span 4);
+        @include grid-position (7 / span 3, 2 / span 4);
     }
 
 }
@@ -68,16 +71,13 @@
         z-index: 5;
         @extend %display-block;
         @extend %hover-cursor;
-        @include grid-position (8 / span 4, 8 / span 4);
+        @include grid-position (10 / span 3, 2 / span 4);
     }
 
 }
 
-.cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources, .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources {
-
-    .designe_dev {
-        width: 85%;
-    }
+.cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources, .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources
+{
 
     
     &.fade {

@@ -11,7 +11,6 @@ window.addEventListener("load", function (event) {
 
     },500);
 
-
 (function () {
 
 // SHAPE ACCUEIL
@@ -50,7 +49,7 @@ const about_competences = document.querySelector("#competences");
 const about_formations = document.querySelector("#formations");
 const about_interet = document.querySelector("#interet");
 const about_exp_pro = document.querySelector("#exp-pro");
-const about_contact = document.querySelector("#contact");
+const contact = document.querySelector("#contact");
 const about_social = document.querySelector("#resaux");
 
 // ARRAY
@@ -218,6 +217,67 @@ const cards_data = [
         image:"#",
         date:"00/00/2022"
     },
+    // ........................................
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 1",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 2",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 3",
+        image:"#",
+        date:"00/00/2022"
+    },
+    {
+        titre:"titre de la card 4",
+        image:"#",
+        date:"00/00/2022"
+    },
 ] 
 
 // OBJETS
@@ -225,7 +285,7 @@ const cards_data = [
 // DESIGNE DEV
 
 const tabDesigne_dev = {
-    designe : "./assets/img/svg/divers/designe.svg",
+    designe : "./assets/img/svg/divers/fichier 6.svg",
     dev : "./assets/img/svg/divers/dev.svg"
 };
 
@@ -324,8 +384,7 @@ const slideIN_bottom = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-
-const replace = function (elememt, duration = 500 , delay = 0) {
+const replace = function (elememt, duration = 800 , delay = 0) {
 
     elememt.animate([
         // {opacity: "0"},
@@ -344,7 +403,6 @@ const replace = function (elememt, duration = 500 , delay = 0) {
 
 };
 
-
 // FUNCTIONS
 
 const eraser = function () {
@@ -361,10 +419,10 @@ const eraser = function () {
     if (card_a1.classList.contains("bloom") || card_a1.classList.contains("fade")) {
         card_a1.classList.remove(card_a1.classList.item(3));
         card_a2.classList.remove(card_a2.classList.item(3));
-        card_a3.classList.remove("place");
-        card_a4.classList.remove("place");
-        card_a5.classList.remove("place");
-        card_a6.classList.remove("place");
+        // card_a3.classList.remove("place");
+        // card_a4.classList.remove("place");
+        // card_a5.classList.remove("place");
+        // card_a6.classList.remove("place");
     };
 
     let verif = navSecondary.parentNode.querySelector(".nav_title.v2");
@@ -375,6 +433,7 @@ const eraser = function () {
 };
 
 const switchSection = function (section) {
+
     for (let c = 0; c < cards.length; c++) {
 
         let  cardsClass = cards[c].classList.item(2);
@@ -391,25 +450,18 @@ const switchSection = function (section) {
         navSecondary.classList.replace(navSecondaryClass, section);
     };
 
-    
-    
     if (section === "profil") {
         let section = "about";
         navSecondary.parentNode.querySelector("h2").textContent = section + "   |";
-    } else {
+    } 
+    else {
         navSecondary.parentNode.querySelector("h2").textContent = section;
+    };
 
-        function switchDesigneDev(elememt,array) {
-            let designe = document.createElement("div");
-            designe.className = "designe_dev";
-            elememt.appendChild(designe);
-            let designe_image = document.createElement("img");
-            designe.appendChild(designe_image);
-            designe_image.src = array;
-        };
-
-        switchDesigneDev(card_a1,tabDesigne_dev.designe);
-        switchDesigneDev(card_a2,tabDesigne_dev.dev);
+    if(section === contact.getAttribute('id')) {
+        contact.classList.add('desactive');
+    } else {
+        contact.classList.remove('desactive');
     };
 
 };
@@ -434,10 +486,6 @@ const bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
     card_2.classList.add("bloom");
 
-    for(let i = 2; i < cards.length; i++) {
-        cards[i].classList.add("place");
-    };
-
 };
 
 const nav_title_v2 = function () {
@@ -458,22 +506,43 @@ const useAnimation = function (array,anim) {
 (function () {
 
     const defaultPage = function () {
+
+    const container = document.createElement("div");
+    card_a1.appendChild(container);
+    container.className = "container";
+
+    const article = document.createElement("article");
+    article.className = "accueil_article";
+    container.appendChild(article);
+
     
-    card_a1.innerHTML = '<div class="container"></div>';
+    const cta = document.createElement("div");
+    container.appendChild(cta)
+    cta.classList= "accueil_cta";
+    const cta_commencer = document.createElement("a");
+    cta.appendChild(cta_commencer);
+    cta_commencer.className = "btn";
+    cta_commencer.href = "#";
+    cta_commencer.textContent = "Commencer";
+    // cta.innerHTML= '<a class = "btn"> commencer</a>';
 
-    const container = card_a1.querySelector(".container");
-    container.innerHTML = '<article class="accueil_article"></article> <div class="accueil_article_illustration"></div>';
+    const accueil_illus = document.createElement("div");
+    accueil_illus.className = "accueil_article_illustration";
+    container.appendChild(accueil_illus);
 
-    const article = container.querySelector(".accueil_article");
-    article.innerHTML = '<div class="accueil_article_profil"></div> <p></p>';
-
-    const profil = article.querySelector(".accueil_article_profil");
+    const profil = document.createElement("div");
+    profil.className = "accueil_article_profil";
+    article.appendChild(profil);
     profil.innerHTML = '<img src="" alt="Image de profil"> <h2></h2>';
     profil.querySelector("img").src = './assets/img/logo/logo.svg';
     profil.querySelector("h2").innerHTML = "faizdine";
+    
+    const paraph = document.createElement("p");
+    article.appendChild(paraph);
 
-    article.querySelector("p").textContent = 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dicta enim repellendus tempora magni quod consectetur magnam fuga repellat necessitatibus ab aliquam";
+    paraph.textContent = 
+    "Bonjour, et bienvenu sur mon portfolio.\ \
+    En tant que concepteur designer UI je suis toujours en quête de nouveaux projets ou poser mes idées de créations. ";
 
     const illustration = container.querySelector(".accueil_article_illustration");
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
@@ -504,12 +573,16 @@ const useAnimation = function (array,anim) {
         }
             else {
                 eraser();
-                switchSection(sectionClass);
                 defaultPage();
-                selection(container_logo);
+                switchSection(sectionClass);
+                // selection(container_logo);
         
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
+                slideIN_left(card_a1);
+                slideIN_right(card_a2);
+                slideIN_right(card_a3);
+                slideIN_right(card_a4);
             }
     }   ) ();
     
@@ -616,6 +689,10 @@ const useAnimation = function (array,anim) {
     const about_nav = function (element,array) {
     
         element.addEventListener("click", function (event) {
+            
+            // ANIMATIONS
+
+            this.classList.contains("active") ? false : replace(card_a1);
 
             setTimeout(() => {
                 if (element === about_profil) {
@@ -628,11 +705,8 @@ const useAnimation = function (array,anim) {
                     
                 }
 
-            },250)
+            },300)
 
-            // ANIMATIONS
-
-            this.classList.contains("active") ? false : replace(card_a1);
         });
     
     };
@@ -642,7 +716,6 @@ const useAnimation = function (array,anim) {
     about_nav(about_formations, tab_formations);
     about_nav(about_interet, tab_interet);
     about_nav(about_exp_pro, tab_exp_pro);
-    // about_nav(about_contact);
     about_nav(about_social, tab_social);
 
 }) ();
@@ -650,6 +723,17 @@ const useAnimation = function (array,anim) {
 // NAV PRICIPAL
 
 (function () {
+
+    
+        
+    const switchDesigneDev = function (objet,array) {
+        let designe = document.createElement("div");
+        designe.className = "designe_dev";
+        objet.appendChild(designe);
+        let designe_image = document.createElement("img");
+        designe.appendChild(designe_image);
+        designe_image.src = array;
+    };
 
     const nav = function (element) {
         
@@ -661,7 +745,10 @@ const useAnimation = function (array,anim) {
                 
                 eraser();
                 switchSection(sectionClass);
+                switchDesigneDev(card_a1,tabDesigne_dev.designe);
+                switchDesigneDev(card_a2,tabDesigne_dev.dev);
                 selection(this);
+                
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
                 slideIN_top(card_a1);
@@ -676,10 +763,72 @@ const useAnimation = function (array,anim) {
     };
 
     nav(nav_Creations);
-    nav(nav_Travaux);
+    // nav(nav_Travaux);
     nav(nav_ressources);
     // nav(nav_bonus);
     
+}) ();
+
+// CONTACT
+
+(function () {
+
+    const content = function () {
+        const container  = document.createElement("div");
+        card_a1.appendChild(container);
+        container.className = "container";
+
+        const contact_content = document.createElement('div');
+        container.appendChild(contact_content);
+        contact_content.className = "contact_content";
+
+        const name = document.createElement('span');
+        contact_content.appendChild(name);
+        name.textContent = "Nom : TOUMBOU";
+
+        const userName = document.createElement('span');
+        contact_content.appendChild(userName);
+        userName.textContent = "Prénom : Faizdine";
+
+        const email = document.createElement('span');
+        contact_content.appendChild(email);
+        email.textContent = "E-mail : naruto.akatsuki.senine@gmail.com"; 
+
+        const linkedin = document.createElement('span');
+        contact_content.appendChild(linkedin);
+        linkedin.textContent = "Linkedin : ";
+        const link = document.createElement('a');
+        linkedin.appendChild(link)
+        link.href = '#';
+        link.textContent = 'Mon profil Linkedin';
+
+        const paraph = document.createElement('p');
+        contact_content.appendChild(paraph);
+        paraph.textContent = 
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis assumenda cumque nostrum! Temporibus ea id, repellendus ipsa, officiis nisi est voluptatibus similique maiores iste porro itaque soluta. Impedit, fugit. Voluptates.';
+
+        const cta = document.createElement("div");
+        contact_content.appendChild(cta)
+        cta.classList= "contact_cta";
+        const cta_monCV = document.createElement("a");
+        cta.appendChild(cta_monCV);
+        cta_monCV.className = "btn";
+        cta_monCV.textContent = "Télécharger mon CV";
+        cta_monCV.href = 'assets/docs/CV_Faizdine_TOUMBOU.pdf';
+
+        cta_monCV.addEventListener('click', function (event) {
+            event.stopPropagation();
+        })
+    };
+
+    contact.addEventListener("click", function (event) {
+        eraser();
+        let sectionClass = this.getAttribute("id");
+        switchSection(sectionClass);
+        bloom(card_a2,card_a1);
+        content();
+    });
+
 }) ();
 
 // DESIGNE DEV
@@ -688,14 +837,14 @@ const useAnimation = function (array,anim) {
 
     let counter = 0;
     
-    const cards_generator = function (array,data) {
+    const cards_generator = function (array, elememt) {
 
         let parent = document.createElement("div");
         parent.className = "designe_dev";
-        card_a1.appendChild(parent);
-
-        console.log(parent);
+        elememt.appendChild(parent);
+        parent.classList.add("active")
         
+        /*
         let next = document.createElement("span"); 
         next.textContent = "Suivant";
         next.id = "suivant";
@@ -703,15 +852,19 @@ const useAnimation = function (array,anim) {
         previous.textContent = "Precedant";
         parent.prepend(previous);
         parent.appendChild(next);
-    
-        array.forEach(element => {
+        */
 
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+
+            
             let container = document.createElement("div");
-            element.prepend(container);
+            parent.appendChild(container);
+            // element.prepend(container);
     
             let titre = document.createElement("h3");
             container.appendChild(titre);
-            titre.textContent = data[counter].titre;
+            titre.textContent = array[counter].titre;
             let link = document.createElement("a");
             container.appendChild(link);
             link.href = "#";
@@ -724,28 +877,28 @@ const useAnimation = function (array,anim) {
 
             counter++;
             
-        });
+        };
 
         
+        /*
         next.addEventListener("click", function (event) {
             this.style.color = "red";
             event.stopPropagation();
         });
+        */
     };
     
     card_a1.addEventListener("click", function box (event) {
-        counter = 0;
-
         
-        if (card_a3.classList.contains("place")) {
-            event.preventDefault;
-            console.log("card A1");
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil") || this.classList.contains("contact")) {
             return false
         };
 
+        counter = 0;
+
         eraser();
         let clause = this.classList.item(2);
-        cards_generator(tab_cards, cards_data);
+        cards_generator(cards_data, this);
 
         switch (clause) {
 
@@ -783,17 +936,16 @@ const useAnimation = function (array,anim) {
 
     
     card_a2.addEventListener("click", function () {
-
-        counter = 0;
         
-        if (card_a3.classList.contains("place")) {
-            console.log("ok");
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil") || this.classList.contains("contact")) {
             return false
         };
-        
+
+        counter = 0;
+
         eraser();
         let clause = this.classList.item(2);
-        cards_generator(tab_cards);
+        cards_generator(cards_data, this);
 
         switch (clause) {
 
