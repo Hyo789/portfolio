@@ -9,6 +9,14 @@
 
 @use "./accueil/accueil-article";
 
+// CONTACT
+
+@use "./contact/main-contact";
+
+@use "./contact/cards-contact";
+
+@use "./contact/container-contact";
+
 // ABOUT
 
 @use "./about/nav-about";

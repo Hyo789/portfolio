@@ -1,0 +1,28 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+
+.cards.a1.contact, .cards.a2.contact
+{
+    align-items: stretch;
+    box-shadow: 0 0 ;
+
+    
+    &.fade {
+        @extend %display-none;
+    }
+
+    
+    &.bloom {
+        @include grid-position (1 / span 12, 1 / span 12);
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+
+}

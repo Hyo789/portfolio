@@ -49,7 +49,7 @@ const about_competences = document.querySelector("#competences");
 const about_formations = document.querySelector("#formations");
 const about_interet = document.querySelector("#interet");
 const about_exp_pro = document.querySelector("#exp-pro");
-const about_contact = document.querySelector("#contact");
+const contact = document.querySelector("#contact");
 const about_social = document.querySelector("#resaux");
 
 // ARRAY
@@ -453,8 +453,15 @@ const switchSection = function (section) {
     if (section === "profil") {
         let section = "about";
         navSecondary.parentNode.querySelector("h2").textContent = section + "   |";
-    } else {
+    } 
+    else {
         navSecondary.parentNode.querySelector("h2").textContent = section;
+    };
+
+    if(section === contact.getAttribute('id')) {
+        contact.classList.add('desactive');
+    } else {
+        contact.classList.remove('desactive');
     };
 
 };
@@ -478,10 +485,6 @@ const selection = function (element) {
 const bloom = function (card_1, card_2) {
     card_1.classList.add("fade");
     card_2.classList.add("bloom");
-
-    // for(let i = 2; i < cards.length; i++) {
-    //     cards[i].classList.add("place");
-    // };
 
 };
 
@@ -713,7 +716,6 @@ const useAnimation = function (array,anim) {
     about_nav(about_formations, tab_formations);
     about_nav(about_interet, tab_interet);
     about_nav(about_exp_pro, tab_exp_pro);
-    // about_nav(about_contact);
     about_nav(about_social, tab_social);
 
 }) ();
@@ -767,17 +769,79 @@ const useAnimation = function (array,anim) {
     
 }) ();
 
+// CONTACT
+
+(function () {
+
+    const content = function () {
+        const container  = document.createElement("div");
+        card_a1.appendChild(container);
+        container.className = "container";
+
+        const contact_content = document.createElement('div');
+        container.appendChild(contact_content);
+        contact_content.className = "contact_content";
+
+        const name = document.createElement('span');
+        contact_content.appendChild(name);
+        name.textContent = "Nom : TOUMBOU";
+
+        const userName = document.createElement('span');
+        contact_content.appendChild(userName);
+        userName.textContent = "Prénom : Faizdine";
+
+        const email = document.createElement('span');
+        contact_content.appendChild(email);
+        email.textContent = "E-mail : naruto.akatsuki.senine@gmail.com"; 
+
+        const linkedin = document.createElement('span');
+        contact_content.appendChild(linkedin);
+        linkedin.textContent = "Linkedin : ";
+        const link = document.createElement('a');
+        linkedin.appendChild(link)
+        link.href = '#';
+        link.textContent = 'Mon profil Linkedin';
+
+        const paraph = document.createElement('p');
+        contact_content.appendChild(paraph);
+        paraph.textContent = 
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis assumenda cumque nostrum! Temporibus ea id, repellendus ipsa, officiis nisi est voluptatibus similique maiores iste porro itaque soluta. Impedit, fugit. Voluptates.';
+
+        const cta = document.createElement("div");
+        contact_content.appendChild(cta)
+        cta.classList= "contact_cta";
+        const cta_monCV = document.createElement("a");
+        cta.appendChild(cta_monCV);
+        cta_monCV.className = "btn";
+        cta_monCV.textContent = "Télécharger mon CV";
+        cta_monCV.href = 'assets/docs/CV_Faizdine_TOUMBOU.pdf';
+
+        cta_monCV.addEventListener('click', function (event) {
+            event.stopPropagation();
+        })
+    };
+
+    contact.addEventListener("click", function (event) {
+        eraser();
+        let sectionClass = this.getAttribute("id");
+        switchSection(sectionClass);
+        bloom(card_a2,card_a1);
+        content();
+    });
+
+}) ();
+
 // DESIGNE DEV
 
 (function () {
 
     let counter = 0;
     
-    const cards_generator = function (array) {
+    const cards_generator = function (array, elememt) {
 
         let parent = document.createElement("div");
         parent.className = "designe_dev";
-        card_a1.appendChild(parent);
+        elememt.appendChild(parent);
         parent.classList.add("active")
         
         /*
@@ -826,7 +890,7 @@ const useAnimation = function (array,anim) {
     
     card_a1.addEventListener("click", function box (event) {
         
-        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil")) {
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil") || this.classList.contains("contact")) {
             return false
         };
 
@@ -834,7 +898,7 @@ const useAnimation = function (array,anim) {
 
         eraser();
         let clause = this.classList.item(2);
-        cards_generator(cards_data);
+        cards_generator(cards_data, this);
 
         switch (clause) {
 
@@ -873,14 +937,15 @@ const useAnimation = function (array,anim) {
     
     card_a2.addEventListener("click", function () {
         
-        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil")) {
+        if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil") || this.classList.contains("contact")) {
             return false
         };
 
         counter = 0;
+
         eraser();
         let clause = this.classList.item(2);
-        // cards_generator(tab_cards);
+        cards_generator(cards_data, this);
 
         switch (clause) {
 
