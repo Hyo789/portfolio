@@ -1,0 +1,34 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.container_card {
+    @extend %position-relative;
+    
+        // @include grid-position (1 /span 12, 1 / span 12);
+        @extend %flex;
+        align-items: center; 
+        // @extend %hover-cursor;
+        // border:  solid 1px;
+        border-radius: 0.5rem;
+
+        // a {
+        //     width: 100%;
+        // }
+}
+
+.container_card.active {
+
+    .infos {
+    
+        transform: scaleX(1);
+    
+        transition: 0.8s;
+        margin: 0 0 0 1.5rem;
+    
+        width: 90%;
+    }
+}

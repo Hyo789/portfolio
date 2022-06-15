@@ -859,34 +859,60 @@ const useAnimation = function (array,anim) {
 
             
             let container = document.createElement("div");
+            container.className = "container_card";
             parent.appendChild(container);
+            
+            let project = document.createElement("div");
+            project.className = "project";
+            container.appendChild(project);
+            let backgroound = document.createElement("img");
+            project.appendChild(backgroound);
+            backgroound.src = "assets/img/Fichier 1.svg";
+            
+            let  infos= document.createElement("div");
+            infos.className = "infos";
+            container.appendChild(infos);
             // element.prepend(container);
     
             let titre = document.createElement("h3");
-            container.appendChild(titre);
-            titre.textContent = array[counter].titre;
+            infos.appendChild(titre);
+            
             let link = document.createElement("a");
-            container.appendChild(link);
+            titre.appendChild(link);
             link.href = "#";
-            let backgroound = document.createElement("img");
-            link.appendChild(backgroound);
-            backgroound.src = "#";
-            let buided = document.createElement("span");
-            container.appendChild(buided);
-            buided.textContent = "date";
+            link.textContent = array[counter].titre;
+
+            let bulded = document.createElement("span");
+            infos.appendChild(bulded);
+            bulded.textContent = "date";
 
             counter++;
             
         };
-
         
-        /*
-        next.addEventListener("click", function (event) {
-            this.style.color = "red";
-            event.stopPropagation();
-        });
-        */
     };
+
+    const projects_mouseOver = function () {
+        
+        const projects = document.querySelectorAll(".project");
+        
+        for (let p = 0; p < projects.length; p++) {
+            const element = projects[p];
+            const active = element.parentNode;
+            
+            element.addEventListener("mouseover", function (event) {
+                event.stopPropagation();
+                active.classList.add("active");
+                // console.log(active);
+            });
+            
+            active.querySelector(".infos").addEventListener("mouseout", function (event) {
+                // event.stopPropagation();
+                active.classList.remove("active");
+                console.log(this);
+            });
+        };
+    }
     
     card_a1.addEventListener("click", function box (event) {
         
@@ -931,6 +957,8 @@ const useAnimation = function (array,anim) {
             default:
                 break;
         };
+
+        projects_mouseOver();
 
     });
 
@@ -980,13 +1008,12 @@ const useAnimation = function (array,anim) {
                 break;
         };
 
-    });
+        projects_mouseOver();
 
+    });
     
 }) ();
 
-
 })();
-
 
 });
