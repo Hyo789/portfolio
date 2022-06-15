@@ -15,5 +15,7 @@
     @extend %padding-0_5rem;
     border-radius: 1rem;
     background-color: rgba($color-green,1);
-    color: $color-text;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 900;
 }
