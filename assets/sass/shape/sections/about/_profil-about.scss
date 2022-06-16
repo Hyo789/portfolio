@@ -52,7 +52,7 @@
             scroll-behavior: smooth;
             &::-webkit-scrollbar {width: 8px};
             // &::-webkit-scrollbar-track{border-radius: 8px; box-shadow: inset 5px 5px 5px silver;};
-            &::-webkit-scrollbar-thumb{border-radius: 8px; background-color: $color-green};
+            &::-webkit-scrollbar-thumb{border-radius: 8px; background-color: $color-blue};
         }
 
         li {
@@ -74,7 +74,8 @@
             
             &:hover {
                 border-radius: 1rem;
-                background-color: $color-green;
+                color: #fff;
+                background-color: $color-blue;
                 // border-bottom: solid 1px;
                 box-shadow: silver 0 2px 4px, silver -2px 0 4px ;
 

@@ -1,0 +1,20 @@
+
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.project {
+    @extend %position-absolute; z-index: 5;
+    @extend %flex-center; 
+    @extend %hover-cursor;
+    @include body(130px,130px);
+    border: solid 1px;
+    border-radius:50%;
+    align-self: flex-end;
+
+    margin: auto;
+
+    background-color: white;
+}

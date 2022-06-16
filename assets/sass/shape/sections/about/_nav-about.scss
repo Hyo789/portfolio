@@ -23,8 +23,9 @@
             
 
             &:hover {
+                color: #fff;
                 padding: 0 1rem;
-                background-color: $color-green;
+                background-color: $color-blue;
                 border-radius: 0.5rem;
             }
         }
@@ -35,8 +36,9 @@
     // @extend %padding-0_5rem;
     padding: 0 1rem;
     font-weight: 600;
+    color: #fff;
     // text-decoration: underline;
 
-    background-color: $color-green;
+    background-color: $color-blue;
     border-radius: 0.5rem;
 }
