@@ -45,10 +45,11 @@ a{
 
 .wrapper{
     @extend %grid-default;
-    min-height: 95%; max-height: 95% ;
-    width: 95%;
+    // min-height: 95%; max-height: 95% ;
+    height: 100vh;
+    width: 100%;
     
-    border-radius: 1rem;
+    // border-radius: 1rem;
     box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;
     @extend %padding-0_5rem;
 
@@ -105,6 +106,6 @@ a{
 .container_section {
     @extend %grid-default;
     @extend %padding-0_5rem;
-    @include grid-position (2 / span 10, 2 / span 10);
+    @include grid-position (1 / span 12, 1 / span 12);
 }
 
