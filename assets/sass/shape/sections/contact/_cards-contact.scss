@@ -6,7 +6,7 @@
 // COMPONENTS
 
 
-.cards.a1.contact, .cards.a2.contact
+.cards.a1.contact
 {
     align-items: stretch;
     box-shadow: 0 0 ;
@@ -18,11 +18,15 @@
 
     
     &.bloom {
-        @include grid-position (1 / span 12, 1 / span 12);
+        @include grid-position (4 / span 6, 1 / span 12);
 
         &:hover {
             transform: scale(1);
         }
     }
 
+}
+
+.a2.contact,.a3.contact,.a4.contact,.a5.contact,.a6.contact {
+    @extend %display-none;
 }

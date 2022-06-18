@@ -6,11 +6,12 @@
 // COMPONENTS
 
 .infos {
+    @extend %position-relative; z-index: 0;
     @extend %flex;
-    @extend %padding-1rem;
     flex-flow: column ;
-    justify-content: space-between;
-    @include body (0%, 90%);
+    // justify-content: space-between;
+    @extend %padding-1rem;
+    @include body (0%, 95%);
     border: solid 1px;
     border-left: none;
     border-radius: 1rem;
@@ -21,12 +22,37 @@
 
     transition: 0.8s;
 
-    h3 {
-        width: 70%;
+    a {
+        @extend %position-absolute; z-index: 5; inset: 0;
+        // width: 100%; height: 100%;
         margin-left: auto;
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        &:hover {
+            transform: scale(1);
+        }
     }
 
-    span {
+    a span  {
+        margin-left:30% ;
+        margin-right:auto ;
+    }
+
+    .date {
+        @extend %position-absolute; bottom: 5%; right: 5%;
         align-self: flex-end;
+    }
+}
+
+.container_card.active {
+    .infos {
+    
+        transform: scaleX(1);
+        width: 90%;
+        margin: 0 0 0 8%;
+    
+        transition: 0.8s;
+    
     }
 }

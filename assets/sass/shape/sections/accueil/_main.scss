@@ -17,19 +17,19 @@
 }
 
 .cards.a2.accueil {
-    @extend %margin-1rem;
+    @extend %margin-3rem;
     @extend %hover-cards;
     @include grid-position (1 / span 4, 8 / span 4 );
 }
 
 .cards.a3.accueil {
-    @extend %margin-1rem;
+    @extend %margin-3rem;
     @extend %hover-cards;
     @include grid-position (5 / span 4, 8 / span 4 );
 }
 
 .cards.a4.accueil {
-    @extend %margin-1rem;
+    @extend %margin-3rem;
     @extend %hover-cards;
     @include grid-position (9 / span 4, 8 / span 4 );
 }

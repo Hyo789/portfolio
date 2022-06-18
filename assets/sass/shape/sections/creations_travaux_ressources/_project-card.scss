@@ -9,12 +9,18 @@
     @extend %position-absolute; z-index: 5;
     @extend %flex-center; 
     @extend %hover-cursor;
-    @include body(130px,130px);
+    @include body(18vh,18vh);
     border: solid 1px;
     border-radius:50%;
     align-self: flex-end;
 
-    margin: auto;
+    // margin: auto;
 
     background-color: white;
+}
+
+.container_card.active {
+    .project {
+    margin-right: auto;
+    }
 }
