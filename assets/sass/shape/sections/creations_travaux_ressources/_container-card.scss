@@ -10,6 +10,8 @@
     
         // @include grid-position (1 /span 12, 1 / span 12);
         @extend %flex;
+        // justify-content: center;
+        // padding: 2rem;
         align-items: center; 
         // @extend %hover-cursor;
         // border:  solid 1px;
@@ -18,17 +20,4 @@
         // a {
         //     width: 100%;
         // }
-}
-
-.container_card.active {
-
-    .infos {
-    
-        transform: scaleX(1);
-    
-        transition: 0.8s;
-        margin: 0 0 0 1.5rem;
-    
-        width: 90%;
-    }
 }

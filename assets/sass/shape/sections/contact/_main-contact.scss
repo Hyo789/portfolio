@@ -5,13 +5,12 @@
 
 // COMPONENTS
 
-
 #contact {
     // @extend %hover-cursor;
     // margin-left:2rem;
     @extend %position-relative;
     padding: 0.2rem 1rem;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
 
     cursor: pointer;
 
@@ -48,6 +47,7 @@
 }
 
 .btn.desactive {
+    @extend %display-none;
     opacity: 0;
     visibility: hidden;
 

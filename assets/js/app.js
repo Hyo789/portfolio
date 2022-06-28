@@ -575,7 +575,7 @@ const useAnimation = function (array,anim) {
                 eraser();
                 defaultPage();
                 switchSection(sectionClass);
-                // selection(container_logo);
+                selection(container_logo);
         
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
@@ -663,7 +663,7 @@ const useAnimation = function (array,anim) {
         ( () => {
             
         if (card_a1.classList.contains(sectionClass)) {
-            event.preventDefault
+            event.preventDefault();
         }
         else {
             eraser();
@@ -866,7 +866,7 @@ const useAnimation = function (array,anim) {
             project.className = "project";
             container.appendChild(project);
             let backgroound = document.createElement("img");
-            project.appendChild(backgroound);
+            // project.appendChild(backgroound);
             backgroound.src = "assets/img/Fichier 1.svg";
             
             let  infos= document.createElement("div");
@@ -874,15 +874,17 @@ const useAnimation = function (array,anim) {
             container.appendChild(infos);
             // element.prepend(container);
     
-            let titre = document.createElement("h3");
-            infos.appendChild(titre);
             
             let link = document.createElement("a");
-            titre.appendChild(link);
+            infos.appendChild(link);
             link.href = "#";
-            link.textContent = array[counter].titre;
+            
+            let titre = document.createElement("span");
+            link.appendChild(titre);
+            titre.textContent = array[counter].titre;
 
             let bulded = document.createElement("span");
+            bulded.className = "date";
             infos.appendChild(bulded);
             bulded.textContent = "date";
 
@@ -905,12 +907,51 @@ const useAnimation = function (array,anim) {
                 active.classList.add("active");
                 // console.log(active);
             });
+
+            let verif = 0;
+
+            element.addEventListener("mouseout", function (event) {
+                // console.log(event);
+                event.stopPropagation();
+                
+                this.parentNode.querySelector(".infos a").addEventListener("mouseover", function (event) {
+                    event.stopPropagation();
+                    verif = 1;
+
+                    this.addEventListener("mouseout", function (event) {
+                        event.stopPropagation();
+                        active.classList.remove("active");
+                        verif = 0;
+                    });
+
+                    this.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                    });
+
+                    console.log(verif);
+                });
+                
+                setTimeout(() => {
+                    if (verif === 0 ) {
+                        active.classList.remove("active");
+                        // verif++
+                    };
+                    console.log(verif);
+                },300)
+
+
+
+                
+                // console.log(active);
+            });
+
+
             
-            active.querySelector(".infos").addEventListener("mouseout", function (event) {
+            /*active.querySelector(".infos").addEventListener("mouseout", function (event) {
                 // event.stopPropagation();
                 active.classList.remove("active");
                 console.log(this);
-            });
+            });*/
         };
     }
     
