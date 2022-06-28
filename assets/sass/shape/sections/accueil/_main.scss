@@ -14,6 +14,7 @@
 
 .cards.a1.accueil {
     @include grid-position (1 / span 12, 1 / span 6);
+    background: top left / cover no-repeat url(../img/svg/accueil/paysage.svg) ;
 }
 
 .cards.a2.accueil {

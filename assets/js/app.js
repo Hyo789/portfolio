@@ -575,7 +575,7 @@ const useAnimation = function (array,anim) {
                 eraser();
                 defaultPage();
                 switchSection(sectionClass);
-                // selection(container_logo);
+                selection(container_logo);
         
                 // ANIMATIOS
                 fondu(document.querySelector(".nav_title"));
@@ -663,7 +663,7 @@ const useAnimation = function (array,anim) {
         ( () => {
             
         if (card_a1.classList.contains(sectionClass)) {
-            event.preventDefault
+            event.preventDefault();
         }
         else {
             eraser();
