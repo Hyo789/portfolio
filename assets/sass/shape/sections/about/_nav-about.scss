@@ -23,22 +23,23 @@
             
 
             &:hover {
-                color: #fff;
                 padding: 0 1rem;
-                background-color: $color-blue;
                 border-radius: 0.5rem;
+                color: #000;
+                background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
             }
         }
     }
 }
 
 .secondary_ul li.active {
-    // @extend %padding-0_5rem;
     padding: 0 1rem;
-    font-weight: 600;
-    color: #fff;
-    // text-decoration: underline;
-
-    background-color: $color-blue;
     border-radius: 0.5rem;
+
+    font-weight: 600;
+
+    color: #fff;
+
+    // background-color: $color-blue;
+    background: $color-blue linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
 }

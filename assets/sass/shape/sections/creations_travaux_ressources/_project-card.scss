@@ -7,14 +7,15 @@
 
 .project {
     @extend %position-absolute; z-index: 5;
-    @extend %flex-center; 
+    // @extend %flex-center; 
     @extend %hover-cursor;
     @include body(18vh,18vh);
-    border: solid 1px;
+    border: $color-blue solid 1px;
     border-radius:50%;
     align-self: flex-end;
 
-    // margin: auto;
+
+    box-shadow:1px 1px 5px silver, -1px -1px 5px silver ;
 
     background-color: white;
 }

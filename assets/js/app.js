@@ -285,8 +285,8 @@ const cards_data = [
 // DESIGNE DEV
 
 const tabDesigne_dev = {
-    designe : "./assets/img/svg/divers/fichier 6.svg",
-    dev : "./assets/img/svg/divers/dev.svg"
+    // designe : "./assets/img/svg/divers/designe.svg",
+    // dev : "./assets/img/svg/divers/dev.svg"
 };
 
 // ANIMATIONS
@@ -519,12 +519,10 @@ const useAnimation = function (array,anim) {
     const cta = document.createElement("div");
     container.appendChild(cta)
     cta.classList= "accueil_cta";
-    const cta_commencer = document.createElement("a");
+    const cta_commencer = document.createElement("span");
     cta.appendChild(cta_commencer);
     cta_commencer.className = "btn";
-    cta_commencer.href = "#";
     cta_commencer.textContent = "Commencer";
-    // cta.innerHTML= '<a class = "btn"> commencer</a>';
 
     const accueil_illus = document.createElement("div");
     accueil_illus.className = "accueil_article_illustration";
@@ -726,13 +724,13 @@ const useAnimation = function (array,anim) {
 
     
         
-    const switchDesigneDev = function (objet,array) {
+    const switchDesigneDev = function (objet) {
         let designe = document.createElement("div");
         designe.className = "designe_dev";
         objet.appendChild(designe);
-        let designe_image = document.createElement("img");
-        designe.appendChild(designe_image);
-        designe_image.src = array;
+        // let designe_image = document.createElement("img");
+        // designe.appendChild(designe_image);
+        // designe_image.src = array;
     };
 
     const nav = function (element) {
@@ -745,8 +743,8 @@ const useAnimation = function (array,anim) {
                 
                 eraser();
                 switchSection(sectionClass);
-                switchDesigneDev(card_a1,tabDesigne_dev.designe);
-                switchDesigneDev(card_a2,tabDesigne_dev.dev);
+                switchDesigneDev(card_a1);
+                switchDesigneDev(card_a2);
                 selection(this);
                 
                 // ANIMATIOS
@@ -865,9 +863,9 @@ const useAnimation = function (array,anim) {
             let project = document.createElement("div");
             project.className = "project";
             container.appendChild(project);
-            let backgroound = document.createElement("img");
+            // let backgroound = document.createElement("img");
             // project.appendChild(backgroound);
-            backgroound.src = "assets/img/Fichier 1.svg";
+            // backgroound.src = "assets/img/Fichier 1.svg";
             
             let  infos= document.createElement("div");
             infos.className = "infos";

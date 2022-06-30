@@ -10,7 +10,7 @@
     padding: 2rem 0.5rem
 }
 
-.list {
+.nav_principal .list {
     width: 100%;
     @extend %flex;
     @include flex (space-evenly, center);
@@ -23,27 +23,27 @@
         @extend %position-relative;
         z-index: 0;
         @extend %padding-0_5rem;
-        // padding: 0.1rem;
         width: 100%;
+        border-radius: 0.5rem;
         font-size: 1.1rem;
         font-weight: 500;
         text-transform: capitalize;
-        // text-align: center;
 
         transition: 0.3s;
         
         &:hover {
-            color: #fff;
-            background-color: $color-blue;
             border-radius: 1rem;
+
+            color: #000;
+            background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+
             cursor: pointer;
 
             transition: 0.3s;
 
-            
         &::before {
             content: url(../img/icon/gigot.svg);
-            @extend %position-absolute;
+            @extend %position-absolute; z-index: -5;
             right: $ref;
             width: 10%;
 
@@ -55,31 +55,26 @@
         }
     }
 
-    li.active {
-        border-radius: 1rem;
 
-        font-weight: 700;
-        color: #fff;
-        // text-decoration: underline;
-        background-color: $color-blue;
+}
 
-        
-        &::before {
-            content: url(../img/icon/gigot.svg);
-            @extend %position-absolute;
-            right: $ref;
-            width: 10%;
 
-            opacity: 1;
-            transform: rotate(25deg) scale(1);
+.nav_principal li.active {
+    border-radius: 1rem;
 
-            transition: 0.3s;
-        }
+    font-weight: 700;
+    color: #fff;
+    background: $color-blue linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+    
+    &::before {
+        content: url(../img/icon/gigot.svg);
+        @extend %position-absolute;
+        right: $ref;
+        width: 10%;
 
-        
-    // &:hover::before {
-    //     transform: rotate(-25deg);
-    // }
+        opacity: 1;
+        transform: rotate(25deg) scale(1);
+
+        transition: 0.3s;
     }
-
 }

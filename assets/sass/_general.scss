@@ -15,6 +15,24 @@
     background-color: $color-background;
 
     overflow: hidden;
+
+    @media screen and (max-width:1200px) {
+        .wrapper {
+            &::after{
+                content: "Le site n'est pas responcive pour l'instant une mise àjour arriveras prochainement pour y remedier";
+                @include grid-position(1 /span 12, 1 /span 12);
+                margin: auto 25%;
+
+                font-size: 1.2rem;
+                font-weight: 600;
+
+                text-align: center;
+            }
+        }
+        .wrapper * {
+            display: none;
+        }
+
 }
 
 h1 {
@@ -53,7 +71,9 @@ a{
     box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;
     @extend %padding-0_5rem;
 
-    background-color: $color-background;
+    // background-color: $color-background;
+    
+
 
     overflow: hidden;
 }
@@ -62,8 +82,9 @@ a{
     @extend %grid-default;
     @include grid-position(1 /span 2, 1 /span 12);
     border-radius: 0.5rem 0 0 0.5rem;
-    // box-shadow: -2px -2px 4px silver;
+    box-shadow: -2px -2px 4px silver;
     // box-shadow: 2px 0 4px silver;
+// background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
 }
 
 .header {
@@ -80,14 +101,26 @@ a{
 
 .container_nav_secondary{
     @extend %flex-center;
+    @extend %position-relative; z-index: 0;
     @include grid-position(3 /span 10, 1 /span 1);
     padding: 2rem;
 
-    // box-shadow: 2px -2px 4px silver;
+    box-shadow: 2px -2px 4px silver;
     border-radius: 0 0.5rem 0.5rem 0;
 
     text-transform: capitalize;
+// background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+    & ::after {
+    content: "";
+    @extend %position-absolute; left: 0; top: 0;
+        width: 100%;
+        height: 100%;
 
+    border-radius: 1rem;
+    // background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+
+    animation: slideGlow .5s linear forwards;
+    }
 }
 
 .nav_title {
@@ -107,5 +140,7 @@ a{
     @extend %grid-default;
     @extend %padding-0_5rem;
     @include grid-position (1 / span 12, 1 / span 12);
+    
 }
 
+}
