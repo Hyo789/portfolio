@@ -23,6 +23,10 @@
     // background-color: red;
 
     background:linear-gradient(326deg, rgba(8, 0, 255, 0.08) 10%, rgba(32, 32, 32, 0.08) 50%, rgba(170, 0, 255, 0.08) 90%), center / cover  no-repeat url(../img/svg/divers/designe.svg);
+
+    &:hover {
+        animation: beats 2.5s linear infinite 0.3s;
+    }
 }
 
 .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources {
@@ -32,6 +36,11 @@
     @include grid-position (7 / span 6, 1 / span 12);
 
     background: linear-gradient(326deg, rgba(170, 0, 255, 0.08) 10%, rgba(32, 32, 32, 0.08) 50%,rgba(8, 0, 255, 0.08)90%), center  no-repeat url(../img/svg/divers/dev.svg);
+    
+    &:hover {
+        animation: beats 2.5s linear infinite 0.3s;
+    }
+
 }
 
 .cards.a3.creations, .cards.a3.travaux, .cards.a3.ressources {
@@ -93,6 +102,8 @@
     &.bloom {
         // @extend %flex-center;
         @include grid-position (1 / span 12, 1 / span 12);
+        cursor: default;
+        animation: none;
 
         &:hover {
             transform: scale(1);

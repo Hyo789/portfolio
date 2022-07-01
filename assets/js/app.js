@@ -616,11 +616,41 @@ const useAnimation = function (array,anim) {
         cv_lien.className = "btn";
         cv_lien.href = "./assets/docs/CV_Faizdine_TOUMBOU.pdf";
 
+        let illustrationPorfil = container.querySelector(".profil_illustration");
+        
+        let stats = document.createElement("div");
+        stats.className = "stats";
+        illustrationPorfil.appendChild(stats);
+        
+        let stats_container = document.createElement("div");
+        stats_container.className = "stats_container";
+        stats.appendChild(stats_container);
+        
+        let sujet = document.createElement("img");
+        stats_container.appendChild(sujet);
+        
+        let stats_def = document.createElement("p");
+        stats_container.appendChild(stats_def);
+        stats_def.textContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero mollitia nihil nobis ea obcaecati nostrum odit. Voluptatibus autem itaque provident dolorum, officia, nihil similique reiciendis officiis eligendi, dicta sed!';
+        
+        let stats_text = document.createElement("p");
+        stats_text.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero mollitia nihil nobis ea obcaecati nostrum odit. Voluptatibus autem itaque provident dolorum, officia, nihil similique reiciendis officiis eligendi, dicta sed!";
+        stats.appendChild(stats_text)
+        
+        
+        let stats_juge = document.createElement("div");
+        stats_juge.className = "stats_juge";
+        stats.appendChild(stats_juge)
+
     };
 
     const contentAbout_list = function (array) {
         // console.log(params1);
         let container = card_a1.querySelector(".container");
+        let illustration = container.querySelector("img");
+        illustration.className = "illus_1"
+        illustration.src = array[array.length - 1];
+
         const article = card_a1.querySelector(".container article");
         let paraph = article.querySelector("p");
 
@@ -639,9 +669,27 @@ const useAnimation = function (array,anim) {
             let img = document.createElement("img");
             img.src = array[i].Image;
             el.prepend(img);
+
+            el.addEventListener("click", function (event) {
+                event.stopPropagation();
+                let illustrationPorfil = container.querySelector(".profil_illustration");
+                illustrationPorfil.classList.add("active");
+                console.log(this.querySelector("img").getAttribute('src'));
+                illustrationPorfil.querySelector(".stats_container img").src = this.querySelector("img").getAttribute('src');
+                
+                if (this.classList.contains("active")) {
+                    event.preventDefault();
+                    console.log(this);
+                } else if (list.querySelector(".active") === null || undefined) {
+                    this.classList.add("active");
+                } else {
+                    this.parentNode.querySelector(".active").classList.remove("active");
+                    this.classList.add("active");
+                }
+                
+            })
         };
         
-        container.querySelector("img").src = array[array.length - 1];
     };
 
     const active = function (element) {
@@ -704,6 +752,11 @@ const useAnimation = function (array,anim) {
                 }
 
             },300)
+
+            if (card_a1.querySelector(".profil_illustration").classList.contains("active")) {
+                card_a1.querySelector(".profil_illustration").classList.remove("active")
+            };
+            
 
         });
     

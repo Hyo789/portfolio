@@ -9,14 +9,6 @@
     @extend %flex;
     @include body (100%, 100%);
     justify-content: space-around;
-    
-    .profil_illustration{
-        @extend %flex-center;
-        width: 45%;
-        img {
-            @include body (100%, 100%);
-        }
-    }
 
     
     article{
@@ -87,11 +79,126 @@
         }
 
         li.active {
-            background: $color-blue linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%)
+            border-radius: 1rem;
+            color: #fff;
+            background: $color-blue linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+
+            &:hover {
+                color: #000;
+                background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
+            }
         }
 
         img {
             @include body (40px, 40px);
         }
+    }
+}
+
+
+.profil_illustration{
+    @extend %position-relative; z-index: 0;
+    @extend %flex-center;
+    width: 45%;
+    
+    .stats{
+        @extend %position-absolute; inset: 0;
+        @extend %flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10% 0;
+
+        opacity: 0;
+    }
+    
+    .stats_container {
+        width: 100%; max-height: 40%;
+        @extend %flex;
+        @extend %padding-0_5rem;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+
+        // border: solid 1px;
+        // border-bottom: solid 1px;
+        border-radius: 1rem;
+        
+        box-shadow: 1px 1px  silver, 0 -1px silver ;
+        // margin-bottom: auto;
+
+        img {
+            @include body (20vh, 20vh);
+            border-radius: 1rem;
+            // border: solid 1px;
+            
+            box-shadow: 1px 1px 5px $color-blue, -1px -1px 5px $color-blue ;
+        }
+
+        p {
+            @extend %padding-0_5rem;
+        }
+    }
+
+    .stats_juge {
+        @extend %position-relative; left: 0;
+        height: 3%;
+        border: $color-blue solid 3px;
+        border-top: none;
+        border-bottom: none;
+        width: 100%;
+        border-radius: 1rem;
+        
+        &::after {
+            content: "";
+            @extend %position-absolute; left: 0;
+            height: 100%;
+            border-radius: 1rem;
+
+            background-color: $color-yellow;
+
+            animation: travel2 1.5s ease-out forwards;
+        }
+    }
+
+    img {
+        @include body (100%, 100%);
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+
+.profil_illustration.active{
+    // @extend %flex-center;
+    // width: 45%;
+
+    .stats {
+        // @extend %flex-center;
+        // width: 50vh; height: 50vh;
+        // border: $color-blue solid 25px;
+        // border-radius: 50%;
+
+        /*&::after {
+            content: "";
+        @extend %position-absolute; 
+        width: 50vh; height: 50vh;
+        border: solid 25px;
+        border-radius: 50%;
+
+        animation: travel2 5;
+        }
+        */
+
+        // background-color: red;
+
+        opacity: 1;
+        
+    }
+
+    .illus_1 {
+        @include body (100%, 100%);
+        opacity: 0;
+        transition: 0.3s;
     }
 }
