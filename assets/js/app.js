@@ -63,59 +63,137 @@ const tab_about = document.querySelectorAll(".secondary_ul li");
 const tab_competences = [
     
     {   texte :"HTML",
-        Image:"./assets/img/svg/about/icons8-html-5-96.svg"
+        Image:"./assets/img/svg/about/icons8-html-5-96.svg",
+        taux: "95%",
+        stats_def: `
+        HTML signifie « HyperText Markup Language » qu'on peut traduire par « langage de balises pour l'hypertexte ». Il est utilisé afin de créer et de représenter le contenu d'une page web et sa structure. D'autres technologies sont utilisées avec HTML pour décrire la présentation d'une page (CSS) et/ou ses fonctionnalités interactives (JavaScript).`,
+
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"CSS",
-        Image:"./assets/img/svg/about/icons8-css3-96.svg"
+        Image:"./assets/img/svg/about/icons8-css3-96.svg",
+        taux: "75%",
+        stats_def: `
+        CSS est l'un des langages principaux du Web ouvert et a été standardisé par le W3C. Ce standard évolue sous forme de niveaux (levels), CSS1 est désormais considéré comme obsolète, CSS2.1 correspond à la recommandation et CSS3, qui est découpé en modules plus petits, est en voie de standardisation.`,
+
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"jascript",
-        Image:"./assets/img/svg/about/icons8-javascript-96.svg"
+        Image:"./assets/img/svg/about/icons8-javascript-96.svg",
+        taux: "60%",
+        stats_def: `
+        vaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web. Mais il est aussi utilisé dans de nombreux environnements extérieurs aux navigateurs web tels que Node.js, Apache CouchDB voire Adobe Acrobat. Le code JavaScript est interprété ou compilé à la volée (JIT). C'est un langage à objets utilisant le concept de prototype, disposant d'un typage faible et dynamique qui permet de programmer suivant plusieurs paradigmes de programmation : fonctionnelle, impérative et orientée objet. Apprenez-en plus sur JavaScript.`,
+
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"SASS",
-        Image:"./assets/img/svg/about/icons8-sass-96.svg"
+        Image:"./assets/img/svg/about/icons8-sass-96.svg",
+        taux: "60%",
+        stats_def: `
+        Sass (Syntactically awesome stylesheets) est un langage de script préprocesseur qui est compilé ou interprété en CSS (Cascading Style Sheets). SassScript est le langage de script en lui-même.`,
+        
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"bootstrap",
-        Image:"./assets/img/svg/about/icons8-bootstrap-96.svg"
+        Image:"./assets/img/svg/about/icons8-bootstrap-96.svg",
+        taux: "70%",
+        stats_def: `
+        Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et interactions avec la page dans le navigateur, etc.) de sites et d'applications web. C'est un ensemble qui contient des codes HTML et CSS, des formulaires, boutons, outils de navigation et autres éléments interactifs, ainsi que des extensions JavaScript en option. C'est l'un des projets les plus populaires sur la plate-forme de gestion de développement GitHub.`,
+
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"Wordpress",
-        Image:"./assets/img/svg/about/icons8-wordpress-96.svg"
+        Image:"./assets/img/svg/about/icons8-wordpress-96.svg",
+        taux: "60%",
+        stats_def: `
+        WordPress est un système de gestion de contenu (SGC ou content management system (CMS) en anglais) gratuit, libre et open-source. Ce logiciel écrit en PHP repose sur une base de données MySQL et est distribué par la fondation WordPress.org. Les fonctionnalités de WordPress lui permettent de créer et gérer différents types de sites Web : site vitrine, site de vente en ligne, site applicatif, blog, portfolio, site institutionnel, site d'enseignement…`,
+
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
-    {   texte :"a.Illustrator",
-        Image:"./assets/img/svg/about/icons8-adobe-illustrator-96.svg"
+    {   texte :"adobe Illustrator",
+        Image:"./assets/img/svg/about/icons8-adobe-illustrator-96.svg",
+        taux: "50%",
+        stats_def: `
+        Adobe Illustrator est un logiciel de création graphique vectorielle. Il fait partie de la gamme Adobe, peut être utilisé indépendamment ou en complément de Photoshop, et offre des outils de dessin vectoriel puissants. Les images vectorielles sont constituées de courbes générées par des formules mathématiques. `,
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
-    {   texte :"a.phtoshop",
-        Image:"./assets/img/svg/about/icons8-adobe-photoshop-96.svg"
+    {   texte :"adobe phtoshop",
+        Image:"./assets/img/svg/about/icons8-adobe-photoshop-96.svg",
+        taux: "40%",
+        stats_def: `
+        Photoshop est un logiciel de retouche, de traitement et de dessin assisté par ordinateur, lancé en 1990 puis en 1992 pour les systèmes d'exploitations MacOS et Windows.`,
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
-    {   texte :"a.afther effect",
-        Image:"./assets/img/svg/about/icons8-adobe-after-effects-96.svg"
+    {   texte :"afther effect",
+        Image:"./assets/img/svg/about/icons8-adobe-after-effects-96.svg",
+        taux: "0%",
+        stats_def: `
+        Adobe After Effects ou After Effects est un logiciel, à l'origine, de montage vidéo qui est devenu par la suite un outil de composition (compositing en anglais) et d'effets visuels, pionnier de l'animation graphique sur ordinateur personnel, édité par la société Adobe Systems.
+        Ce logiciel permet de créer des effets spéciaux et des animations graphiques pour tous supports et à partir de nombreux types de sources.`,
+
+        stats_text: `
+        Pas de données pour l'intant.`
 },
 
-    {   texte :"a.premier pro",
-        Image:"./assets/img/svg/about/icons8-adobe-premiere-pro-96.svg"
+    {   texte :"adobe premier pro",
+        Image:"./assets/img/svg/about/icons8-adobe-premiere-pro-96.svg",
+        taux: "0%",
+        stats_def: `
+        Adobe Premiere Pro, anciennement appelé Adobe Premiere, est un logiciel de montage vidéo. Il est intégré aux versions Production Premium et Master Collection de la Creative Suite.Adobe Premiere Pro gère de nombreux formats vidéo et intègre un système de scénarimage (storyboard) très complet. `,
+        stats_text: `
+        Pas de données pour l'intant.`
 },
 
-    {   texte :"a.indesign",
-        Image:"./assets/img/svg/about/icons8-adobe-indesign-96.svg"
+    {   texte :"adobe indesign",
+        Image:"./assets/img/svg/about/icons8-adobe-indesign-96.svg",
+        taux: "0%",
+        stats_def: `
+        Adobe InDesign est un logiciel de PAO produit par Adobe Systems. Initialement conçu pour créer des œuvres telles que des affiches, dépliants, brochures, magazines, journaux ou livres, il permet également de publier plusieurs types de contenus adaptés aux tablettes, lorsque utilisé avec Adobe DPS. `,
+        stats_text: `
+        Pas de données pour l'intant.`
 },
 
-    {   texte :"a.XD",
-        Image:"./assets/img/svg/about/icons8-adobe-xd-96.svg"
+    {   texte :"adobe XD",
+        Image:"./assets/img/svg/about/icons8-adobe-xd-96.svg",
+        taux: "75%",
+        stats_def: `
+        Adobe XD est un outil de conception d'expérience utilisateur vectoriel pour les applications Web et les applications mobiles, développé et publié par Adobe Inc.`,
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"figma",
-        Image:"./assets/img/svg/about/icons8-figma-96.svg"
+        Image:"./assets/img/svg/about/icons8-figma-96.svg",
+        taux: "70%",
+        stats_def: `
+        HFigma est un éditeur de graphiques vectoriels et un outil de prototypage. Il est principalement basé sur le web, avec des fonctionnalités hors ligne supplémentaires activées par des applications de bureau pour macOS et Windows (par exemple : vous pouvez utiliser des polices locales sur la version desktop).`,
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     {   texte :"git / github",
-        Image:"./assets/img/svg/about/icons8-git-96.svg"
+        Image:"./assets/img/svg/about/icons8-git-96.svg",
+        taux: "65%",
+        stats_def: `
+        GitHub (exploité sous le nom de GitHub, Inc.) est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. `,
+        stats_text: `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum.`
 },
 
     "assets/img/svg/about/competences.svg"
@@ -174,7 +252,8 @@ const tab_exp_pro = [
 const tab_social = [
     
     {   texte :"linkedin",
-        Image:"./assets/img/svg/about/icons8-linkedin-96.svg"
+        Image:"./assets/img/svg/about/icons8-linkedin-96.svg",
+        ancre: "https://fr.linkedin.com/",
 },
     
     {   texte :"instagram",
@@ -300,6 +379,20 @@ const fondu = function (element, duration = 400 , delay = 0) {
     {
         duration: duration,
         delay:delay
+    });
+
+};
+
+const travel = function (element, duration = 1000 , dist = "0") {
+    
+    element.animate([
+        {width: '0%'},
+        {width:dist},
+    ], 
+    {
+        duration: duration,
+        delay:300,
+        fill: "forwards"
     });
 
 };
@@ -630,17 +723,33 @@ const useAnimation = function (array,anim) {
         stats_container.appendChild(sujet);
         
         let stats_def = document.createElement("p");
+        stats_def.className = "stats_def";
         stats_container.appendChild(stats_def);
-        stats_def.textContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero mollitia nihil nobis ea obcaecati nostrum odit. Voluptatibus autem itaque provident dolorum, officia, nihil similique reiciendis officiis eligendi, dicta sed!';
         
         let stats_text = document.createElement("p");
-        stats_text.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem libero mollitia nihil nobis ea obcaecati nostrum odit. Voluptatibus autem itaque provident dolorum, officia, nihil similique reiciendis officiis eligendi, dicta sed!";
-        stats.appendChild(stats_text)
+        stats_text.className = "stats_text";
+        stats.appendChild(stats_text);
         
+        
+        let juge_container = document.createElement("div");
+        juge_container.className = "juge_container";
+        stats.appendChild(juge_container);
         
         let stats_juge = document.createElement("div");
         stats_juge.className = "stats_juge";
-        stats.appendChild(stats_juge)
+        juge_container.appendChild(stats_juge);
+        
+        let stats_purcent = document.createElement("span");
+        stats_purcent.className = "stats_purcent";
+        juge_container.appendChild(stats_purcent);
+        
+        let stats_taux = document.createElement("div");
+        stats_taux.className = "stats_taux";
+        stats_juge.appendChild(stats_taux);
+        
+        let stats_link = document.createElement("a");
+        stats_link.className = "stats_link";
+        stats_juge.appendChild(stats_link);
 
     };
 
@@ -673,18 +782,37 @@ const useAnimation = function (array,anim) {
             el.addEventListener("click", function (event) {
                 event.stopPropagation();
                 let illustrationPorfil = container.querySelector(".profil_illustration");
+                let taux = illustrationPorfil.querySelector(".stats_taux");
+                let link = illustrationPorfil.querySelector(".stats_link");
+                about_competences.classList.contains("active") ? link.classList.add("desactive") : link.classList.remove("desactive");
+
                 illustrationPorfil.classList.add("active");
                 console.log(this.querySelector("img").getAttribute('src'));
                 illustrationPorfil.querySelector(".stats_container img").src = this.querySelector("img").getAttribute('src');
                 
                 if (this.classList.contains("active")) {
                     event.preventDefault();
-                    console.log(this);
                 } else if (list.querySelector(".active") === null || undefined) {
                     this.classList.add("active");
                 } else {
                     this.parentNode.querySelector(".active").classList.remove("active");
                     this.classList.add("active");
+                }
+
+                illustrationPorfil.querySelector(".stats_def").textContent = array[i].stats_def;
+                illustrationPorfil.querySelector(".stats_text").textContent = array[i].stats_text;
+
+                travel(taux,undefined,array[i].taux)
+                illustrationPorfil.querySelector(".stats_purcent").textContent = array[i].taux;
+                illustrationPorfil.querySelector(".stats_link").innerHTML = this.querySelector("span").textContent;
+
+                let ancre = link.href = array[i].ancre;
+
+                if (ancre === undefined || null) {
+                    illustrationPorfil.querySelector(".stats_link").href = "#";
+                } else {
+                    illustrationPorfil.querySelector(".stats_link").href = array[i].ancre;
+                    illustrationPorfil.querySelector(".stats_link").target="_blank";
                 }
                 
             })
@@ -748,6 +876,7 @@ const useAnimation = function (array,anim) {
                     
                         contentAbout_list(array);
                         active(this);
+                        travel(card_a1.querySelector(".stats_taux"));
                     
                 }
 
