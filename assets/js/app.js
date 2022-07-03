@@ -21,16 +21,12 @@ const card_a1 = document.querySelector(".cards.a1");
 const card_a2 = document.querySelector(".cards.a2");
 const card_a3 = document.querySelector(".cards.a3");
 const card_a4 = document.querySelector(".cards.a4");
-const card_a5 = document.querySelector(".cards.a5");
-const card_a6 = document.querySelector(".cards.a6");
-
 // HEADER
 
 const container_logo = document.querySelector("#container-logo");
 
 // NAV PRINCIPAL
 
-const container_section = document.querySelector("#container-section");
 const nav_principal = document.querySelector("#nav-principal");
 const nav_About = document.querySelector("#profil");
 const nav_Creations = document.querySelector("#creations");
@@ -53,10 +49,7 @@ const contact = document.querySelector("#contact");
 const about_social = document.querySelector("#resaux");
 
 // ARRAY
-
-const nav_list = document.querySelectorAll("#nav-principal .list li");
 const cards = document.querySelectorAll(".cards");
-const tab_about = document.querySelectorAll(".secondary_ul li");
 
 // ABOUT ME
 
@@ -84,7 +77,7 @@ const tab_competences = [
 
     {   texte :"jascript",
         Image:"./assets/img/svg/about/icons8-javascript-96.svg",
-        taux: "60%",
+        taux: "50%",
         stats_def: `
         vaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web. Mais il est aussi utilisé dans de nombreux environnements extérieurs aux navigateurs web tels que Node.js, Apache CouchDB voire Adobe Acrobat. Le code JavaScript est interprété ou compilé à la volée (JIT). C'est un langage à objets utilisant le concept de prototype, disposant d'un typage faible et dynamique qui permet de programmer suivant plusieurs paradigmes de programmation : fonctionnelle, impérative et orientée objet. Apprenez-en plus sur JavaScript.`,
 
@@ -202,18 +195,33 @@ const tab_competences = [
 
 const tab_formations = [
     {   texte :"Openclassroom",
-        Image:"./assets/img/svg/about/openclassroom.svg"
+        Image:"./assets/img/svg/about/openclassroom.svg",
+        stats_def: `
+        OpenClassrooms est un site web de formation en ligne, créé en 1999 sous le nom de Site du Zéro. Il propose à ses membres des cours certifiants et des parcours débouchant sur des métiers en croissance.`,
+
+        stats_text: `
+        Pas de données pour l'intant.`
 },
     {   texte :"Concepteur designer UI",
-        Image:"./assets/img/svg/about/designer.svg"
+        Image:"./assets/img/svg/about/designer.svg",
+        stats_def: `
+        Le designer UI (design de l’interface utilisateur) s’occupe du lien entre la machine et l’homme. Il est en charge de la conception générale de l’interface, de la clarté de la navigation, de l’optimisation des parcours et aussi de la qualité des contenus. Son objectivité est guidée par l’efficacité. Il organise des éléments graphiques et textuels sur la base de normes techniques.`,
+
+        stats_text: `
+        Pas de données pour l'intant.`
 },
     {   texte :"BTS (Management des Unitées commercial)",
-        Image:"assets/img/svg/about/management.svg"
+        Image:"assets/img/svg/about/management.svg",
+        stats_def: `
+        Le BTS MUC (Brevet de Technicien Supérieur en Management des Unités Commerciales) est une formation post-baccalauréat qui se déroule sur 2 ans. L'objectif est d'occuper des fonctions dans une unité commerciale.`,
+
+        stats_text: `
+        Pas de données pour l'intant.`
 },
 
     "./assets/img/svg/about/formations.svg"
 
-]
+];
 
 const tab_interet = [
 
@@ -268,105 +276,144 @@ const tab_social = [
 
 ];
 
-const tab_cards = [
-    card_a3,
-    card_a4,
-    card_a5,
-    card_a6
-] 
+const cards_data = {
 
-const cards_data = [
-    {
-        titre:"titre de la card 1",
-        image:"#",
-        date:"00/00/2022"
+    creations : {
+
+        recent : [
+            {
+                titre:"titre de la card 2",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 3",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 4",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+        ],
+
+        designe : [
+            /*{
+                titre:"titre de la card 2",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 3",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 4",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },*/
+        ],
+
+        dev: [
+            /*{
+                titre:"titre de la card 2",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 3",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 4",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },*/
+        ]
     },
-    {
-        titre:"titre de la card 2",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 3",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 4",
-        image:"#",
-        date:"00/00/2022"
-    },
-    // ........................................
-    {
-        titre:"titre de la card 1",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 2",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 3",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 4",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 1",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 2",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 3",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 4",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 1",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 2",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 3",
-        image:"#",
-        date:"00/00/2022"
-    },
-    {
-        titre:"titre de la card 4",
-        image:"#",
-        date:"00/00/2022"
-    },
-] 
+
+    ressources :{
+        designe: [
+            /*{
+                titre:"titre de la card 2",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 3",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 4",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },*/
+        ],
+
+        dev:[
+            {
+                titre:"Grafikart",
+                image:"./assets/img/svg/ressources/grafikart.svg",
+                date:"00/00/2022",
+                link: "https://grafikart.fr/",
+                def: `
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, labore esse enim praesentium temporibus tempora laboriosam dolores dolorum numquam `
+            },
+            /*{
+                titre:"titre de la card 2",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 3",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },
+            {
+                titre:"titre de la card 4",
+                image:"#",
+                date:"00/00/2022",
+                link: "#",
+                def: "................................."
+            },*/
+        ]
+    }
+
+};
 
 // OBJETS
-
-// DESIGNE DEV
-
-const tabDesigne_dev = {
-    // designe : "./assets/img/svg/divers/designe.svg",
-    // dev : "./assets/img/svg/divers/dev.svg"
-};
 
 // ANIMATIONS
 
@@ -585,15 +632,6 @@ const nav_title_v2 = function () {
     navSecondary.parentNode.querySelector(".nav_title").classList.add("v2");
 };
 
-const useAnimation = function (array,anim) {
-
-    (function () {
-        array.forEach(element => {
-            anim(element);
-        });
-    }) ();
-};
-
 // ACCUEIL
 
 (function () {
@@ -639,17 +677,16 @@ const useAnimation = function (array,anim) {
     illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
     illustration.querySelector('img').src = './assets/img/svg/accueil/accueil.svg';
     
+    for (let i = 1; i < 4; i++) {
+        const element = cards[i];
+        let v = i - 1;
+        let link = document.createElement("a");
+        element.appendChild(link);
+        link.innerHTML = "contenu";
+        link.href = cards_data.creations.recent[v].link;
+        link.target = "_blank"
+    };
 
-    card_a2.innerHTML = '<img src="" alt="Illustration de la card">'
-    card_a2.querySelector('img').src = './assets/img/Fichier 1.svg';
-    
-    const card_a3 = document.querySelector(".cards.a3");
-    card_a3.innerHTML = '<img src="" alt="Illustration de la card">'
-    card_a3.querySelector('img').src = './assets/img/Fichier 1.svg';
-    
-    const card_a4 = document.querySelector(".cards.a4");
-    card_a4.innerHTML = '<img src="" alt="Illustration de la card">'
-    card_a4.querySelector('img').src = './assets/img/Fichier 1.svg';
     };
 
     defaultPage();
@@ -847,7 +884,6 @@ const useAnimation = function (array,anim) {
             // ANIMATIOS
             fondu(navSecondary.parentNode.querySelector(".nav_title"));
             fondu(navSecondary.querySelector("ul"));
-            // useAnimation(tab_about,fondu,);
             depli(card_a1, 300, 0);
     
             let li_active = navSecondary.querySelector("li.active");
@@ -904,15 +940,10 @@ const useAnimation = function (array,anim) {
 
 (function () {
 
-    
-        
     const switchDesigneDev = function (objet) {
         let designe = document.createElement("div");
         designe.className = "designe_dev";
         objet.appendChild(designe);
-        // let designe_image = document.createElement("img");
-        // designe.appendChild(designe_image);
-        // designe_image.src = array;
     };
 
     const nav = function (element) {
@@ -937,7 +968,6 @@ const useAnimation = function (array,anim) {
             } else {
                 event.preventDefault();
             }
-
     });
 
     };
@@ -1023,50 +1053,41 @@ const useAnimation = function (array,anim) {
         parent.className = "designe_dev";
         elememt.appendChild(parent);
         parent.classList.add("active")
-        
-        /*
-        let next = document.createElement("span"); 
-        next.textContent = "Suivant";
-        next.id = "suivant";
-        let previous = document.createElement("span"); 
-        previous.textContent = "Precedant";
-        parent.prepend(previous);
-        parent.appendChild(next);
-        */
 
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
-
             
             let container = document.createElement("div");
             container.className = "container_card";
             parent.appendChild(container);
             
-            let project = document.createElement("div");
+            let project = document.createElement("a");
             project.className = "project";
+            project.href = array[i].link;
+            project.target = "_blank";
+            console.log(`url(${array[i].Image})`);
+            project.style.backgroundImage = `url(${array[i].image})`;
             container.appendChild(project);
-            // let backgroound = document.createElement("img");
-            // project.appendChild(backgroound);
-            // backgroound.src = "assets/img/Fichier 1.svg";
             
             let  infos= document.createElement("div");
             infos.className = "infos";
             container.appendChild(infos);
-            // element.prepend(container);
-    
             
             let link = document.createElement("a");
+            link.textContent = array[counter].titre;
+            link.href = array[i].link;
+            link.target = "_blank";
             infos.appendChild(link);
-            link.href = "#";
-            
-            let titre = document.createElement("span");
-            link.appendChild(titre);
-            titre.textContent = array[counter].titre;
+
+            let def = document.createElement("p");
+            def.className = "cards_def";
+            def.textContent = array[i].def;
+            infos.appendChild(def);
 
             let bulded = document.createElement("span");
             bulded.className = "date";
-            infos.appendChild(bulded);
             bulded.textContent = "date";
+            infos.appendChild(bulded);
 
             counter++;
             
@@ -1085,13 +1106,17 @@ const useAnimation = function (array,anim) {
             element.addEventListener("mouseover", function (event) {
                 event.stopPropagation();
                 active.classList.add("active");
-                // console.log(active);
+                be
+                
+                this.addEventListener("click", function (event) {
+                    event.stopPropagation();
+
+                });
             });
 
             let verif = 0;
 
             element.addEventListener("mouseout", function (event) {
-                // console.log(event);
                 event.stopPropagation();
                 
                 this.parentNode.querySelector(".infos a").addEventListener("mouseover", function (event) {
@@ -1103,39 +1128,19 @@ const useAnimation = function (array,anim) {
                         active.classList.remove("active");
                         verif = 0;
                     });
-
-                    this.addEventListener("click", function (event) {
-                        event.stopPropagation();
-                    });
-
-                    console.log(verif);
                 });
                 
                 setTimeout(() => {
                     if (verif === 0 ) {
                         active.classList.remove("active");
-                        // verif++
                     };
-                    console.log(verif);
                 },300)
 
-
-
-                
-                // console.log(active);
             });
-
-
-            
-            /*active.querySelector(".infos").addEventListener("mouseout", function (event) {
-                // event.stopPropagation();
-                active.classList.remove("active");
-                console.log(this);
-            });*/
         };
     }
     
-    card_a1.addEventListener("click", function box (event) {
+    card_a1.addEventListener("click", function  (event) {
         
         if (card_a3.classList.contains("place") || this.classList.contains("accueil") || this.classList.contains("profil") || this.classList.contains("contact")) {
             return false
@@ -1144,10 +1149,10 @@ const useAnimation = function (array,anim) {
         counter = 0;
 
         eraser();
-        let clause = this.classList.item(2);
-        cards_generator(cards_data, this);
+        let cas = this.classList.item(2);
+        cards_generator(cards_data[cas].designe, this);
 
-        switch (clause) {
+        switch (cas) {
 
             case "creations":
                 nav_title_v2();
@@ -1156,18 +1161,9 @@ const useAnimation = function (array,anim) {
                 fondu(document.querySelector(".nav_title"));
 
                 break;
-            case "travaux":
 
-                // eraser();
-                nav_title_v2();
-                bloom(card_a2,this);
-                // ANIMATIOS
-                fondu(document.querySelector(".nav_title"));
-                
-                break;
             case "ressources":
 
-                // eraser();
                 nav_title_v2();
                 bloom(card_a2,this);
                 // ANIMATIOS
@@ -1182,7 +1178,6 @@ const useAnimation = function (array,anim) {
         projects_mouseOver();
 
     });
-
     
     card_a2.addEventListener("click", function () {
         
@@ -1193,10 +1188,10 @@ const useAnimation = function (array,anim) {
         counter = 0;
 
         eraser();
-        let clause = this.classList.item(2);
-        cards_generator(cards_data, this);
+        let cas = this.classList.item(2);
+        cards_generator(cards_data[cas].dev, this);
 
-        switch (clause) {
+        switch (cas) {
 
             case "creations":
 
@@ -1206,15 +1201,7 @@ const useAnimation = function (array,anim) {
                 fondu(document.querySelector(".nav_title"));
 
                 break;
-            case "travaux":
 
-                // eraser();
-                nav_title_v2();
-                bloom(card_a1,this);
-                // ANIMATIOS
-                fondu(document.querySelector(".nav_title"));
-                
-                break;
             case "ressources":
 
                 // eraser();

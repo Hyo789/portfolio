@@ -14,7 +14,6 @@
 .contact_content {
     min-width: 60%; max-width: 90%;
     @extend %padding-1rem;
-    // @include border ($radius:1rem);
     @extend %flex;
     flex-flow: column wrap;
     gap: 1rem;

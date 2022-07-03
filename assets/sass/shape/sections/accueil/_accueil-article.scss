@@ -15,10 +15,8 @@
 .accueil_article {
     @extend %flex; 
     flex-direction: column;
-    // gap: 1rem;
     width: 45%;
 
-    // color: #fff;
     font-size: 1.2rem;
     font-weight: 500
 }
@@ -38,9 +36,12 @@
 .accueil_article p {
     @extend %flex-center;
     @extend %margin-auto;
-    @extend %padding-0_5rem;
+    @extend %padding-1rem;
     min-width: 50%; max-width: 90%;
     align-self: flex-end;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
 
 }
 
@@ -58,7 +59,16 @@
 }
 
 .accueil_cta {
+    cursor: pointer;
     align-self: flex-end;
     padding-bottom: 1rem;
     transform: translate(80%);
+
+    transition: 0.3s;
+    
+    &:hover {
+        transform: translate(80%) scale(1.05);
+
+        transition: 0.3s;
+    }
 }

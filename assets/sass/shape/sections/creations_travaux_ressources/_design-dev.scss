@@ -15,7 +15,6 @@
 
     scroll-behavior: smooth;
     &::-webkit-scrollbar {width: 8px};
-    // &::-webkit-scrollbar-track{border-radius: 8px; box-shadow: inset 5px 5px 5px silver;};
     &::-webkit-scrollbar-thumb{border-radius: 8px; background-color: $color-blue};
 
     &.active {

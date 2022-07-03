@@ -12,7 +12,6 @@
 // COMPONENTS
 .cards {
     @extend %flex-center;
-    // @include border ( $radius:1rem);
     border-radius: 1rem;
 
     box-shadow: 2px 2px 10px silver, -2px -2px 10px silver ;

@@ -63,17 +63,11 @@ a{
 
 .wrapper{
     @extend %grid-default;
-    // min-height: 95%; max-height: 95% ;
     height: 100vh;
     width: 100%;
     
-    // border-radius: 1rem;
     box-shadow: 2px 2px 4px silver, -2px -2px 4px silver ;
     @extend %padding-0_5rem;
-
-    // background-color: $color-background;
-    
-
 
     overflow: hidden;
 }
@@ -83,8 +77,6 @@ a{
     @include grid-position(1 /span 2, 1 /span 12);
     border-radius: 0.5rem 0 0 0.5rem;
     box-shadow: -2px -2px 4px silver;
-    // box-shadow: 2px 0 4px silver;
-// background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
 }
 
 .header {
@@ -109,7 +101,6 @@ a{
     border-radius: 0 0.5rem 0.5rem 0;
 
     text-transform: capitalize;
-// background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
     & ::after {
     content: "";
     @extend %position-absolute; left: 0; top: 0;
@@ -117,7 +108,6 @@ a{
         height: 100%;
 
     border-radius: 1rem;
-    // background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
 
     animation: slideGlow .5s linear forwards;
     }

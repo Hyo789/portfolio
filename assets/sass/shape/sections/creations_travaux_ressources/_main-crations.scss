@@ -10,7 +10,6 @@
 // CREATIONS TRAVAUX RESSOURCES
 
 .cards.creations, .cards.travaux, .cards.ressources {
-    // @extend %margin-1rem;
     margin: 1.5rem
 }
 
@@ -20,7 +19,6 @@
     @extend %margin-1rem;
     @extend %hover-cursor;
     @include grid-position (1 / span 6, 1 / span 12);
-    // background-color: red;
 
     background:linear-gradient(326deg, rgba(8, 0, 255, 0.08) 10%, rgba(32, 32, 32, 0.08) 50%, rgba(170, 0, 255, 0.08) 90%), center / cover  no-repeat url(../img/svg/divers/designe.svg);
 
@@ -65,31 +63,6 @@
     }
 }
 
-.cards.a5.creations, .cards.a5.travaux, .cards.a5.ressources {
-    @extend %display-none;
-    
-    &.place {
-        z-index: 5;
-        @extend %display-block;
-        @extend %hover-cursor;
-        @include grid-position (7 / span 3, 2 / span 4);
-    }
-
-}
-
-.cards.a6.creations, .cards.a6.travaux, .cards.a6.ressources {
-    @extend %display-none;
-
-    
-    &.place {
-        z-index: 5;
-        @extend %display-block;
-        @extend %hover-cursor;
-        @include grid-position (10 / span 3, 2 / span 4);
-    }
-
-}
-
 .cards.a1.creations, .cards.a1.travaux, .cards.a1.ressources, .cards.a2.creations, .cards.a2.travaux, .cards.a2.ressources
 {
 
@@ -100,7 +73,6 @@
 
     
     &.bloom {
-        // @extend %flex-center;
         @include grid-position (1 / span 12, 1 / span 12);
         cursor: default;
         animation: none;
@@ -118,8 +90,3 @@
     @extend %flex-center;
     gap: 2rem; flex-wrap: wrap;
 }
-
-// .cards.creations-active {
-//     @include body (calc(100% / 3.5), calc(100% / 3.5));
-//     @extend %hover-cards;
-// }

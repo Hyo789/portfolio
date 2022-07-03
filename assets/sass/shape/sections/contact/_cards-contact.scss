@@ -11,8 +11,6 @@
     align-items: stretch;
     box-shadow: 0 0 ;
     border: $color-blue solid 2px;
-
-    // background-color: rgba(255, 255, 255, 0.137);
     
     &.fade {
         @extend %display-none;
@@ -29,6 +27,6 @@
 
 }
 
-.a2.contact,.a3.contact,.a4.contact,.a5.contact,.a6.contact {
+.a2.contact,.a3.contact,.a4.contact {
     @extend %display-none;
 }

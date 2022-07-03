@@ -7,17 +7,7 @@
 
 .container_card {
     @extend %position-relative;
-    
-        // @include grid-position (1 /span 12, 1 / span 12);
-        @extend %flex;
-        // justify-content: center;
-        // padding: 2rem;
-        align-items: center; 
-        // @extend %hover-cursor;
-        // border:  solid 1px;
-        border-radius: 0.5rem;
-
-        // a {
-        //     width: 100%;
-        // }
+    @extend %flex;
+    align-items: center; 
+    border-radius: 0.5rem;
 }

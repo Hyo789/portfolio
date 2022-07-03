@@ -6,11 +6,9 @@
 // COMPONENTS
 
 #contact {
-    // @extend %hover-cursor;
-    // margin-left:2rem;
+
     @extend %position-relative;
     padding: 0.2rem 1rem;
-    // border-radius: 0.5rem;
 
     cursor: pointer;
 
@@ -22,7 +20,6 @@
         transition: 0.3s;
 
     }
-
     
     &::before {
         content: "";

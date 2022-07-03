@@ -41,10 +41,6 @@
 
 // COMPETENCES FORMATIONS INTERET 
 
-.cards.competences {
-    // @include body (auto, auto);
-}
-
 .cards.a1.competences {
     @include grid-position (1 / span 12, 1 / span 12);
     @extend %margin-0_5rem;
@@ -60,14 +56,5 @@
 }
 
 .cards.a4.competences {
-    @extend %display-none;
-}
-
-.cards.a5.competences {
-    @extend %display-none;
-
-}
-
-.cards.a6.competences {
     @extend %display-none;
 }

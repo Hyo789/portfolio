@@ -35,11 +35,9 @@
     @include grid-position (9 / span 4, 8 / span 4 );
 }
 
-.cards.a5.accueil {
-    @extend %display-none;
-
-}
-
-.cards.a6.accueil {
-    @extend %display-none;
+.cards.a2.accueil,.cards.a3.accueil,.cards.a4.accueil {
+    a {
+        @extend %flex-center;
+        @include body (100%,100%)
+    }
 }
