@@ -195,8 +195,8 @@ let meFunctions = {
       card._1.classList.contains("bloom") ||
       card._1.classList.contains("fade")
     ) {
-      card._1.classList.remove(card_a1.classList.item(3));
-      card._2.classList.remove(card_a2.classList.item(3));
+      card._1.classList.remove(card._1.classList.item(3));
+      card._2.classList.remove(card._2.classList.item(3));
     }
 
     let verif = nav.secondary.parentNode.querySelector(".nav_title.v2");
@@ -210,7 +210,7 @@ let meFunctions = {
       let elememt = card.all[i];
       let cardsClass = elememt.classList.item(2);
       elememt.classList.replace(cardsClass, section);
-    };
+    }
 
     let navSecondaryClass = nav.secondary.classList.item(1);
 
@@ -218,15 +218,16 @@ let meFunctions = {
       nav.secondary.classList.add(section);
     } else {
       nav.secondary.classList.replace(navSecondaryClass, section);
-    };
+    }
 
     if (section === "profil") {
       section = "about";
-      nav.secondary.parentNode.querySelector("h2").textContent =
-        `${section}   |`;
+      nav.secondary.parentNode.querySelector(
+        "h2"
+      ).textContent = `${section}   |`;
     } else {
       nav.secondary.parentNode.querySelector("h2").textContent = section;
-    };
+    }
 
     if (section === aboutNav.contact.getAttribute("id")) {
       aboutNav.contact.classList.add("desactive");
@@ -254,52 +255,55 @@ let meFunctions = {
   },
 
   nav_title_v2: function () {
-    navSecondary.parentNode.querySelector(".nav_title").classList.add("v2");
+    nav.secondary.parentNode.querySelector(".nav_title").classList.add("v2");
   },
 
   defaultPage: function () {
     const container = document.createElement("div");
-    card_a1.appendChild(container);
-    container.className = "container";
+    card._1.appendChild(container);
+    container.setAttribute("class", "container");
 
     const article = document.createElement("article");
-    article.className = "accueil_article";
+    article.setAttribute("class", "accueil_article");
     container.appendChild(article);
 
     const cta = document.createElement("div");
     container.appendChild(cta);
-    cta.className = "accueil_cta";
+    cta.setAttribute("class", "accueil_cta");
     const cta_commencer = document.createElement("span");
     cta.appendChild(cta_commencer);
-    cta_commencer.className = "btn ";
+    cta_commencer.setAttribute("class", "btn");
     cta_commencer.textContent = "Commencer ";
 
     const accueil_illus = document.createElement("div");
-    accueil_illus.className = "accueil_article_illustration";
+    accueil_illus.setAttribute("class", "accueil_article_illustration");
     container.appendChild(accueil_illus);
 
     const profil = document.createElement("div");
-    profil.className = "accueil_article_profil";
+    profil.setAttribute("class", "accueil_article_profil");
     article.appendChild(profil);
-    profil.innerHTML = '<img src="" alt="Image de profil"> <h2></h2>';
-    profil.querySelector("img").src = "./assets/img/logo/logo.svg";
-    profil.querySelector("h2").innerHTML = "faizdine";
+    const image = document.createElement("img");
+    image.setAttribute("src", "./assets/img/logo/logo.svg");
+    profil.appendChild(image);
+    const titre = document.createElement("h2");
+    titre.innerHTML = "faizdine";
+    profil.appendChild(titre);
 
     const paraph = document.createElement("p");
     article.appendChild(paraph);
 
     paraph.textContent =
       "Bonjour, et bienvenu sur mon portfolio. \
-          En tant que concepteur designer UI je suis toujours en quête de nouveaux projets ou poser mes idées de créations. ";
+      En tant que concepteur designer UI je suis toujours en quête de nouveaux projets ou poser mes idées de créations. ";
 
     const illustration = container.querySelector(
       ".accueil_article_illustration"
     );
-    illustration.innerHTML = '<img src="" alt="Illustration de l\'article">';
-    illustration.querySelector("img").src =
-      "./assets/img/svg/accueil/accueil.svg";
+    const image_illus = document.createElement("img");
+    image_illus.setAttribute("src", "./assets/img/svg/accueil/accueil.svg");
+    image_illus.setAttribute("alt", "Illustration de l'article");
 
-    for (let i = 1; i < 4; i++) {
+    /*for (let i = 1; i < 4; i++) {
       const element = elememt[i];
       let v = i - 1;
       let link = document.createElement("a");
@@ -307,13 +311,13 @@ let meFunctions = {
       link.innerHTML = "contenu";
       link.href = cards_data.creations.recent[v].link;
       link.target = "_blank";
-    }
+    }*/
   },
 
   contentAbout_profil: function () {
-    card_a1.innerHTML = '<div class="container"></div>';
+    card._1.innerHTML = '<div class="container"></div>';
 
-    const container = card_a1.querySelector(".container");
+    const container = card._1.querySelector(".container");
     container.innerHTML =
       '<div class="profil_illustration"><img src="" alt="Illustration"> </div> <article> <h3></h3> <p></p> </article>';
 
@@ -378,13 +382,12 @@ let meFunctions = {
   },
 
   contentAbout_list: function (array) {
-    // console.log(params1);
-    let container = card_a1.querySelector(".container");
+    let container = card._1.querySelector(".container");
     let illustration = container.querySelector("img");
-    illustration.className = "illus_1";
-    illustration.src = array[array.length - 1];
+    illustration.setAttribute('class', 'illus_1');
+    illustration.setAttribute('class',array[array.length - 1]);
 
-    const article = card_a1.querySelector(".container article");
+    const article = card._1.querySelector(".container article");
     let paraph = article.querySelector("p");
 
     if (paraph != null || undefined) {
@@ -463,7 +466,7 @@ let meFunctions = {
     element.addEventListener("click", function (event) {
       // ANIMATIONS
 
-      this.classList.contains("active") ? false : replace(card_a1);
+      this.classList.contains("active") ? false : replace(card._1);
 
       setTimeout(() => {
         if (element === about_profil) {
@@ -472,16 +475,16 @@ let meFunctions = {
         } else {
           contentAbout_list(array);
           active(this);
-          travel(card_a1.querySelector(".stats_taux"));
+          travel(card._1.querySelector(".stats_taux"));
         }
       }, 300);
 
       if (
-        card_a1
+        card._1
           .querySelector(".profil_illustration")
           .classList.contains("active")
       ) {
-        card_a1
+        card._1
           .querySelector(".profil_illustration")
           .classList.remove("active");
       }
@@ -499,20 +502,20 @@ let meFunctions = {
       let sectionClass = this.getAttribute("id");
 
       if (
-        card_a1.classList.contains("bloom") ||
-        card_a1.classList.contains("fade") ||
-        card_a1.classList.contains(sectionClass) != true
+        card._1.classList.contains("bloom") ||
+        card._1.classList.contains("fade") ||
+        card._1.classList.contains(sectionClass) != true
       ) {
         eraser();
         switchSection(sectionClass);
-        switchDesigneDev(card_a1);
-        switchDesigneDev(card_a2);
+        switchDesigneDev(card._1);
+        switchDesigneDev(card._2);
         selection(this);
 
         // ANIMATIOS
         fondu(document.querySelector(".nav_title"));
-        slideIN_top(card_a1);
-        slideIN_bottom(card_a2);
+        slideIN_top(card._1);
+        slideIN_bottom(card._2);
       } else {
         event.preventDefault();
       }
@@ -520,7 +523,7 @@ let meFunctions = {
   },
   content: function () {
     const container = document.createElement("div");
-    card_a1.appendChild(container);
+    card._1.appendChild(container);
     container.className = "container";
 
     const contact_content = document.createElement("div");
@@ -658,33 +661,30 @@ let meFunctions = {
     }
   },
 };
-/*
+
 // ACCUEIL
 
 defaultPage();
 
 container_logo.addEventListener("click", () => {
   let sectionClass = "accueil";
-
-  (() => {
-    if (card_a1.classList.contains(sectionClass)) {
+    if (card._1.classList.contains(sectionClass)) {
       return false;
     } else {
-      eraser();
-      defaultPage();
-      switchSection(sectionClass);
-      selection(container_logo);
+      meFunctions.eraser();
+      meFunctions.defaultPage();
+      meFunctions.switchSection(sectionClass);
+      meFunctions.selection(container_logo);
 
       // ANIMATIOS
       fondu(document.querySelector(".nav_title"));
-      slideIN_left(card_a1);
-      slideIN_right(card_a2);
-      slideIN_right(card_a3);
-      slideIN_right(card_a4);
+      slideIN_left(card._1);
+      slideIN_right(card._2);
+      slideIN_right(card._3);
+      slideIN_right(card._4);
     }
-  })();
 });
-
+/*
 // ABOUT ME
 document
   .querySelector(".accueil_cta")
@@ -697,7 +697,7 @@ document
     // ANIMATIOS
     fondu(navSecondary.parentNode.querySelector(".nav_title"));
     fondu(navSecondary.querySelector("ul"));
-    depli(card_a1, 300, 0);
+    depli(card._1, 300, 0);
 
     let active = navSecondary.querySelector("li.active");
 
@@ -709,7 +709,7 @@ document
 
 nav_About.addEventListener("click", function (event) {
   let sectionClass = this.getAttribute("id");
-  if (card_a1.classList.contains(sectionClass)) {
+  if (card._1.classList.contains(sectionClass)) {
     event.preventDefault();
   } else {
     eraser();
@@ -719,7 +719,7 @@ nav_About.addEventListener("click", function (event) {
     // ANIMATIOS
     fondu(navSecondary.parentNode.querySelector(".nav_title"));
     fondu(navSecondary.querySelector("ul"));
-    depli(card_a1, 300, 0);
+    depli(card._1, 300, 0);
 
     let active = navSecondary.querySelector("li.active");
 
@@ -748,7 +748,7 @@ contact.addEventListener("click", function (event) {
   eraser();
   let sectionClass = this.getAttribute("id");
   switchSection(sectionClass);
-  bloom(card_a2, card_a1);
+  bloom(card._2, card._1);
   content();
 });
 
@@ -756,9 +756,9 @@ contact.addEventListener("click", function (event) {
 
 let counter = 0;
 
-card_a1.addEventListener("click", function (event) {
+card._1.addEventListener("click", function (event) {
   if (
-    card_a3.classList.contains("place") ||
+    card._3.classList.contains("place") ||
     this.classList.contains("accueil") ||
     this.classList.contains("profil") ||
     this.classList.contains("contact")
@@ -775,7 +775,7 @@ card_a1.addEventListener("click", function (event) {
   switch (cas) {
     case "creations":
       nav_title_v2();
-      bloom(card_a2, this);
+      bloom(card._2, this);
       // ANIMATIOS
       fondu(document.querySelector(".nav_title"));
 
@@ -783,7 +783,7 @@ card_a1.addEventListener("click", function (event) {
 
     case "ressources":
       nav_title_v2();
-      bloom(card_a2, this);
+      bloom(card._2, this);
       // ANIMATIOS
       fondu(document.querySelector(".nav_title"));
 
@@ -796,9 +796,9 @@ card_a1.addEventListener("click", function (event) {
   projects_mouseOver();
 });
 
-card_a2.addEventListener("click", function () {
+card._2.addEventListener("click", function () {
   if (
-    card_a3.classList.contains("place") ||
+    card._3.classList.contains("place") ||
     this.classList.contains("accueil") ||
     this.classList.contains("profil") ||
     this.classList.contains("contact")
@@ -815,7 +815,7 @@ card_a2.addEventListener("click", function () {
   switch (cas) {
     case "creations":
       nav_title_v2();
-      bloom(card_a1, this);
+      bloom(card._1, this);
       // ANIMATIOS
       fondu(document.querySelector(".nav_title"));
 
@@ -824,7 +824,7 @@ card_a2.addEventListener("click", function () {
     case "ressources":
       // eraser();
       nav_title_v2();
-      bloom(card_a1, this);
+      bloom(card._1, this);
       // ANIMATIOS
       fondu(document.querySelector(".nav_title"));
 
