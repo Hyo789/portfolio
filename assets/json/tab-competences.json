@@ -1,0 +1,101 @@
+[
+  {
+    "texte": "HTML",
+    "Image": "./assets/img/svg/about/icons8-html-5-96.svg",
+    "taux": "95%",
+    "stats_def": "\n        HTML signifie « HyperText Markup Language » qu'on peut traduire par « langage de balises pour l'hypertexte ». Il est utilisé afin de créer et de représenter le contenu d'une page web et sa structure. D'autres technologies sont utilisées avec HTML pour décrire la présentation d'une page (CSS) et/ou ses fonctionnalités interactives (JavaScript).",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "CSS",
+    "Image": "./assets/img/svg/about/icons8-css3-96.svg",
+    "taux": "75%",
+    "stats_def": "\n        CSS est l'un des langages principaux du Web ouvert et a été standardisé par le W3C. Ce standard évolue sous forme de niveaux (levels), CSS1 est désormais considéré comme obsolète, CSS2.1 correspond à la recommandation et CSS3, qui est découpé en modules plus petits, est en voie de standardisation.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "jascript",
+    "Image": "./assets/img/svg/about/icons8-javascript-96.svg",
+    "taux": "50%",
+    "stats_def": "\n        vaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web. Mais il est aussi utilisé dans de nombreux environnements extérieurs aux navigateurs web tels que Node.js, Apache CouchDB voire Adobe Acrobat. Le code JavaScript est interprété ou compilé à la volée (JIT). C'est un langage à objets utilisant le concept de prototype, disposant d'un typage faible et dynamique qui permet de programmer suivant plusieurs paradigmes de programmation : fonctionnelle, impérative et orientée objet. Apprenez-en plus sur JavaScript.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "SASS",
+    "Image": "./assets/img/svg/about/icons8-sass-96.svg",
+    "taux": "60%",
+    "stats_def": "\n        Sass (Syntactically awesome stylesheets) est un langage de script préprocesseur qui est compilé ou interprété en CSS (Cascading Style Sheets). SassScript est le langage de script en lui-même.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "bootstrap",
+    "Image": "./assets/img/svg/about/icons8-bootstrap-96.svg",
+    "taux": "70%",
+    "stats_def": "\n        Bootstrap est une collection d'outils utiles à la création du design (graphisme, animation et interactions avec la page dans le navigateur, etc.) de sites et d'applications web. C'est un ensemble qui contient des codes HTML et CSS, des formulaires, boutons, outils de navigation et autres éléments interactifs, ainsi que des extensions JavaScript en option. C'est l'un des projets les plus populaires sur la plate-forme de gestion de développement GitHub.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "Wordpress",
+    "Image": "./assets/img/svg/about/icons8-wordpress-96.svg",
+    "taux": "60%",
+    "stats_def": "\n        WordPress est un système de gestion de contenu (SGC ou content management system (CMS) en anglais) gratuit, libre et open-source. Ce logiciel écrit en PHP repose sur une base de données MySQL et est distribué par la fondation WordPress.org. Les fonctionnalités de WordPress lui permettent de créer et gérer différents types de sites Web : site vitrine, site de vente en ligne, site applicatif, blog, portfolio, site institutionnel, site d'enseignement…",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "adobe Illustrator",
+    "Image": "./assets/img/svg/about/icons8-adobe-illustrator-96.svg",
+    "taux": "50%",
+    "stats_def": "\n        Adobe Illustrator est un logiciel de création graphique vectorielle. Il fait partie de la gamme Adobe, peut être utilisé indépendamment ou en complément de Photoshop, et offre des outils de dessin vectoriel puissants. Les images vectorielles sont constituées de courbes générées par des formules mathématiques. ",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "adobe phtoshop",
+    "Image": "./assets/img/svg/about/icons8-adobe-photoshop-96.svg",
+    "taux": "40%",
+    "stats_def": "\n        Photoshop est un logiciel de retouche, de traitement et de dessin assisté par ordinateur, lancé en 1990 puis en 1992 pour les systèmes d'exploitations MacOS et Windows.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "afther effect",
+    "Image": "./assets/img/svg/about/icons8-adobe-after-effects-96.svg",
+    "taux": "0%",
+    "stats_def": "\n        Adobe After Effects ou After Effects est un logiciel, à l'origine, de montage vidéo qui est devenu par la suite un outil de composition (compositing en anglais) et d'effets visuels, pionnier de l'animation graphique sur ordinateur personnel, édité par la société Adobe Systems.\n        Ce logiciel permet de créer des effets spéciaux et des animations graphiques pour tous supports et à partir de nombreux types de sources.",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  {
+    "texte": "adobe premier pro",
+    "Image": "./assets/img/svg/about/icons8-adobe-premiere-pro-96.svg",
+    "taux": "0%",
+    "stats_def": "\n        Adobe Premiere Pro, anciennement appelé Adobe Premiere, est un logiciel de montage vidéo. Il est intégré aux versions Production Premium et Master Collection de la Creative Suite.Adobe Premiere Pro gère de nombreux formats vidéo et intègre un système de scénarimage (storyboard) très complet. ",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  {
+    "texte": "adobe indesign",
+    "Image": "./assets/img/svg/about/icons8-adobe-indesign-96.svg",
+    "taux": "0%",
+    "stats_def": "\n        Adobe InDesign est un logiciel de PAO produit par Adobe Systems. Initialement conçu pour créer des œuvres telles que des affiches, dépliants, brochures, magazines, journaux ou livres, il permet également de publier plusieurs types de contenus adaptés aux tablettes, lorsque utilisé avec Adobe DPS. ",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  {
+    "texte": "adobe XD",
+    "Image": "./assets/img/svg/about/icons8-adobe-xd-96.svg",
+    "taux": "75%",
+    "stats_def": "\n        Adobe XD est un outil de conception d'expérience utilisateur vectoriel pour les applications Web et les applications mobiles, développé et publié par Adobe Inc.",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "figma",
+    "Image": "./assets/img/svg/about/icons8-figma-96.svg",
+    "taux": "70%",
+    "stats_def": "\n        HFigma est un éditeur de graphiques vectoriels et un outil de prototypage. Il est principalement basé sur le web, avec des fonctionnalités hors ligne supplémentaires activées par des applications de bureau pour macOS et Windows (par exemple : vous pouvez utiliser des polices locales sur la version desktop).",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  {
+    "texte": "git / github",
+    "Image": "./assets/img/svg/about/icons8-git-96.svg",
+    "taux": "65%",
+    "stats_def": "\n        GitHub (exploité sous le nom de GitHub, Inc.) est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. ",
+    "stats_text": "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto assumenda cum harum beatae ipsa culpa consequatur, obcaecati deserunt rem est aspernatur, consectetur quibusdam sunt ipsum reprehenderit maxime. Iusto, nostrum."
+  },
+  "assets/img/svg/about/competences.svg"
+]

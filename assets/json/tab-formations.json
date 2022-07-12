@@ -1,0 +1,24 @@
+[
+  {
+    "texte": "Openclassroom",
+    "Image": "./assets/img/svg/about/openclassroom.svg",
+    "ancre": "https://openclassrooms.com/fr/",
+    "stats_def": "\n        OpenClassrooms est un site web de formation en ligne, créé en 1999 sous le nom de Site du Zéro. Il propose à ses membres des cours certifiants et des parcours débouchant sur des métiers en croissance.",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  {
+    "texte": "Concepteur designer UI",
+    "Image": "./assets/img/svg/about/designer.svg",
+    "ancre": "https://www.afpa.fr/formation-qualifiante/concepteur-designer-ui",
+    "stats_def": "\n        Le designer UI (design de l’interface utilisateur) s’occupe du lien entre la machine et l’homme. Il est en charge de la conception générale de l’interface, de la clarté de la navigation, de l’optimisation des parcours et aussi de la qualité des contenus. Son objectivité est guidée par l’efficacité. Il organise des éléments graphiques et textuels sur la base de normes techniques.",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  {
+    "texte": "BTS (Management des Unitées commercial)",
+    "Image": "assets/img/svg/about/management.svg",
+    "ancre": "https://www.onisep.fr/Ressources/Univers-Formation/Formations/Post-bac/bts-management-commercial-operationnel",
+    "stats_def": "\n        Le BTS MUC (Brevet de Technicien Supérieur en Management des Unités Commerciales) est une formation post-baccalauréat qui se déroule sur 2 ans. L'objectif est d'occuper des fonctions dans une unité commerciale.",
+    "stats_text": "\n        Pas de données pour l'intant."
+  },
+  "./assets/img/svg/about/formations.svg"
+]

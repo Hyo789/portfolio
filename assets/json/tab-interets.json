@@ -1,0 +1,38 @@
+[
+  {
+    "texte": "Gastronomie",
+    "Image": "./assets/img/svg/about/gastronomie.svg",
+    "ancre": "https://fr.wikipedia.org/wiki/Gastronomie",
+    "stats_def": "\n        La gastronomie est la connaissance raisonnée de tout ce qui se rapporte à l'être humain en tant qu'il se nourrit. Certains restreignent cela à l'ensemble des règles (fluctuantes, selon pays, classes sociales et modes) qui définissent l'art de faire bonne chère1.",
+    "stats_text": "Pas de données pour l'intant."
+  },
+  {
+    "texte": "Manga (BD Japonais)",
+    "Image": "./assets/img/svg/about/manga.svg",
+    "ancre": "https://fr.wikipedia.org/wiki/Manga",
+    "stats_def": "\n        Un manga (漫画?) est une bande dessinée japonaise. La plupart des mangas se conforment à un style développé au Japon à la fin du xixe siècle, alors que la forme a une longue préhistoire dans l'art japonais antérieur. Au Japon, le terme manga désigne plus généralement la bande dessinée, quelle que soit son origine. En Occident, le mot « manga » désigne une bande dessinée japonaise, mais aussi parfois une bande dessinée non japonaise respectant les codes des productions populaires japonaises ou pour nommer, par métonymie, d'autres produits visuels rappelant certaines de ces bandes dessinées (dessins animés, style graphique, etc.).\n\n        Les mangas se lisent généralement de droite à gauche. En raison du rythme élevé de parution1 et pour limiter le coût d'impression, la plupart des mangas sont dessinés en noir et blanc, mis à part la couverture.\n        \n        Les deux premiers pays les plus consommateurs de mangas sont le Japon et la France2,3,4,5,6.\n        \n        La personne réalisant des mangas est appelée mangaka.",
+    "stats_text": "Pas de données pour l'intant."
+  },
+  {
+    "texte": "Jeux vidéos",
+    "Image": "./assets/img/svg/about/icons8-steam-96.svg",
+    "ancre": "https://fr.wikipedia.org/wiki/Jeu_vid%C3%A9o",
+    "stats_def": "\n        Un jeu vidéo est un jeu électronique doté d'une interface utilisateur permettant une interaction humaine ludique en générant un retour visuel sur un dispositif vidéo. Le joueur de jeu vidéo dispose de périphériques pour agir sur le jeu et percevoir les conséquences de ses actes sur un environnement virtuel. Le mot « vidéo » dans le jeu vidéo fait traditionnellement référence à un dispositif d'affichage de trame, mais, à la suite de la vulgarisation du terme, il implique désormais tout type de dispositif d'affichage.",
+    "stats_text": "Pas de données pour l'intant."
+  },
+  {
+    "texte": "Running",
+    "Image": "./assets/img/svg/about/wooman_run.svg",
+    "ancre": "https://fr.wikipedia.org/wiki/Running",
+    "stats_def": "\n        Le running (terme anglais signifiant « courir ») est une pratique libre de la course à pied, accompagnée d'objectifs propres à ceux d'une discipline. Le running s'inscrit dans le culte de la performance : courir plus longtemps ou plus vite par exemple. Pour les runners qui l'exercent de façon régulière voire intensive, il se différencie du jogging qui reste une activité « du dimanche », occasionnelle, pour éliminer les excès ou prendre l'air1.",
+    "stats_text": "Pas de données pour l'intant."
+  },
+  {
+    "texte": "Musculation",
+    "Image": "./assets/img/svg/about/musculation.svg",
+    "ancre": "https://fr.wikipedia.org/wiki/Musculation",
+    "stats_def": "\n        La musculation est un ensemble d'exercices physiques visant le développement des muscles squelettiques, afin d'acquérir plus de force, d'endurance, de puissance, d'explosivité ou de volume musculaire. Dans ces exercices, une force (par exemple la gravité, avec l'utilisation d'haltères, de bandes élastiques ou encore à l'aide du poids du corps) est opposée de manière répétitive à la force générée par la contraction des muscles. Cette activité est généralement pratiquée dans une salle de sport.",
+    "stats_text": "Pas de données pour l'intant."
+  },
+  "assets/img/svg/about/interets.svg"
+]

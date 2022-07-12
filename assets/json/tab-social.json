@@ -1,0 +1,24 @@
+[
+  {
+    "texte": "linkedin",
+    "Image": "./assets/img/svg/about/icons8-linkedin-96.svg",
+    "ancre": "https://fr.linkedin.com/",
+    "stats_def": "",
+    "stats_text": ""
+  },
+  {
+    "texte": "instagram",
+    "Image": "./assets/img/svg/about/icons8-instagram-96.svg",
+    "ancre": "https://fr.linkedin.com/",
+    "stats_def": "",
+    "stats_text": ""
+  },
+  {
+    "texte": "twitter",
+    "Image": "./assets/img/svg/about/icons8-twitter-96.svg",
+    "ancre": "https://fr.linkedin.com/",
+    "stats_def": "",
+    "stats_text": ""
+  },
+  "assets/img/svg/about/social.svg"
+]
