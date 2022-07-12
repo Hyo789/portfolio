@@ -9,17 +9,18 @@ window.addEventListener("load", function (event) {
   }, 500);
 });
 
-// SHAPE ACCUEIL
-
 // CARDS
-class cards {
+class elememt {
   constructor() {
-    this.card_1 = document.querySelector(".cards.a1");
-    this.card_2 = document.querySelector(".cards.a2");
-    this.card_3 = document.querySelector(".cards.a3");
-    this.card_4 = document.querySelector(".cards.a4");
+    this.all = document.querySelectorAll(".elememt");
+    this._1 = document.querySelector(".elememt.a1");
+    this._2 = document.querySelector(".elememt.a2");
+    this._3 = document.querySelector(".elememt.a3");
+    this._4 = document.querySelector(".elememt.a4");
   }
 }
+
+let card = new elememt();
 
 // HEADER
 
@@ -29,38 +30,42 @@ class header {
   }
 }
 
+let header1 = new header();
+
 // NAV PRINCIPAL
 
-class navMain {
+class navigation {
   constructor() {
-    this.nav = document.querySelector("#nav-principal");
-    this.nav_About = document.querySelector("#profil");
-    this.nav_Creations = document.querySelector("#creations");
-    this.nav_ressources = document.querySelector("#ressources");
+    this.main = document.querySelector("#nav-principal");
+    this.main_cbout = document.querySelector("#profil");
+    this.main_creations = document.querySelector("#creations");
+    this.main_ressources = document.querySelector("#ressources");
     // this.nav_Travaux = document.querySelector("#travaux");
     // this.nav_bonus = document.querySelector("#bonus");
+    this.secondary = document.querySelector("#nav-secondary");
   }
 }
 
-// NAV SECONDARY
+let nav = new navigation();
 
-const navSecondary = document.querySelector("#nav-secondary");
+// NAV SECONDARY
 
 // ABOUT NAV
 class navAbout {
   constructor() {
-    this.about_profil = document.querySelector("#profil-2");
-    this.about_competences = document.querySelector("#competences");
-    this.about_formations = document.querySelector("#formations");
-    this.about_interet = document.querySelector("#interet");
-    this.about_exp_pro = document.querySelector("#exp-pro");
+    this.profil = document.querySelector("#profil-2");
+    this.competences = document.querySelector("#competences");
+    this.formations = document.querySelector("#formations");
+    this.interet = document.querySelector("#interet");
+    this.exp_pro = document.querySelector("#exp-pro");
     this.contact = document.querySelector("#contact");
-    this.about_social = document.querySelector("#resaux");
+    this.social = document.querySelector("#resaux");
   }
 }
 
+let aboutNav = new navAbout();
+
 // ARRAY
-const cards = document.querySelectorAll(".cards");
 
 // ANIMATIONS
 let animations = {
@@ -176,72 +181,69 @@ let animations = {
 // FUNCTIONS
 
 let meFunctions = {
-  eraser: function () {
-    for (let i = 0; i < cards.length; i++) {
-      let el = cards[i].firstElementChild;
-      if (el != null || undefined) {
-        el.remove();
+  eraser: function (array = card.all) {
+    for (let i = 0; i < array.length; i++) {
+      let element = array[i];
+      if (element != null || undefined) {
+        element.remove();
       } else {
         continue;
       }
     }
 
     if (
-      card_a1.classList.contains("bloom") ||
-      card_a1.classList.contains("fade")
+      card._1.classList.contains("bloom") ||
+      card._1.classList.contains("fade")
     ) {
-      card_a1.classList.remove(card_a1.classList.item(3));
-      card_a2.classList.remove(card_a2.classList.item(3));
-      // card_a3.classList.remove("place");
-      // card_a4.classList.remove("place");
-      // card_a5.classList.remove("place");
-      // card_a6.classList.remove("place");
+      card._1.classList.remove(card_a1.classList.item(3));
+      card._2.classList.remove(card_a2.classList.item(3));
     }
 
-    let verif = navSecondary.parentNode.querySelector(".nav_title.v2");
+    let verif = nav.secondary.parentNode.querySelector(".nav_title.v2");
     if (verif != null || undefined) {
       verif.classList.remove("v2");
     }
   },
 
   switchSection: function (section) {
-    for (let c = 0; c < cards.length; c++) {
-      let cardsClass = cards[c].classList.item(2);
-      cards[c].classList.replace(cardsClass, section);
-    }
+    for (let i = 0; i < card.all.length; i++) {
+      let elememt = card.all[i];
+      let cardsClass = elememt.classList.item(2);
+      elememt.classList.replace(cardsClass, section);
+    };
 
-    let navSecondaryClass = navSecondary.classList.item(1);
+    let navSecondaryClass = nav.secondary.classList.item(1);
 
     if (navSecondaryClass === null || undefined) {
-      navSecondary.classList.add(section);
+      nav.secondary.classList.add(section);
     } else {
-      navSecondary.classList.replace(navSecondaryClass, section);
-    }
+      nav.secondary.classList.replace(navSecondaryClass, section);
+    };
 
     if (section === "profil") {
-      let section = "about";
-      navSecondary.parentNode.querySelector("h2").textContent =
-        section + "   |";
+      section = "about";
+      nav.secondary.parentNode.querySelector("h2").textContent =
+        `${section}   |`;
     } else {
-      navSecondary.parentNode.querySelector("h2").textContent = section;
-    }
+      nav.secondary.parentNode.querySelector("h2").textContent = section;
+    };
 
-    if (section === contact.getAttribute("id")) {
-      contact.classList.add("desactive");
+    if (section === aboutNav.contact.getAttribute("id")) {
+      aboutNav.contact.classList.add("desactive");
     } else {
-      contact.classList.remove("desactive");
+      aboutNav.contact.classList.remove("desactive");
     }
   },
 
   selection: function (element) {
-    let li_active = nav_principal.querySelector("li.active");
+    let active = elememt.querySelector(".active");
 
-    if (li_active === null || undefined) {
+    if (active === null || undefined) {
       element.classList.add("active");
-    } else if ((li_active != null || undefined) && element === container_logo) {
-      li_active.classList.remove("active");
+    } else if ((active != null || undefined) && element === container_logo) {
+      active.classList.remove("active");
     } else {
-      li_active.classList.remove("active");
+      active.classList.remove("active");
       element.classList.add("active");
     }
   },
@@ -298,7 +300,7 @@ let meFunctions = {
       "./assets/img/svg/accueil/accueil.svg";
 
     for (let i = 1; i < 4; i++) {
-      const element = cards[i];
+      const element = elememt[i];
       let v = i - 1;
       let link = document.createElement("a");
       element.appendChild(link);
@@ -656,7 +658,7 @@ let meFunctions = {
     }
   },
 };
-
+/*
 // ACCUEIL
 
 defaultPage();
@@ -697,11 +699,11 @@ document
     fondu(navSecondary.querySelector("ul"));
     depli(card_a1, 300, 0);
 
-    let li_active = navSecondary.querySelector("li.active");
+    let active = navSecondary.querySelector("li.active");
 
-    li_active === null || undefined
+    active === null || undefined
       ? about_profil.classList.add("active")
-      : li_active.classList.remove("active"),
+      : active.classList.remove("active"),
       about_profil.classList.add("active");
   });
 
@@ -719,11 +721,11 @@ nav_About.addEventListener("click", function (event) {
     fondu(navSecondary.querySelector("ul"));
     depli(card_a1, 300, 0);
 
-    let li_active = navSecondary.querySelector("li.active");
+    let active = navSecondary.querySelector("li.active");
 
-    li_active === null || undefined
+    active === null || undefined
       ? about_profil.classList.add("active")
-      : li_active.classList.remove("active"),
+      : active.classList.remove("active"),
       about_profil.classList.add("active");
   }
 });
@@ -834,3 +836,4 @@ card_a2.addEventListener("click", function () {
 
   projects_mouseOver();
 });
+*/
