@@ -1,0 +1,18 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.heading_nav {
+    @extend %display-none;
+}
+
+.heading_nav.active {
+    margin-right: auto;
+}
+
+.heading_ul {
+    @extend %flex;
+    gap: 2.5rem;
+}

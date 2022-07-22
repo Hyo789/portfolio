@@ -9,12 +9,12 @@
 
 // HEADER
 
-@use "./shape/header/header-stack";
+@use "./shape/header/stack-header";
 
 // FOOTER
 
-@use "./shape/footer/footer-stack";
+@use "./shape/footer/stack-footer";
 
 // SECTIONS
 
-@use "./shape/sections/sections-stack";
+@use "./shape/sections/stack-sections" ;

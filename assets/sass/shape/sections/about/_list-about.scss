@@ -1,0 +1,38 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.about_ul {
+  @extend %padding-1rem;
+  flex-flow: column;
+  gap: 1rem;
+  width: 50%;
+  
+  overflow-y: scroll;
+  
+  // visibility: hidden;
+  // opacity: 0;
+  
+  transition: 0.3s;
+  
+  @extend %display-none;
+}
+
+.about_ul.active {
+  @extend %flex;
+  visibility: visible;
+  opacity: 1;
+
+  transition: 0.3s;
+}
+
+.about_ul li {
+  @extend %flex;
+  align-items: center;
+  gap: 2rem;
+  @extend %padding-0_5rem;
+
+  @extend %hover;
+}

@@ -1,84 +1,25 @@
-
 // COMPONENTS
 
 @use "../../components/index" as *;
 
 // COMPONENTS
 
-.nav_principal {
-    @extend %flex-center;
-    padding: 2rem 0.5rem
+.header_ul {
+  @extend %flex-column;
+  gap: 2rem;
 }
 
-.nav_principal .list {
-    width: 100%;
-    @extend %flex;
-    @include flex (space-evenly, center);
-    flex-flow: column wrap;
-    gap: 1.5rem;
-    
-    padding: 1rem 0.5rem;
-    
-    li {
-        @extend %position-relative;
-        z-index: 0;
-        @extend %padding-0_5rem;
-        width: 100%;
-        border-radius: 0.5rem;
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-transform: capitalize;
+.header_li {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
 
-        transition: 0.3s;
-        
-        &:hover {
-            border-radius: 1rem;
-
-            color: #000;
-            background: linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-        &::before {
-            content: url(../img/icon/gigot.svg);
-            @extend %position-absolute; z-index: -5;
-            right: $ref;
-            width: 10%;
-
-            opacity: 0;
-            transform: rotate(-300deg) scale(0.1);
-
-            transition: 0.5s;
-        }
-        }
-    }
-
-
+  @extend %hover;
 }
 
 
-.nav_principal li.active {
-    border-radius: 1rem;
 
-    font-weight: 700;
-    color: #fff;
-    background: $color-blue linear-gradient(326deg, rgba(7,0,255,0.2528361686471463) 10%, rgba(32,32,32,0.25003504819896705) 50%, rgba(169,0,255,0.2528361686471463) 90%);
-    
-    &::before {
-        content: url(../img/icon/gigot.svg);
-        @extend %position-absolute;
-        right: $ref;
-        width: 10%;
-
-        opacity: 1;
-        transform: rotate(25deg) scale(1);
-
-        transition: 0.3s;
-    }
-}
-
-#bonus {
-    cursor: not-allowed;
+.header_li a {
+  width: 100%;
+  padding: 0.5rem 1rem;
 }

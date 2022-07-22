@@ -1,0 +1,17 @@
+
+// COMPONENTS
+
+@use "./variables" as *;
+
+@use "./colors" as *;
+
+@use "./extend" as *;
+
+@use "./mixin" as *;
+
+// COMPONENTS
+
+.wrapper {
+    @extend %grid-default;
+    @extend %padding-1rem;
+}

@@ -1,11 +1,9 @@
-
 // COMPONENTS
 
 @use "../../../components/index" as *;
 
 // COMPONENTS
 
-.nav_title.v2 {
-    margin-right: auto;
-    padding: 0 1rem 0 3rem;
+.contact {
+    @extend %position-absolute; right: 2rem;
 }

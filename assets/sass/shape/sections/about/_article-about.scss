@@ -1,0 +1,33 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.about_article {
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.about_article.desactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.about_article h3 {
+  @extend %padding-1rem;
+
+  font-size: 1.3rem;
+  font-weight: 600;
+
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.about_article p {
+  @extend %padding-1rem;
+  max-width: 75%;
+
+  text-align: center;
+}

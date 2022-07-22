@@ -1,4 +1,3 @@
-
 // COMPONENTS
 
 @use "./variables" as *;
@@ -12,10 +11,14 @@
 // COMPONENTS
 
 .btn {
-    @extend %padding-0_5rem;
-    border-radius: 1rem;
-    background-color: rgba($color-green,1);
-    color: #fff !important;
-    font-size: 1.1rem;
-    font-weight: 900;
+  padding: 0.25rem 1rem;
+  border-radius: 5rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  text-transform: capitalize;
+
+  color: #fff;
+  background-color: rgba($color-secondary, 1);
 }

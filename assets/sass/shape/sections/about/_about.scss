@@ -1,0 +1,14 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+.section_about {
+    flex-direction: column;
+    height: 100%;
+}
+
+.container_about {
+    justify-content: space-between;
+    max-height: 100%;
+}

@@ -1,0 +1,24 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.container_accueil {
+  @extend %grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "article"
+    "article"
+    "cards";
+    @extend %padding-1rem;
+}
+
+.container_article {
+  @extend %flex;
+  grid-area: article;
+}
+
+.container_cards {
+  grid-area: cards;
+}

@@ -1,0 +1,15 @@
+// COMPONENTS
+
+@use "../../components/index" as *;
+
+// COMPONENTS
+
+.header {
+  margin-bottom: auto;
+}
+
+.header_container {
+  @extend %flex-column;
+  gap: 2rem;
+  margin-bottom: auto;
+}

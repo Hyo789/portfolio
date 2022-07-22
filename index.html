@@ -30,81 +30,163 @@
 <body class="body">
 
     <!-- LOADER -->
-    <div id="container_loader" class="container_loader">
+    <div id="container_loader" class="container_loader desactive">
         <span id="loader" class="loader">Chargement de la page</span>
     </div>
     <!-- LOADER -->
 
-    <div class="wrapper">
+    <div class="wrapper body_wrapper">
 
-        <div class="container_header_footer">
+        <div class="container container_header_footer">
 
             <header class="header" id="header">
-
-                <div id="container-logo" class="container_logo">
+                <div class="conatiner header_container">
+                    
+                <div id="container_logo" class=" container container_logo">
                     <img class="logo" src="./assets/img/logo/logo.svg" alt="Logo du site">
-                    <h1>Faizdine</h1>
+                    <h1>faizdine</h1>
                 </div>
 
-                <nav id="nav-principal" class="nav_principal">
+                <nav id="header_nav"" class="header_nav">
 
-                    <ul class="list">
+                    <ul class="container header_ul">
 
-                        <li id="profil">aboute-Me</li>
+                        <li id="profil" class="header_li">
+                            <a href="#">aboute-Me</a>
+                        </li>
 
-                        <li id="creations">créations</li>
+                        <li id="creations" class="header_li">
+                            <a href="#">créations</a>
+                        </li>
 
                         <!-- <li id="travaux">travaux</li> -->
 
-                        <li id="ressources">ressources</li>
+                        <li id="ressources" class="header_li">
+                            <a href="#">ressources</a>
+                        </li>
 
-                        <li id="bonus">bonus</li>
+                        <li id="bonus" class="header_li">
+                            <a href="#">bonus</a>
+                        </li>
 
                     </ul>
 
                 </nav>
+                </div>
 
             </header>
 
             <footer class="footer" id="footer">
-                <nav class="footer_nav">
-                    <ul>
+                <div class="container footer_container">
+                <nav id="footer_nav" class="footer_nav">
+                    <ul class="footer_nav">
                         <li><a href="#">cookies/confidentialite</a></li>
                     </ul>
                 </nav>
 
-                <span class="copy">Tous droits réserver à &copy; <a href="#">hyo@sayajin</a> || 2022</span>
+                <span class="copy">Tous droits réserver à <br> &copy; <a href="#">hyo@sayajin</a> || 2022</span>
+            </div>
             </footer>
 
         </div>
 
-        <div class="container_nav_secondary">
+        <div class="container container_heading">
 
-            <h2 class="nav_title">accueil</h2>
+            <h2 class="heading_title">accueil</h2>
 
-            <nav id="nav-secondary" class="nav_secondary">
-                <ul class="secondary_ul">
-                    <li id="profil-2">profil</li>
-                    <li id="competences">compétences</li>
-                    <li id="formations">formations</li>
-                    <li id="exp-pro">exp.pro</li>
-                    <li id="interet">centre d'interêt</li>
-                    <li id="resaux">social</li>
+            <nav id="heading_nav" class="heading_nav">
+                <ul class="heading_ul">
+
+                    <li id="profil-2" class="heading_li">
+                        <a href="#">profil</a>
+                    </li>
+
+                    <li id="competences" class="heading_li">
+                        <a href="#">compétences</a>
+                    </li>
+
+                    <li id="formations" class="heading_li">
+                        <a href="#">formations</a>
+                    </li>
+
+                    <li id="exp-pro" class="heading_li">
+                        <a href="#">exp.pro</a>
+                    </li>
+
+                    <li id="interet" class="heading_li">
+                        <a href="#">centre d'interêt</a>
+                    </li>
+
+                    <li id="resaux" class="heading_li">
+                        <a href="#">social</a>
+                    </li>
+
                 </ul>
             </nav>
             
-            <span id="contact" class="btn">contact</span>
+            <a id="contact" class="btn contact" href="#">contact</a>
             
         </div>
 
-        <section class="sections">
-            <div id="container-section" class="container_section">
-                <div class="cards a1 accueil"> </div>
-                <div class="cards a2 accueil"> </div>
-                <div class="cards a3 accueil"> </div>
-                <div class="cards a4 accueil"> </div>
+       <main id="main" class="main">
+        <!-- <section id="section_accueil" class="sections section_accueil">
+
+            <div class="container_accueil">
+
+                <div class="container container_article">
+                    <article class="accueil_article">
+                        
+                        <div class="container article_logo">
+                            <img src="./assets/img/logo/logo.svg" alt="Logo de profil">
+                            <h2>Faizdine</h2>
+                        </div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam ut nobis vero quae! Aliquid laboriosam porro, eligendi cumque animi fugiat praesentium neque, culpa rerum esse, perspiciatis saepe explicabo facilis quos!
+                        </p>
+                        <a class="btn cta_commencer" href="#">commencer</a>
+                        
+                    </article>
+                    <div class="container accueil_illustration">
+                        <img src="./assets/img/svg/accueil/accueil.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="container container_cards">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="section_about" class="sections section_about">
+            
+            <div class="container container_about">
+
+                <div class="container about_illustration">
+                    <img src="./assets/img/svg/about/presentation.svg" alt="Profil illustration">
+                </div>
+
+                <article class="container about_article">
+                    <h3>pésentation</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum magnam nesciunt totam quas aliquid qui laborum consequuntur minus voluptates porro magni, laboriosam veniam consectetur quos deserunt ut, molestias aliquam laudantium.
+                    </p>
+                    <a class="btn cta_tmcv" href="./assets/docs/CV_Faizdine_TOUMBOU.pdf">Télécharger mon CV</a>
+                </article>
+
+                <ul class="about_ul">
+                </ul>
             </div>
         </section>
+
+        <!-- <section id="section_work" class="sections section_work">
+            <div class="container container_work">
+                <div class="container design"></div>
+                <div class="container dev"></div>
+            </div>
+        </section> -->
+       </main>
 
     </div>
 

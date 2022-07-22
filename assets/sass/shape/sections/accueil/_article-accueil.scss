@@ -1,0 +1,46 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.accueil_article {
+  @extend %flex-column;
+  // justify-content: space-between;
+  width: 60%;
+}
+
+.article_logo {
+  @extend %flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    @include body(64px, 64px);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.accueil_article p {
+  @extend %padding-1rem;
+  max-width: 65%;
+  border-top: solid 1px silver;
+}
+
+
+.cta_commencer {
+  align-self: flex-start;
+  margin: auto auto auto 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+.accueil_illustration {
+  @extend %flex-center;
+  width: 40%;
+}

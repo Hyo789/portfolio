@@ -12,6 +12,7 @@
 // COMPONENTS
 
 
+/*
 .container_loader {
     @extend %flex-center;
     position: absolute; inset: 0; z-index: 2000;
@@ -32,7 +33,7 @@
             @include body (5rem, 5rem);
 
             border-radius: 50%;
-            border-top:solid 10px $color-green;
+            border-top:solid 10px $color-secondary;
             border-left:solid 10px transparent;
             border-right:solid 10px transparent;
 
@@ -40,10 +41,12 @@
         }
     }
 }
+*/
 
-.disactive {
+.desactive {
     visibility: hidden;
     opacity: 0;
+    display: none;
 
     transition: 1s;
 }
