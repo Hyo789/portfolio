@@ -1,0 +1,37 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.contact_article {
+    flex-direction: column;
+    @include flex(space-around,initial);
+    min-height: 90%;
+    width: 40%;
+    padding: 10% 6%;
+    
+    border: solid;
+    border-radius: 1rem;
+
+    text-align: center;
+    
+    background-color: $color-background;
+    
+    .cta_tmcv {
+        align-self: center;
+    }
+}
+
+.contact_article span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.contact_article p {
+    font-size: 1.1rem;
+    // text-align: left;
+    margin: auto;
+    max-width: 65%;
+}

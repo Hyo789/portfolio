@@ -1,0 +1,16 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+section.section_contact {
+    @extend %display-none;
+}
+
+section.section_contact.active {
+    @extend %position-absolute; inset: 0;
+    @extend %flex;
+    @include flex();
+    background-color:transparent;
+}

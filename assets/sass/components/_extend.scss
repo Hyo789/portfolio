@@ -30,7 +30,7 @@
 
 %flex-column {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
 }
 
 %flex-center {
@@ -133,7 +133,9 @@
     background: $gradient;
 
     box-shadow: -1px -1px 4px silver, 1px 1px 5px silver;
-
+    
+    transform: scale(1.02);
+    
     @extend %transition;
   }
 

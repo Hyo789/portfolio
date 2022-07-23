@@ -7,11 +7,13 @@
 
 
 // CONTACT
+@use "./contact/contact";
 
+@use "./contact/article-contact";
 
 // ABOUT
 @use "./about/stack-about";
 
-
-// CREATIONS TRAVAUX RESSOURCES
+// Work
+@use "./work/stack-work";
 

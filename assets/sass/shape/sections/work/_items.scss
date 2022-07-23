@@ -1,0 +1,13 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.items {
+  @include flex();
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px silver, -1px -1px 4px silver;
+
+  @extend %hover;
+}

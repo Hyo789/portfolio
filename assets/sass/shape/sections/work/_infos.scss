@@ -1,0 +1,54 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.infos {
+    @extend %display-none;
+}
+
+.infos.active {
+  @extend %position-absolute;
+  inset: 0;
+  @extend %grid;
+  grid-template-areas:
+  "illus"
+  "supp"
+  "supp";
+  grid-template-rows: calc(100% / 3);
+  @extend %padding-1rem;
+
+  border-radius: 1rem;
+
+  background-color: $color-background;
+}
+
+.infos_description {
+  grid-area: illus;
+  @extend %position-relative;
+  gap: 2rem;
+  bottom: 0;
+
+  &::after {
+    content: "";
+    @extend %position-absolute;
+    bottom: 0;
+    height: 1%;
+    width: 45%;
+
+    border-radius: 0.5rem;
+
+    background-color: $color-secondary;
+  }
+}
+
+.infos_illustration {
+  @include flex();
+  width: 15%;
+}
+
+.infos_paraph {
+  max-width: 70%;
+  @extend %padding-0_5rem;
+}

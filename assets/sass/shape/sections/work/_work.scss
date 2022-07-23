@@ -1,0 +1,44 @@
+// COMPONENTS
+
+@use "../../../components/index" as *;
+
+// COMPONENTS
+
+.section_work {
+  box-shadow: initial;
+}
+
+.section_work.active {
+  @extend %position-relative;
+  padding: 0.5rem;
+  box-shadow: 0px -1px 4px silver, 1px 1px 4px silver;
+}
+
+.container_work {
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+}
+
+.container_work.active {
+  @extend %grid;
+  grid-template-columns: repeat(auto-fit, 20vh);
+  grid-auto-rows: 20vh;
+  gap: 10vh;
+
+  overflow: scroll;
+}
+
+.work_options {
+  @extend %flex;
+  @extend %padding-0_5rem;
+  width: 50%;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 4px silver, -1px -1px 4px silver;
+
+  @extend %hover;
+}
+
+.work_options.desactive {
+  @extend %display-none;
+}
